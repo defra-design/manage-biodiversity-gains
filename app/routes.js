@@ -10,3 +10,6 @@ const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
 // Add your routes here
+
+const registerapplicationv22 = require('./views/register-application/v22/_routes');
+router.use('/register-application/v22', registerapplicationv22);

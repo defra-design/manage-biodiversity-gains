@@ -538,8 +538,6 @@ router.post('/landowner-certificate-answer', function (req, res) {
 // Landowner certificate check KP
 router.post('/landowner-certificate-correct-answer', function (req, res) {
 
-
-
   var install = req.session.data['landowner-certificate-correct']
 
   if (install == "no"){
