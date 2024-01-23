@@ -196,7 +196,7 @@
             Start date
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['legal-agreement-date-start-day'] or '15' }} {{ data['legal-agreement-date-start-month'] | monthToWordWithSpaces('March') }} {{ data['legal-agreement-date-start-year'] or '2022' }}
+            {{ data['legal-agreement-date-start-day'] or '15' }} {{ data['legal-agreement-date-start-month']  }} {{ data['legal-agreement-date-start-year'] or '2022' }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link govuk-link--no-visited-state" href="./legal-agreement-date-start">
@@ -241,7 +241,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['has-management-plan-habitat-date-start'] == "yes" %}
-            {{ data['management-plan-habitat-date-start'] or '15' }} {{ data['management-plan-habitat-date-start'] | monthToWordWithSpaces('March') }} {{ data['management-plan-habitat-date-start'] or '2023' }}
+            {{ data['management-plan-habitat-date-start'] or '15' }} {{ data['management-plan-habitat-date-start']  }} {{ data['management-plan-habitat-date-start'] or '2023' }}
             {% else %}
             Not started yet
             {% endif %}
@@ -258,7 +258,7 @@
             Start date of 30-year management and monitoring period
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['management-plan-date-end-day'] or '15' }} {{ data['management-plan-date-end-month'] | monthToWordWithSpaces('March') }} {{ data['management-plan-date-end-year'] or '2023' }}
+            {{ data['management-plan-date-end-day'] or '15' }} {{ data['management-plan-date-end-month']  }} {{ data['management-plan-date-end-year'] or '2023' }}
           </dd>
           <dd class="govuk-summary-list__actions">    
             <a class="govuk-link" href="/register-application/v22/management-plan-date-end">
@@ -273,7 +273,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['has-legal-agreement-date-end'] == "yes" %}
-            {{ data['legal-agreement-date-end-day'] or '15' }} {{ data['legal-agreement-date-end-month'] | monthToWordWithSpaces('March') }} {{ data['legal-agreement-date-end-year'] or '2022' }}
+            {{ data['legal-agreement-date-end-day'] or '15' }} {{ data['legal-agreement-date-end-month']  }} {{ data['legal-agreement-date-end-year'] or '2022' }}
 
           {% else %}
           No end date
