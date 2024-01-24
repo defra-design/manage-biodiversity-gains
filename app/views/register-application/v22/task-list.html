@@ -109,7 +109,7 @@
               </ul>
               <h2 class="govuk-heading-m govuk-!-margin-top-5">Submit your biodiversity gain site information</h2>
               <ul class="govuk-task-list">
-                <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
                    <span id="can-submit" style="display:none;">
                    <span class="app-task-list__task-name" >
@@ -121,7 +121,7 @@
                   </div>
                   <div class="govuk-task-list__status" id="landowner-status">
                     <span id="cannot-submit" >
-                     <span class="app-task-list__task-name"  >
+                     <span class="app-task-list__task-name">
                         Check your answers and submit
                       </span>
                       <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-application-status">Cannot start yet</strong>
@@ -144,6 +144,7 @@ window.addEventListener('load', function() {
   
   let tasks = $('.task-list-required').length;
   let tasksCompleted = $('.completed').length;
+  console.log(tasks + " " + tasksCompleted);
   $('.task-progress-to-complete-total').text(tasks);
   $('.task-progress-completed').text(tasksCompleted);
   if (tasks == tasksCompleted){
