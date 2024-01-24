@@ -696,18 +696,5 @@ router.post('/additional-email-more-answer-allocation', function (req, res) {
   }
 })
 
-// Logging session data 
- 
- router.use((req, res, next) => { 
- const log = { 
- method: req.method, 
- url: req.originalUrl, 
- data: req.session.data 
- } 
- console.log(JSON.stringify(log, null, 2)) 
-
- next() 
- })
-
 // Add your routes above the module.exports line
 module.exports = router
