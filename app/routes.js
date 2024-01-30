@@ -14,3 +14,6 @@ router.use(radioButtonRedirect)
 const registerapplicationv22 = require('./views/register-application/v22/_routes');
 router.use('/register-application/v22', registerapplicationv22);
 
+const biodiversitygainsitesregisterv6 = require('./views/biodiversity-gain-sites-register/v6/_routes');
+router.use('/biodiversity-gain-sites-register/v6', biodiversitygainsitesregisterv6);
+
