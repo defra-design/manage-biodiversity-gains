@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Estimate the cost of statutory biodiversity credits
+      </h1>
+
+      <p>Use this service to estimate the cost of statutory biodiversity credits for a development.</p>
+
+      <p>We need to know whether your statutory biodiversity credit type is Area, Hedgerow or Watercourse. All habitats fit into one of these groups and in each of them, there are credit tiers. There are five credit tiers in Area, A1 to A5, one in Hedgerow, H and one in Watercourse, W.</p>
+
+      <p>The number of statutory credits is worked out from the information you inputted into the statutory biodiversity metric calculation tool. You are responsible for the accuracy of the information you provide.</p>
+
+      <p>This service gives an estimate only.</p>
+
+      <p>You will need to discuss your potential credit requirements with your LPA.</p>
+
+      <p>If you want to buy credit units go to the <a href="#">Manage Biodiversity Gains</a> service.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "#",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        You will need the following information
+      </h2>
+
+      <p>From your completed statutory biodiversity metric tool:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the credit type</li>
+        <li>the credit tier: Area (A1 to A5), H or W</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        Contact us if you need help
+      </h2>
+
+      <p>Telephone: 0300 060 3900</p>
+
+      <p>Opening times:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>March to September – Monday to Friday, 10am to 4pm</li>
+        <li>October to February – Monday to Friday, 10am to 2pm</li>
+      </ul>
+
+      <p>Closed on public holidays.</p>
+
+      <p><a href="https://www.gov.uk/call-charges">Find out about call charges</a></p>
+
+      <p>Email: <a href="mailto:biodiversitynetgainenquiries@naturalengland.org.uk">biodiversitynetgainenquiries@naturalengland.org.uk</a></p>
+
+      <p>We aim to reply within 10 working days.</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li><a href="https://www.gov.uk/guidance/statutory-biodiversity-credits">
+              Statutory biodiversity credits guidance
+            </a></li>
+            <li><a href="https://www.gov.uk/guidance/statutory-biodiversity-credit-prices">
+              Statutory biodiversity credit prices guidance
+            </a></li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
