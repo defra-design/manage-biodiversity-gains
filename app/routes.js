@@ -11,12 +11,21 @@ router.use(radioButtonRedirect)
 
 // Add your routes here
 
+
+// Register
 const registerapplicationv22 = require('./views/register-application/v22/_routes');
 router.use('/register-application/v22', registerapplicationv22);
 
+// Public register
 const biodiversitygainsitesregisterv6 = require('./views/biodiversity-gain-sites-register/v6/_routes');
 router.use('/biodiversity-gain-sites-register/v6', biodiversitygainsitesregisterv6);
 
+
+// Credits estimation
 const creditsestimationv5 = require('./views/credits-estimation/v5/_routes');
 router.use('/credits-estimation/v5', creditsestimationv5);
+
+// Credits buy
+const creditsbuyv4 = require('./views/credits-buy/v4/_routes');
+router.use('/credits-buy/v4', creditsbuyv4);
 
