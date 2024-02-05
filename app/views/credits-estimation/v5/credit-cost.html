@@ -1,0 +1,119 @@
+{% extends "credits-estimation/v5/layout-credits-estimation.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-5" style="background-color: #1d70b8;">
+      <h1 class="govuk-panel__title govuk-!-text-align-left">
+        Estimated cost of statutory biodiversity credits
+      </h1>
+      <div class="govuk-panel__body govuk-!-text-align-left">
+        <strong>£134,000 (excluding VAT)</strong>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Credits breakdown</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Tier</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Credits</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Estimated cost</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table__header">A1</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">16.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£19,166</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell govuk-table__header">A2</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">1.76</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£19,166</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell govuk-table__header">A3</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">0.00</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£0.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell govuk-table__header">A4</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">8.37</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£19,166</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell govuk-table__header">A5</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">0.00</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£0.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell govuk-table__header">H</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">5.78</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£19,166</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell govuk-table__header">W</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">0.00</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£0.00</td>
+              </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Total estimated cost</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+              <!-- <td class="govuk-table__cell govuk-table__cell--numeric">70.09</td> -->
+              <td class="govuk-table__cell govuk-table__cell--numeric">£134,000</td>
+            </tr>
+          </tbody>
+        </table>
+      
+      <!-- <form method="post">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Start a new credits estimate
+        </button>
+
+      </form> -->
+    </div>
+  </div>
+
+      
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <!-- <p>
+              {{ data | dump }}
+            </p> -->
+
+            
+            <h2 class="govuk-heading-m">Credit prices</h2>
+            <p>This service provides an estimate only, based on the <a href="https://www.gov.uk/guidance/statutory-biodiversity-credit-prices#area-habitats">current statutory credit prices</a> and the information you provided.</p>
+            <p>It provides an indication of how much you can expect to pay for statutory biodiversity credits. The actual price for them may be different.</p>
+
+            <h2 class="govuk-heading-m">Not legally binding</h2>
+            <p>The estimate is not legally binding with Natural England, or the Secretary of State. Your application to purchase statutory credits is subject to you meeting the required eligibility checks.</p>
+            <p>Your final statutory credit price, based on your application, will be shown on your completed invoice.</p>
+
+            <h2 class="govuk-heading-m">Your responsibility</h2>
+            <p>It is your responsibility to ensure you have purchased the correct number, and tier, of biodiversity credits to meet your BNG requirements.</p>
+            <p>All prices listed in this service do not include VAT, but VAT is payable.</p>
+            <p>Read the <a href="https://www.gov.uk/guidance/statutory-biodiversity-credits">statutory biodiversity credits guidance</a> for further information.</p>
+          </div>
+        </div>
+</div>
+
+{% endblock %}
