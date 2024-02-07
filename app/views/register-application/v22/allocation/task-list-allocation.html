@@ -23,9 +23,9 @@
                 </div>
                 <div class="govuk-task-list__status" id="applicant-info-status">
                   {% if data["applicant-details-added"] %}
-                  <strong class="govuk-tag app-task-list__tag completed" id="add-your-details-status">
+                  <span class="completed" id="add-your-details-status">
                     Completed
-                  </strong>
+                  </span>
                   {% else %}
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
                     Not started
@@ -44,9 +44,9 @@
                 </div>
                 <div class="govuk-task-list__status" id="your-details-status">
                   {% if data["metric-details-added"] %}
-                  <strong class="govuk-tag app-task-list__tag completed" id="add-your-details-status">
+                  <span class="completed" id="add-your-details-status">
                     Completed
-                  </strong>
+                  </span>
                   {% else %}
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
                     Not started
@@ -62,9 +62,9 @@
                 </div>
                 <div class="govuk-task-list__status" id="your-details-status">
                   {% if data["metric-details-uploaded"] %}
-                  <strong class="govuk-tag app-task-list__tag completed" id="add-your-details-status">
+                  <span class="completed" id="add-your-details-status">
                     Completed
-                  </strong>
+                  </span>
                   {% else %}
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
                     Not started
@@ -80,9 +80,9 @@
                 </div>
                 <div class="govuk-task-list__status" id="your-details-status">
                   {% if data["metric-details-confirmed"] %}
-                  <strong class="govuk-tag app-task-list__tag completed" id="add-your-details-status">
+                  <span class="completed" id="add-your-details-status">
                     Completed
-                  </strong>
+                  </span>
                   {% else %}
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
                     Not started
@@ -109,7 +109,7 @@
                   {% if data["metric-details-confirmed"] %}
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-your-answers-status">Not started</strong>
                   {% else %}
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-your-answers-status">Cannot start</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-your-answers-status">Cannot start yet</strong>
                   {% endif %}
                 </div>
               </li>
