@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Biodiversity gain sites register
 {% endblock %}
 
 {% block header %}
@@ -33,20 +33,34 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            There are currently no registered gain sites. There is no information to display at present.
+          </p>
+        </div>
+      </div>
 
       <h1 class="govuk-heading-xl">
         Biodiversity gain sites register
       </h1>
 
-      <p>You can search the register to check details about land used for biodiversity gain sites, including the:</p>
+      <p>You will be able to search the register to check details about land used for biodiversity gain sites, including the:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>location and area</li>
-        <li>types of habitats enhanced or created</li>
-        <li>habitat management and monitoring plans</li>
+        <li>location</li>
+        <li>map of the area</li>
+        <li>types of habitats to be enhanced or created</li>
       </ul>
 
-      <!-- <p>Registering takes around 5 minutes.</p> -->
+      <p>The register will be populated by data from landowners and developers.</p>
+
+      <p>Once applications start to be processed, the relevant information will appear on the biodiversity gain sites register.</p>
 
       {{ govukButton({
         text: "Start now",
