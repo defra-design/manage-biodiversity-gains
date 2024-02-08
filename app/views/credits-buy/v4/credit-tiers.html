@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Add statutory biodiversity credits</h1>
+        <p class="govuk-body">The information you require to get an estimate from this service can be found in the ‘unit shortfall summary’ tab, from the results menu, in the statutory biodiversity metric calculation tool.</p>
+        <p class="govuk-body">Enter the number of credits from the statutory biodiversity metric calculation tool, up to 2 decimal places, like 23.75.</p>
+        <!-- <p class="govuk-hint">The number of credits must be entered up to 2 decimal places, like 23.75.</p> -->
+
+      <form method="post">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-l">
+                <span class="govuk-caption-m">Area</span>
+                Tier A
+            </h2>
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="A1">
+                A1
+              </label>
+              <div id="event-name-hint" class="govuk-hint">Enter number of credits</div>
+              <input class="govuk-input govuk-input--width-5" id="A1" name="A1" type="text">
+          </div>
+          <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="A2">
+                A2
+              </label>
+              <div id="event-name-hint" class="govuk-hint">Enter number of credits</div>
+              <input class="govuk-input govuk-input--width-5" id="A2" name="A2" type="text">
+          </div>
+          <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="A3">
+                A3
+              </label>
+              <div id="event-name-hint" class="govuk-hint">Enter number of credits</div>
+              <input class="govuk-input govuk-input--width-5" id="A3" name="A3" type="text">
+          </div>
+          <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="A4">
+                A4
+              </label>
+              <div id="event-name-hint" class="govuk-hint">Enter number of credits</div>
+              <input class="govuk-input govuk-input--width-5" id="A4" name="A4" type="text">
+          </div>
+          <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="A5">
+                A5
+              </label>
+              <div id="event-name-hint" class="govuk-hint">Enter number of credits</div>
+              <input class="govuk-input govuk-input--width-5" id="A5" name="A5" type="text">
+          </div>      
+        </div>
+        <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-l">
+                <span class="govuk-caption-m">Hedgerow</span>
+                Tier H
+            </h2>
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="H1">
+                H
+              </label>
+              <div id="event-name-hint" class="govuk-hint">Enter number of credits</div>
+              <input class="govuk-input govuk-input--width-5" id="H1" name="H1" type="text">
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-l">
+                <span class="govuk-caption-m">Watercourse</span>
+                Tier W
+            </h2>
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="W1">
+                W
+              </label>
+              <div id="event-name-hint" class="govuk-hint">Enter number of credits</div>
+              <input class="govuk-input govuk-input--width-5" id="W1" name="W1" type="text">
+          </div>
+        </div>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      </div>
+     
+
+    
+  </div>
+
+{% endblock %}

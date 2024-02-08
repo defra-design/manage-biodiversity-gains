@@ -1,0 +1,329 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers before sending your application
+      </h1>
+
+      <h2 class="govuk-heading-m">Statutory biodiversity metric calculation tool</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            File added
+          </dt>
+          <dd class="govuk-summary-list__value">
+            SoS_Emmer_Green_PP_version.XLSM, 4.1MB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-metric-upload">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Confirm development details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-development-location">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Project name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Emmer Green Golf Course
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Local authority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Reading Borough Council
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Planning reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            22/01976/RJL
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Statutory biodiversity credits</h2>
+
+      <h2 class="govuk-heading-m">Tier A</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            A1
+          </dt>
+          <dd class="govuk-summary-list__value">
+            16.34 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-tier-alt">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            A2
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1.76 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-tier-alt">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            A3
+          </dt>
+          <dd class="govuk-summary-list__value">
+            0.00 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-tier-alt">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            A4
+          </dt>
+          <dd class="govuk-summary-list__value">
+            8.37 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-tier-alt">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            A5
+          </dt>
+          <dd class="govuk-summary-list__value">
+            0.00 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-tier-alt">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Tier H</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            H
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5.78 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-tier-alt">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Tier W</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            W
+          </dt>
+          <dd class="govuk-summary-list__value">
+            0.00
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-tier-alt">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Estimated cost of statutory biodiversity credits</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total estimated cost
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £134,000 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="email-entry">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a> -->
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Purchase order</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Will you be using a purchase order?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-purchase-order">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Purchase order number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            123456789
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-purchase-order">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Customer due diligence information</h2>
+
+      <!-- {% if data['ind-or-org'] == "Individual" %}
+      <p>Individual</p>
+      {% else %}
+      <p>Organisation</p>
+      {% endif %} -->
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Are you purchasing statutory biodiversity credits as an individual or an organisation?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Individual
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-individual-or-organisation">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Middle name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Seymour
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-individual-name">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            08 Febuary 1980
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-individual-dob">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            British
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="credits-individual-nationality">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Submit your information</h2>
+
+      <p>By submitting the above information, you agree that it is complete and correct.</p>
+
+      <p>Submitting this information also confirms the planning permission referenced in your application has been granted.</p>
+
+      <p></p>
+
+      <form method="post">
+
+          {{ govukButton({ text: 'Confirm and submit', href: 'confirmation'}) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

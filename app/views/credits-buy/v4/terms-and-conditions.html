@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Terms and Conditions for the purchase of statutory biodiversity credits</h1>
+
+      <p>The statutory biodiversity credit scheme is run by Natural England on behalf of the Department for Environment, Food and Rural Affairs (Defra) as part of the Environment Act 2021.</p>
+
+      <h2 class="govuk-heading-m">Privacy notice</h2>
+
+      <p>Our <a href="#">privacy notice</a> sets out how we use the personal data.</p>
+
+      <h2 class="govuk-heading-m">Your responsibilities</h2>
+
+      <p>It is your responsibility to ensure:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <!-- <li>all information is correct</li> -->
+        <li>you have purchased the correct number, and tier, of statutory biodiversity credits to meet your BNG obligation for development under the Planning Permission referenced in your application</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Anti-money laundering</h2>
+
+      <p>All applications to purchase statutory biodiversity credits are subject to anti-money laundering checks. They can only be purchased by applicants who pass those checks.</p>
+
+      <h2 class="govuk-heading-m">Purchase terms</h2>
+
+      <p>You have no obligation to Natural England to buy the statutory biodiversity credits in this service. The terms and conditions for purchase of statutory biodiversity credits will apply if you proceed.</p>
+
+      <h2 class="govuk-heading-m">Introduction</h2>
+
+      <p>The statutory biodiversity credit scheme is run by Natural England on behalf of the Department for Environment, Food and Rural Affairs (Defra) as part of the Environment Act 2021.</p>
+
+      <p>The full terms and conditions attached to our proforma purchase invoices are non-negotiable.</p>
+
+      <p>Read <a href="#">the full terms and conditions</a> before progressing further.</p>
+
+      <form method="post">
+        <div class="govuk-form-group">
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                I confirm I have read the above, and the full terms and conditions.
+              </label>
+            </div>
+          </div>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button" name="terms-and-conditons" value="checked">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
