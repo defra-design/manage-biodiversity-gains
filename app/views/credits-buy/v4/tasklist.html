@@ -13,6 +13,10 @@
 
       <h1 class="govuk-heading-xl">Buy statutory biodiversity credits</h1>
 
+      <p>
+        {{ data | dump }}
+      </p>
+
       <h2 class="govuk-heading-m">Statutory biodiversity metric</h2>
 
       {% set completedStatus = {
@@ -26,6 +30,10 @@
         }
       } %}
 
+      {% set cannotStartStatus = {
+        text: "Cannot start"
+      } %}
+
       {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
 
       {{ govukTaskList({
@@ -36,7 +44,7 @@
               text: "Upload statutory biodiversity metric"
             },
             href: "metric-upload.html ",
-            status: completedStatus
+            status: (completedStatus if data['development-data'] == "yes" else incompleteStatus)
           }
         ]
       }) }}
@@ -51,7 +59,7 @@
               text: "Add statutory biodiversity credits"
             },
             href: "credit-tiers.html",
-            status: completedStatus
+            status: (completedStatus if data['credits-cost'] == "completed" else incompleteStatus)
           }
         ]
       }) }}
@@ -66,7 +74,7 @@
               text: "Add a purchase order number"
             },
             href: "purchase-order.html",
-            status: completedStatus
+            status: (completedStatus if data['purchase-order'] == "Yes" or data['purchase-order'] == "No" == "completed" else incompleteStatus)
           }
         ]
       }) }}
@@ -81,7 +89,7 @@
               text: "Complete customer due diligence"
             },
             href: "individual-or-organisation.html",
-            status: completedStatus
+            status: (completedStatus if data['ind-or-org'] == "Individual" or data['ind-or-org'] == "Organisation" == "completed" else incompleteStatus)
           }
         ]
       }) }}
@@ -96,12 +104,14 @@
               text: "Accept terms and conditions"
             },
             href: "terms-and-conditions.html ",
-            status: completedStatus
+            status: (completedStatus if data['terms-and-conditions'] == "agree" else incompleteStatus)
           }
         ]
       }) }}
 
       <h2 class="govuk-heading-m govuk-!-margin-top-5">Submit your biodiversity gain information</h2>
+
+      {% if data['terms-and-conditions'] == "agree" %} 
 
       {{ govukTaskList({
         idPrefix: "second-section",
@@ -111,10 +121,26 @@
               text: "Check your answers before you submit them"
             },
             href: "check-your-answers.html",
-            status: completedStatus
+            status: incompleteStatus
           }
         ]
       }) }}
+
+      {% else %} 
+
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+          {
+            title: {
+              text: "Check your answers before you submit them"
+            },
+            status: cannotStartStatus
+          }
+        ]
+      }) }}
+
+      {% endif %}
 
       <!-- <div class="govuk-!-margin-top-5">
         {{ govukButton({ text: "Apply", href: "#" }) }}
