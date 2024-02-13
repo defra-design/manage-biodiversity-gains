@@ -13,9 +13,9 @@
 
       <h1 class="govuk-heading-xl">Buy statutory biodiversity credits</h1>
 
-      <p>
+      <!-- <p>
         {{ data | dump }}
-      </p>
+      </p> -->
 
       <h2 class="govuk-heading-m">Statutory biodiversity metric</h2>
 
@@ -74,7 +74,7 @@
               text: "Add a purchase order number"
             },
             href: "purchase-order.html",
-            status: (completedStatus if data['purchase-order'] == "Yes" or data['purchase-order'] == "No" == "completed" else incompleteStatus)
+            status: (completedStatus if data['purchase-order'] == "Yes" or data['purchase-order'] == "No" else incompleteStatus)
           }
         ]
       }) }}
@@ -89,7 +89,7 @@
               text: "Complete customer due diligence"
             },
             href: "individual-or-organisation.html",
-            status: (completedStatus if data['ind-or-org'] == "Individual" or data['ind-or-org'] == "Organisation" == "completed" else incompleteStatus)
+            status: (completedStatus if data['ind-or-org'] == "Individual" or data['ind-or-org'] == "Organisation" else incompleteStatus)
           }
         ]
       }) }}
