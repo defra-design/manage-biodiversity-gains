@@ -1,4 +1,4 @@
-{% extends "register-application/v22/layout-register-application.html" %}
+{% extends "register-application/v23/layout-register-application.html" %}
 
 {% set pageHeading = "Development projects" %}
 
@@ -14,7 +14,7 @@
       {{ pageHeading }}
     </h1>
 
-      <form action="/register-application/v22/allocation/allocation-gain-site" method="post" novalidate>
+      <form action="/register-application/v23/allocation/allocation-gain-site" method="post" novalidate>
         <input type="hidden" name="register-journey" value="false">
         <button class="govuk-button" data-module="govuk-button">
           Record off-site gains for a new development
@@ -40,9 +40,9 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               {% if data['development-added'] == 'true' %}
-              <a href="/register-application/v22/dashboard-record-view">Farifax Housing Project</a>
+              <a href="/register-application/v23/dashboard-record-view">Farifax Housing Project</a>
               {% else %}
-                <a href="/register-application/v22/allocation-check-answers">Farifax Housing Project</a>
+                <a href="/register-application/v23/allocation-check-answers">Farifax Housing Project</a>
               {% endif %}
             </td>
             <td class="govuk-table__cell">
@@ -52,7 +52,7 @@
               22/01976/RJL
             </td>
             <td class="govuk-table__cell">
-              {% include "register-application/v22/includes/todays-date.html" %}
+              {% include "register-application/v23/includes/todays-date.html" %}
             </td>
             <td class="govuk-table__cell">
               {% if data['development-added'] == 'true' %}

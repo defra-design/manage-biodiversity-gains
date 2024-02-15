@@ -1,4 +1,4 @@
-{% extends "register-application/v22/layout-register-application.html" %}
+{% extends "register-application/v23/layout-register-application.html" %}
 
 {% set pageHeading = "Biodiversity gain sites" %}
 
@@ -20,10 +20,10 @@
       <ul class="govuk-list govuk-list--spaced">
         <li>
           <span class="govuk-body-s">
-            {% include "register-application/v22/includes/todays-date.html" %}
+            {% include "register-application/v23/includes/todays-date.html" %}
           </span> 
           <span class="govuk-caption-m">Action</span> 
-          <a href="/register-application/v22/allocation-approval">Approve development project habitat allocation</a>
+          <a href="/register-application/v23/allocation-approval">Approve development project habitat allocation</a>
         </li>
 
       </ul>
@@ -31,7 +31,7 @@
   {% else %}
   {% endif %} -->
 
-      <form action="/register-application/v22/task-list" method="post" novalidate>
+      <form action="/register-application/v23/task-list" method="post" novalidate>
         <input type="hidden" name="new-register-journey" value="true">
         <input type="hidden" name="register-journey" value="true">
         <button class="govuk-button" data-module="govuk-button">
@@ -59,11 +59,11 @@
               {% if data['answers-checked'] == 'true' %}
                 BNGREG-6040S-AVPJW
               {% else %}
-                <a href="/register-application/v22/task-list" class="govuk-link--no-visited-state">BNGREG-3040W-GHERS</a>
+                <a href="/register-application/v23/task-list" class="govuk-link--no-visited-state">BNGREG-3040W-GHERS</a>
               {% endif %}
             </th>
             <td class="govuk-table__cell">
-              {% include "register-application/v22/includes/todays-date.html" %}
+              {% include "register-application/v23/includes/todays-date.html" %}
             </td>
             <td class="govuk-table__cell">
               {% if data['answers-checked'] == 'true' %}
@@ -79,7 +79,7 @@
                 BNGREG-9820B-YREWS
             </th>
             <td class="govuk-table__cell">
-              {% include "register-application/v22/includes/todays-date.html" %}
+              {% include "register-application/v23/includes/todays-date.html" %}
             </td>
             <td class="govuk-table__cell">
 
@@ -109,11 +109,11 @@
               {% if data['answers-checked'] == 'true' %}
                 BGS-150322001
               {% else %}
-                <a href="/register-application/v22/task-list" class="govuk-link--no-visited-state">BGS-150322001</a>
+                <a href="/register-application/v23/task-list" class="govuk-link--no-visited-state">BGS-150322001</a>
               {% endif %}
             </th>
             <td class="govuk-table__cell">
-              {% include "register-application/v22/includes/todays-date.html" %}
+              {% include "register-application/v23/includes/todays-date.html" %}
             </td>
             <td class="govuk-table__cell">
               {% if data['answers-checked'] == 'true' %}
@@ -129,7 +129,7 @@
                 BGS-150322045
             </th>
             <td class="govuk-table__cell">
-              {% include "register-application/v22/includes/todays-date.html" %}
+              {% include "register-application/v23/includes/todays-date.html" %}
             </td>
             <td class="govuk-table__cell">
 

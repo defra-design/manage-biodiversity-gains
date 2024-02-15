@@ -1,4 +1,4 @@
-{% extends "register-application/v22/layout-register-application.html" %}
+{% extends "register-application/v23/layout-register-application.html" %}
 
 {% set pageHeading = "Development projects" %}
 
@@ -14,7 +14,7 @@
       {{ pageHeading }}
     </h1>
 
-      <form action="/register-application/v22/allocation/task-list-allocation" method="post" novalidate>
+      <form action="/register-application/v23/allocation/task-list-allocation" method="post" novalidate>
         <input type="hidden" name="new-allocate-journey" value="true">
         <input type="hidden" name="allocate-journey" value="true">
         <button class="govuk-button" data-module="govuk-button">
@@ -42,11 +42,11 @@
               {% if data['answers-checked'] == 'true' %}
                 BNGREG-6040S-AVPJW
               {% else %}
-                <a href="/register-application/v22/allocation/task-list-allocation" class="govuk-link--no-visited-state">BNGREG-3040W-GHERS</a>
+                <a href="/register-application/v23/allocation/task-list-allocation" class="govuk-link--no-visited-state">BNGREG-3040W-GHERS</a>
               {% endif %}
             </th>
             <td class="govuk-table__cell">
-              {% include "register-application/v22/includes/todays-date.html" %}
+              {% include "register-application/v23/includes/todays-date.html" %}
             </td>
             <td class="govuk-table__cell">
               {% if data['answers-checked'] == 'true' %}
@@ -62,7 +62,7 @@
                 BNGREG-9820B-YREWS
             </th>
             <td class="govuk-table__cell">
-              {% include "register-application/v22/includes/todays-date.html" %}
+              {% include "register-application/v23/includes/todays-date.html" %}
             </td>
             <td class="govuk-table__cell">
 
@@ -92,11 +92,11 @@
               {% if data['answers-checked'] == 'true' %}
                 BGS-150322001
               {% else %}
-                <a href="/register-application/v22/allocation/task-list-allocation" class="govuk-link--no-visited-state">BGS-150322001</a>
+                <a href="/register-application/v23/allocation/task-list-allocation" class="govuk-link--no-visited-state">BGS-150322001</a>
               {% endif %}
             </th>
             <td class="govuk-table__cell">
-              {% include "register-application/v22/includes/todays-date.html" %}
+              {% include "register-application/v23/includes/todays-date.html" %}
             </td>
             <td class="govuk-table__cell">
               {% if data['answers-checked'] == 'true' %}
@@ -112,7 +112,7 @@
                 BGS-150322045
             </th>
             <td class="govuk-table__cell">
-              {% include "register-application/v22/includes/todays-date.html" %}
+              {% include "register-application/v23/includes/todays-date.html" %}
             </td>
             <td class="govuk-table__cell">
 
