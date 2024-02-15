@@ -1,0 +1,139 @@
+{% extends "register-application/v22/layout-register-application.html" %}
+
+{% set pageHeading = serviceName %}
+
+{% set hideBackLink = true %}
+{% set hideSaveSection = true %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Record allocation of off-site biodiversity gains to a development</h1>
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-2"><span class="task-progress-status-text">Allocation in progress</span></h2>
+            <p class="govuk-body govuk-!-margin-bottom-4">You have completed <span class="task-progress-completed">0</span> of <span class="task-progress-to-complete-total">3</span> sections.</p>
+            
+            <!-- new GDS task list -->
+            
+            <h2 class="govuk-heading-m">Applicant information</h2>
+            <ul class="govuk-task-list">
+              <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="./applicant-details-is-agent" aria-describedby="applicant-info-status">Add details about the person applying</a>
+                </div>
+                <div class="govuk-task-list__status" id="applicant-info-status">
+                  {% if data["applicant-details-added"] %}
+                  <span class="completed" id="add-your-details-status">
+                    Completed
+                  </span>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
+                    Not started
+                  </strong>
+                  {% endif %}
+                </div>
+              </li>
+            </ul>
+            <h2 class="govuk-heading-m govuk-!-margin-top-5">Development information</h2>
+            <ul class="govuk-task-list">
+              <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                <div class="govuk-task-list__name-and-hint">
+                  <a href="allocation-gain-site?confirmed-defra-id=british" aria-describedby="your-details-status" id="add-bng-number">
+                    Add development details
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="your-details-status">
+                  {% if data["metric-details-added"] %}
+                  <span class="completed" id="add-your-details-status">
+                    Completed
+                  </span>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
+                    Not started
+                  </strong>
+                  {% endif %}
+                </div>
+              </li>
+              <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                <div class="govuk-task-list__name-and-hint">
+                  <a href="allocation-metric-upload" aria-describedby="your-details-status" id="upload-metric-file">
+                    Add statutory biodiversity metric calculations
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="your-details-status">
+                  {% if data["metric-details-uploaded"] %}
+                  <span class="completed" id="add-your-details-status">
+                    Completed
+                  </span>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
+                    Not started
+                  </strong>
+                  {% endif %}
+                </div>
+              </li>
+              <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                <div class="govuk-task-list__name-and-hint">
+                  <a href="allocation-metric-development" aria-describedby="your-details-status" id="confirm-development-details">
+                    Confirm development and habitat details
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="your-details-status">
+                  {% if data["metric-details-confirmed"] %}
+                  <span class="completed" id="add-your-details-status">
+                    Completed
+                  </span>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
+                    Not started
+                  </strong>
+                  {% endif %}
+                </div>
+              </li>
+            </ul>
+            <h2 class="govuk-heading-m govuk-!-margin-top-5">Submit your off-site gains information</h2>
+            <ul class="govuk-task-list">
+              <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                <div class="govuk-task-list__name-and-hint">
+                  {% if data["metric-details-confirmed"] %}
+                  <span id="check-your-answers">
+                    <a href="allocation-check-answers">Check your answers and submit</a>
+                  </span> 
+                  {% else %}
+                  <span id="check-your-answers">
+                    Check your answers and submit
+                  </span>
+                  {% endif %}
+                </div>
+                <div class="govuk-task-list__status" id="your-details-status">
+                  {% if data["metric-details-confirmed"] %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-your-answers-status">Not started</strong>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-your-answers-status">Cannot start yet</strong>
+                  {% endif %}
+                </div>
+              </li>
+            </ul>
+            
+            <!-- new GDS task list ends -->
+            
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript">
+window.addEventListener('load', function() {
+  
+  let tasks = $('.task-list-required').length;
+  let tasksCompleted = $('.completed').length;
+  $('.task-progress-to-complete-total').text(tasks);
+  $('.task-progress-completed').text(tasksCompleted);
+  if (tasks == tasksCompleted){
+    $('.task-progress-status-text').text("Allocation details complete")
+  }
+
+});
+</script>
+{% endblock %}

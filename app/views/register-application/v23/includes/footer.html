@@ -1,0 +1,51 @@
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="gem-c-related-navigation">
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+          {% set contactInformation %}
+            <h2 class="govuk-heading-m">Get help with your application</h2>
+            <p>Telephone: 0300 060 3900</p>
+            <p>Opening times:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>March to September - 10am to 4pm, Monday to Friday</li>
+                <li>October to February - 10am to 2pm, Monday to Friday</li>
+              </ul>
+            <p>Closed on public holidays.</p>
+            <p class="govuk-body">
+              <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+            </p>
+          {% endset %}
+
+          {{ govukInsetText({
+            html: contactInformation
+          }) }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "#",
+        text: "Policies"
+      },{
+        href: "/register-application/" + pageURL + "/cookies",
+        text: "Cookies"
+      },{
+        href: "#",
+        text: "Contact us"
+      },{
+        href: "#",
+        text: "Accessibility statement"
+      },
+      {
+        href: "/prototype-admin/clear-data",
+        text: "Clear data"
+      }
+    ]
+  }
+}) }}

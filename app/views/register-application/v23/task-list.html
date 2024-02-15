@@ -1,0 +1,158 @@
+{% extends "register-application/v22/layout-register-application.html" %}
+
+{% set pageHeading = serviceName %}
+
+{% set hideBackLink = true %}
+{% set hideSaveSection = true %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Register a biodiversity gain site
+      </h1>
+
+      <!-- UPDATED in 19: Task progress status is controlled by jquery at the bottom of the page -->
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2"><span class="task-progress-status-text">Registration in progress</span></h2>
+      <p class="govuk-body app-!-secondary-text-colour govuk-!-margin-bottom-4">You have completed <span class="task-progress-completed">0</span> of <span class="task-progress-to-complete-total">7</span> sections.</p>
+
+
+     <!-- new GDS pattern for task list -->
+     
+             <h2 class="govuk-heading-m govuk-!-margin-top-5">Applicant information</h2>
+             <ul class="govuk-task-list">
+               <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                 <div class="govuk-task-list__name-and-hint">
+                   <a class="govuk-link govuk-task-list__link" href="./applicant-details-is-agent" aria-describedby="before-you-start-1-status">Add details about the applicant</a>
+                 </div>
+                 <div class="govuk-task-list__status" id="applicant-status">
+                   {% if data['details-confirm'] or data['use-defra-id'] == "yes" %}<span class="completed">Completed</span>{% else %}Not started{% endif %}
+                 </div>
+               </li>
+             </ul>
+             <h2 class="govuk-heading-m govuk-!-margin-top-5">Land information</h2>
+             <ul class="govuk-task-list">
+               <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                 <div class="govuk-task-list__name-and-hint">
+                   {% if data.landownershipFiles | length == 0 %}
+                   <a class="govuk-link govuk-task-list__link" href="./landowner-certificate-upload" aria-describedby="landowner-status">
+                   {% else %}
+                   <a class="govuk-link govuk-task-list__link" href="./land-ownership-list" aria-describedby="landowner-status">
+                   {% endif %} 
+                    Add land ownership details
+                   </a>
+                 </div>
+                 <div class="govuk-task-list__status" id="landowner-status">
+                   {% if data.landownershipFiles | length > 0 %}<span class="completed">Completed</span>{% else %}Not started{% endif %} 
+                 </div>
+               </li>
+               <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                 <div class="govuk-task-list__name-and-hint">
+                   {% if data['location-confirm'] %}
+                     <a class="govuk-link govuk-task-list__link" href="./location-confirm" aria-describedby="boundary-status">
+                     {% else %}
+                     <a class="govuk-link govuk-task-list__link" href="./location-upload" aria-describedby="boundary-status">
+                   {% endif %} 
+                     Add biodiversity gain site boundary details
+                   </a>
+                 </div>
+                 <div class="govuk-task-list__status" id="prepare-application-2-status">
+                   {% if data['location-confirm'] %}<span class="completed">Completed</span>{% else %} Not started{% endif %} 
+                 </div>
+               </li>
+               <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                 <div class="govuk-task-list__name-and-hint">
+                   {% if data['habitat-checked-data'] %}
+                     <a class="govuk-link govuk-task-list__link"  href="./metric-confirm" aria-describedby="habitat-data-status">
+                   {% else %}
+                     <a class="govuk-link govuk-task-list__link" href="./metric-upload" aria-describedby="habitat-data-status">
+                   {% endif %} 
+                     Add habitat baseline, creation and enhancements
+                   </a>
+                 </div>
+                 <div class="govuk-task-list__status" id="habitat-status">
+                   {% if data['habitat-checked-data'] %}<span class="completed">Completed</span>{% else %}Not started{% endif %} 
+                 </div>
+               </li>
+             </ul>
+             <h2 class="govuk-heading-m govuk-!-margin-top-5">Legal information</h2>
+              <ul class="govuk-task-list">
+                <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                  <div class="govuk-task-list__name-and-hint">
+                   {% if data['legal-agreement-confirm'] %} 
+                     <a class="govuk-link govuk-task-list__link" href="./legal-agreement-confirm" aria-describedby="legal-agreement-status">
+                   {% else %}
+                     <a class="govuk-link govuk-task-list__link" href="./legal-agreement" aria-describedby="legal-agreement-status">
+                   {% endif %} 
+                     Add legal agreement details
+                   </a>
+                  </div>
+                  <div class="govuk-task-list__status" id="landowner-status">
+                    {% if data['legal-agreement-confirm'] %}<span class="completed">Completed</span>{% else %}Not started{% endif %} 
+                  </div>
+                </li>
+                <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                  <div class="govuk-task-list__name-and-hint">
+                    {% if data['local-land-charge-correct'] %} 
+                      <a class="govuk-link govuk-task-list__link" href="./local-land-charge-check" aria-describedby="local-land-charge-status">
+                    {% else %}
+                      <a class="govuk-link govuk-task-list__link" href="./local-land-charge-upload" aria-describedby="local-land-charge-status">
+                    {% endif %} 
+                      Add local land charge search certificate
+                    </a>
+                  </div>
+                  <div class="govuk-task-list__status" id="prepare-application-2-status">
+                    {% if data['local-land-charge-correct'] %}<span class="completed">Completed</span>{% else %}Not started{% endif %} 
+                  </div>
+                </li>
+              </ul>
+              <h2 class="govuk-heading-m govuk-!-margin-top-5">Submit your biodiversity gain site information</h2>
+              <ul class="govuk-task-list">
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                   <span id="can-submit" style="display:none;">
+                   <span class="app-task-list__task-name" >
+                     <a href="./check-answers" aria-describedby="submit-application-status">
+                       Check your answers and submit
+                     </a>
+                   </span>
+                   </span>
+                  </div>
+                  <div class="govuk-task-list__status" id="landowner-status">
+                    <span id="cannot-submit" >
+                     <span class="app-task-list__task-name">
+                        Check your answers and submit
+                      </span>
+                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-application-status">Cannot start yet</strong>
+                      </span> 
+                  </div>
+                </li>
+              </ul>
+    
+     
+     <!-- new task list ends -->
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript">
+window.addEventListener('load', function() {
+  
+  let tasks = $('.task-list-required').length;
+  let tasksCompleted = $('.completed').length;
+  console.log(tasks + " " + tasksCompleted);
+  $('.task-progress-to-complete-total').text(tasks);
+  $('.task-progress-completed').text(tasksCompleted);
+  if (tasks == tasksCompleted){
+    $('.task-progress-status-text').text("Registration complete")
+    $('#can-submit').show()
+    $('#cannot-submit').hide()
+  }
+
+});
+</script>
+{% endblock %}
