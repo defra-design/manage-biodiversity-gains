@@ -4,3 +4,17 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{# 
+Below added to include the new gov.uk crown
+#}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+	serviceName: "",
+	serviceUrl: "/",
+	containerClasses: "govuk-width-container",
+	useTudorCrown: true
+  }) }}
+{% endblock %}
