@@ -36,6 +36,26 @@
             </ul>
             <h2 class="govuk-heading-m govuk-!-margin-top-5">Development information</h2>
             <ul class="govuk-task-list">
+              <!-- permission -->
+              <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                <div class="govuk-task-list__name-and-hint">
+                  <a href="allocation-permission-upload.html" aria-describedby="permission-status" id="add-permission">
+                    Add development permission
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="your-details-status">
+                  {% if data["permission-details-uploaded"] %}
+                  <span class="completed" id="permission-status">
+                    Completed
+                  </span>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
+                    Not started
+                  </strong>
+                  {% endif %}
+                </div>
+              </li>
+              <!-- permission -->
               <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
                 <div class="govuk-task-list__name-and-hint">
                   <a href="allocation-gain-site?confirmed-defra-id=british" aria-describedby="your-details-status" id="add-bng-number">
