@@ -7,7 +7,7 @@
       <li class="login-nav__list-item">
       {% if data.defraAccountType == "organisation" %}
         {{data["companyName"]}} 
-      {%else %}
+      {% else %}
         {{data["applicant-f-name"]}} {{data["applicant-l-name"]}}
       {% endif %}
        |

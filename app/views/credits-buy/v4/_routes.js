@@ -8,6 +8,12 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 // Credits metric upload
+router.post('/sign-in', function (req, res) {
+    res.redirect('application-list');
+});
+
+
+// Credits metric upload
 router.post('/metric-upload', function (req, res) {
     res.redirect('metric-upload-check');
 });

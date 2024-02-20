@@ -1,0 +1,21 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Buy statutory biodiversity credits",
+    serviceUrl: "#"
+  }) }}
+
+   <div class="govuk-width-container">
+
+    {% include "includes/phase-banner.html" %}
+    {% include "credits-buy/v4/includes/login-nav.html" %}    
+  </div>
+
+{% endblock %}
+
+<!-- {% block footer %}
+  {% include "includes/footer.html" %}
+{% endblock %} -->
