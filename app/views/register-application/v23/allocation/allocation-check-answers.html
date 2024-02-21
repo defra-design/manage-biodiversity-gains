@@ -276,6 +276,22 @@
             </dd>
         </div>
        
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Development permission
+         </dt>
+         <dd class="govuk-summary-list__value">
+          {{data['metric-upload'] or 'decision-notice.pdf'}}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+             
+               <a class="govuk-link" href="./allocation-permission-upload?change=yes&returnURL=check-answers">
+               Change<span class="govuk-visually-hidden"> Local authority development permission</span>
+               </a>
+             
+           </dd>
+       </div>
+       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Statutory biodiversity metric file
