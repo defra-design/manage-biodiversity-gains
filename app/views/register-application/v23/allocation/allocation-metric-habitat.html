@@ -1,6 +1,6 @@
 {% extends "register-application/v23/layout-register-application.html" %}
 
-{% set pageHeading = "Confirm habitats being used by the development project for off-site gain" %}
+{% set pageHeading = "Confirm habitats being used by the development for off-site gain" %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
         {{ pageHeading }}
       </h1>
 
-      <p>Confirm if these details match what the development project has agreed with the landowner.</p>
+      <p>Confirm if these details match what your development project has agreed with the landowner or leaseholder.</p>
 
       {% include "register-application/v23/includes/metric-creation-habitat-large-grouped-allocation.html" %}
 
@@ -19,32 +19,21 @@
       
       {% include "register-application/v23/includes/metric-watercourse.html" %}
 
-      
-          <form method="post" action="">
 
+            <form method="post" action="./task-list-allocation">
 
-        {{ govukRadios({
-          idPrefix: "allocation-habitat",
-          name: "allocation-habitat",
-          fieldset: {
-            legend: {
-              text: "Are these habitat details correct?",
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes~./task-list-allocation",
-              text: "Yes"
-            },
-            {
-              value: "no~./allocation-metric-upload",
-              text: "No, upload a different file"
-            }
-          ]
-        }) }}
+              {{ govukButton({ text: 'Save and continue' }) }}
+                
+              </form>
         
-        {{ govukButton({ text: 'Save and continue' }) }}
+              <p>Or</p>
+        
+              <p><a href="./allocation-metric-upload" class="govuk-link--no-visited-state">Upload a different statutory biodiversity metric file</a></p>
+        
+            </div>
+          </div>
+
+        
 
         <input type="hidden" name="metric-details-confirmed" value="yes">
         
