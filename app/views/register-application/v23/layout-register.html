@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Register a biodiversity gain site" %}
+{% set serviceUrl = "/register-application/v23/dashboard" %}
+{% set pageURL = "v23" %}
+{% set checkUser = query.userCheck %}
+
+{% block header %}
+
+  {% if hideSignOut === true %}
+
+  {{ govukHeader({
+	homepageUrl: "/",
+	serviceName: serviceName,
+	serviceUrl: serviceUrl
+  }) }}
+
+  {% else %}
+
+  {{ govukHeader({
+	homepageUrl: "/",
+	serviceName: serviceName,
+	serviceUrl: serviceUrl
+  }) }}
+
+  {% endif %} 
+
+   <div class="govuk-width-container">
+
+	{% include "includes/phase-banner.html" %}
+	{% include "register-application/v23/includes/login-nav.html" %}
+	
+  </div>
+
+   <!-- write logic to redirect to error page -->
+
+   {% if checkUser | length %}
+	  
+   <script>window.location.href = 'user-access-block'</script>
+
+ {% endif %}
+
+{% endblock %}
+
+{% block footer %}
+  {% include "register-application/v23/includes/footer.html" %}
+{% endblock %}
