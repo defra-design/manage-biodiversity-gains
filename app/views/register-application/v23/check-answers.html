@@ -796,7 +796,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['has-management-plan-habitat-date-start'] == "yes" %}
-            {{ data['management-plan-habitat-date-start'] or '15' }} {{ data['management-plan-habitat-date-start'] | monthToWordWithSpaces('March') }} {{ data['management-plan-habitat-date-start'] or '2023' }}
+            {{ data['management-plan-habitat-date-start'] or '15' }} {{ data['management-plan-habitat-date-start'] }} {{ data['management-plan-habitat-date-start'] or '2023' }}
             {% else %}
             No start date
             {% endif %}
@@ -815,7 +815,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['has-legal-agreement-date-end'] == "yes" %}
-            {{ data['legal-agreement-date-end-day'] or '15' }} {{ data['legal-agreement-date-end-month'] | monthToWordWithSpaces('March') }} {{ data['legal-agreement-date-end-year'] or '2022' }}
+            {{ data['legal-agreement-date-end-day'] or '15' }} {{ data['legal-agreement-date-end-month'] }} {{ data['legal-agreement-date-end-year'] or '2022' }}
 
           {% else %}
           No end date
