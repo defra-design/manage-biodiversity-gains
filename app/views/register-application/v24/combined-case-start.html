@@ -1,0 +1,41 @@
+{% extends "register-application/v24/layout-register-application.html" %}
+
+{% set pageHeading = "Choose your BNG application type" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <form method="post">
+      {{ govukRadios({
+      name: "combined-case",
+      fieldset: {
+      legend: {
+      text: pageHeading,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+
+      items: [
+      {
+      value: "register~./dashboard-register",
+      text: "Register a new biodiversity gain site"
+      },
+      {
+      value: "allocate~./dashboard-allocate",
+      text: "Record off-site gains for a new development"
+      },
+      {
+      value: "combined~./dashboard-combined",
+      text: "Register and record off-site gains site together (save £400)"
+      }
+      ]
+      }) }}
+      {{ govukButton({
+      text: "Save and continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
