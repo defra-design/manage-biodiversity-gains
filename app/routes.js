@@ -17,6 +17,8 @@ const registerapplicationv22 = require('./views/register-application/v22/_routes
 router.use('/register-application/v22', registerapplicationv22);
 const registerapplicationv23 = require('./views/register-application/v23/_routes');
 router.use('/register-application/v23', registerapplicationv23);
+const registerapplicationv24 = require('./views/register-application/v24/_routes');
+router.use('/register-application/v24', registerapplicationv24);
 
 // Public register
 const biodiversitygainsitesregisterv6 = require('./views/biodiversity-gain-sites-register/v6/_routes');
