@@ -1,0 +1,23 @@
+{% extends "register-application/v24/layout-register-application.html" %}
+
+
+
+{% set pageHeading = "You need to add proof you have permission to apply"%}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- action controled in ./_routes.js -->
+    <h1 class="govuk-heading-l">{{pageHeading}}</h1>
+    <p>You will need to upload:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>a document confirming <strong>Acme farming inc's</strong> authorisation for you to apply on their behalf</li>
+      <li>the landowner or leaseholder's consent to use their biodiversity gain site for off-site gain</li>
+    </ul>
+    <form method="post" action="applicant-details-upload-authorisation">
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
