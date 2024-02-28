@@ -73,9 +73,17 @@ router.post('/individual-dob', function (req, res) {
     res.redirect('individual-nationality');
 });
 
+// router.post('/individual-nationality', function (req, res) {
+//     res.redirect('tasklist');
+// });
+
 router.post('/individual-nationality', function (req, res) {
+    res.redirect('cdd-cya');
+});
+
+router.post('/cdd-cya', function (req, res) {
     res.redirect('tasklist');
-}); 
+});
 
 // Terms and conditions
 router.post('/terms-and-conditions', function (req, res) {
