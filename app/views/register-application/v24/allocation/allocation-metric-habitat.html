@@ -23,6 +23,9 @@
             <form method="post" action="./task-list-allocation">
 
               {{ govukButton({ text: 'Save and continue' }) }}
+              
+              <input type="hidden" name="metric-details-confirm" value="yes">
+
                 
               </form>
         
@@ -32,14 +35,5 @@
         
             </div>
           </div>
-
-        
-
-        <input type="hidden" name="metric-details-confirmed" value="yes">
-        
-      </form>
-
-    </div>
-  </div>
 
 {% endblock %}

@@ -99,7 +99,7 @@
                   </a>
                 </div>
                 <div class="govuk-task-list__status" id="your-details-status">
-                  {% if data["metric-details-confirmed"] %}
+                  {% if data["metric-details-confirm"] %}
                   <span class="completed" id="add-your-details-status">
                     Completed
                   </span>
@@ -115,7 +115,7 @@
             <ul class="govuk-task-list">
               <li class="govuk-task-list__item govuk-task-list__item--with-link">
                 <div class="govuk-task-list__name-and-hint">
-                  {% if data["metric-details-confirmed"] %}
+                  {% if data["metric-details-confirm"] %}
                   <span id="check-your-answers">
                     <a href="allocation-check-answers">Check your answers and submit</a>
                   </span> 
@@ -126,7 +126,7 @@
                   {% endif %}
                 </div>
                 <div class="govuk-task-list__status" id="your-details-status">
-                  {% if data["metric-details-confirmed"] %}
+                  {% if data["metric-details-confirm"] %}
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-your-answers-status">Not started</strong>
                   {% else %}
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="check-your-answers-status">Cannot start yet</strong>
