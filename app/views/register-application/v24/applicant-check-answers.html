@@ -5,11 +5,19 @@
 {% set userTypeText = "Are you" %}
 {% endif %}
 {% set pageHeading = userTypeText+" an individual or organisation?" %}
+
+
+{% if data["combined-case"] == "combined" %}
+{% set tasklist = "task-list-combined" %}
+{% else %}
+{% set tasklist = "task-list" %}
+{% endif %}
+
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l" >Check applicant information</h1>
-    <form method="post" action="{{data.startURL or 'task-list'}}">
+    <form method="post" action="{{ tasklist }}">
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
         <div class="govuk-summary-list__row">
