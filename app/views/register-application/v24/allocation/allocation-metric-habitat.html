@@ -2,6 +2,12 @@
 
 {% set pageHeading = "Confirm habitats being used by the development for off-site gain" %}
 
+{% if data["combined-case"] == "combined" %}
+{% set tasklist = "/register-application/v24/task-list-combined" %}
+{% else %}
+{% set tasklist = "task-list-allocation" %}
+{% endif %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -20,7 +26,7 @@
       {% include "register-application/v24/includes/metric-watercourse.html" %}
 
 
-            <form method="post" action="./task-list-allocation">
+            <form method="post" action="{{ tasklist }}">
 
               {{ govukButton({ text: 'Save and continue' }) }}
               

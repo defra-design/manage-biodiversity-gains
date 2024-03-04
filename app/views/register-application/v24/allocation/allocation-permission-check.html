@@ -2,6 +2,12 @@
 
 {% set pageHeading = "Check the planning decision notice file" %}
 
+{% if data["combined-case"] == "combined" %}
+{% set tasklist = "task-list-combined" %}
+{% else %}
+{% set tasklist = "allocation/task-list-allocation" %}
+{% endif %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -40,7 +46,7 @@
           },
           items: [
             {
-              value: "yes~./task-list-allocation",
+              value: "yes~/register-application/v24/" + tasklist,
               text: "Yes, this is the correct file"
             },
             {
