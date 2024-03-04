@@ -4,6 +4,12 @@
 {% set legalagreementtype = data['legal-agreement'] %}
 {% set sowtype = data['sow-check'] %}
 
+{% if data["combined-case"] == "combined" %}
+{% set tasklist = "task-list-combined" %}
+{% else %}
+{% set tasklist = "task-list" %}
+{% endif %}
+
 
 {% block content %}
 
@@ -287,7 +293,7 @@
         </div>
       </dl>
 
-      <form method="post" action="./task-list">
+      <form method="post" action="./{{tasklist}}">
 
         <input type="hidden" name="legal-agreement-confirm" value="yes">
 

@@ -4,6 +4,12 @@
 {% set item = " proof of land ownership file" | plural(" proof of land ownership files", count) %}
 {% set pageHeading = "You have added "+ count + item %}
 
+{% if data["combined-case"] == "combined" %}
+{% set tasklist = "task-list-combined" %}
+{% else %}
+{% set tasklist = "task-list" %}
+{% endif %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -31,8 +37,8 @@
               </div>
               {% endfor %}
            </dl>
-
-            <form method="post" action="./land-ownership-more-answer">
+           
+            <form method="post">
 
               {{ govukRadios({
                 idPrefix: "land-ownership-more",
@@ -48,11 +54,11 @@
                 },
                 items: [
                   {
-                    value: "yes",
+                    value: "yes~./" + tasklist,
                     text: "Yes"
                   },
                   {
-                    value: "no",
+                    value: "no~./landowner-certificate-upload",
                     text: "No, add another proof of land ownership file"
                   }
                 ]

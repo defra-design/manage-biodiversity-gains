@@ -4,6 +4,12 @@
 
 {% set pageHeading = "Check the biodiversity gain site boundary details" %}
 
+{% if data["combined-case"] == "combined" %}
+{% set tasklist = "task-list-combined" %}
+{% else %}
+{% set tasklist = "task-list" %}
+{% endif %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -73,7 +79,7 @@
           
       
 
-      <form method="post" class="govuk-!-padding-top-5" action="./task-list">
+      <form method="post" class="govuk-!-padding-top-5" action="./{{tasklist}}">
 
         <input type="hidden" name="location-confirm" value="true">
         

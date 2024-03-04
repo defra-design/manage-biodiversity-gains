@@ -2,6 +2,12 @@
 
 {% set pageHeading = "Check the local land charge search certificate file" %}
 
+{% if data["combined-case"] == "combined" %}
+{% set tasklist = "task-list-combined" %}
+{% else %}
+{% set tasklist = "task-list" %}
+{% endif %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -26,7 +32,7 @@
         ]
       }) }}
 
-        <form method="post" action="./local-land-charge-correct-answer">
+        <form method="post">
 
         {{ govukRadios({
           idPrefix: "local-land-charge-correct",
@@ -39,11 +45,11 @@
           },
           items: [
             {
-              value: "yes",
+              value: "yes~./" + tasklist,
               text: "Yes"
             },
             {
-              value: "no",
+              value: "no~./local-land-charge-upload",
               text: "No, upload a different file"
             }
           ]
