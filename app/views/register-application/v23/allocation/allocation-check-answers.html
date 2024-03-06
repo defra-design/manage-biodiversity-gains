@@ -34,7 +34,7 @@
         {% if data["is-agent"]=="no"%}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Are you the landowner or leasholder
+            Applying as landowner or leaseholder
           </dt>
           <dd class="govuk-summary-list__value">
             {{(data["client-is-landowner"] | capitalize) or "Yes"}}
@@ -223,7 +223,7 @@
         {% if data["client-is-landowner"] == "no" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Landowner consent file
+            Landowner or leaseholder consent file
           </dt>
           <dd class="govuk-summary-list__value">
             {{data["landowner-consent-upload"] or "landowner-consent-form.pdf"}}
@@ -386,9 +386,9 @@
       </div>
         
 
-      <h2 class="govuk-heading-m">Submit your information</h2>
+      <h2 class="govuk-heading-m">Submit your allocation information</h2>
 
-      <p class="govuk-body">By submitting your information you confirm that:</p>
+      <p class="govuk-body">By submitting your information you agree that:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>it is true, to the best of your knowledge and belief</li>
         <li>all landowners or leaseholders agree to allocate off-site gains from their biodiversity gain site</li>
