@@ -201,7 +201,7 @@
         {% endif %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Written authorisation file
+            Written authorisation
           </dt>
           <dd class="govuk-summary-list__value">
             {{data["landowner-agent-upload"] or "agent-evidence.pdf"}}
@@ -223,7 +223,7 @@
         {% if data["client-is-landowner"] == "no" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Landowner consent file
+            Landowner consent
           </dt>
           <dd class="govuk-summary-list__value">
             {{data["landowner-consent-upload"] or "landowner-consent-form.pdf"}}
@@ -388,12 +388,12 @@
 
       <h2 class="govuk-heading-m">Submit your information</h2>
 
-      <p class="govuk-body">By submitting your information you confirm that:</p> 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>it is true, to the best of your knowledge and belief</li>
-          <li>all landowners or leaseholders agree to allocate off-site gains from their biodiversity gain site</li>
-        </ul>
-      </div>
+      <p class="govuk-body">By submitting your information you confirm that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>it is true, to the best of your knowledge and belief</li>
+        <li>all landowners or leaseholders agree to allocate off-site gains from their biodiversity gain site</li>
+      </ul>
+      
 
       <!-- <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
