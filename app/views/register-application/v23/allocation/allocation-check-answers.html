@@ -201,7 +201,7 @@
         {% endif %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Written authorisation
+            Written authorisation file
           </dt>
           <dd class="govuk-summary-list__value">
             {{data["landowner-agent-upload"] or "agent-evidence.pdf"}}
@@ -223,7 +223,7 @@
         {% if data["client-is-landowner"] == "no" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Landowner consent
+            Landowner consent file
           </dt>
           <dd class="govuk-summary-list__value">
             {{data["landowner-consent-upload"] or "landowner-consent-form.pdf"}}
