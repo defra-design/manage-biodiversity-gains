@@ -11,6 +11,10 @@ router.use(radioButtonRedirect)
 
 // Add your routes here
 
+// Shared GG sign in screen
+router.post('/sign-in', function (req, res) {
+    res.redirect('dashboard');
+});
 
 // Register
 const registerapplicationv22 = require('./views/register-application/v22/_routes');
