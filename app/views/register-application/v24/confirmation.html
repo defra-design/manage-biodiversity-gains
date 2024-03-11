@@ -4,6 +4,11 @@
 
 {% set hideSaveSection = true %}
 
+{% if data["combined-case"] == "combined" %}
+{% set combinedtext = "combined" %}
+{# todo set price dynamically #}
+{% endif %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -14,7 +19,7 @@
           {{ pageHeading }}
         </h1>
         <div class="govuk-panel__body">
-          Biodiversity net gain (BNG) application reference number<br> <strong>BNGREG-6040S-AVPJW</strong>
+          Biodiversity net gain (BNG) {{ combinedtext }} application reference number<br> <strong>BNGREG-6040S-AVPJW</strong>
         </div>
       </div>
 
