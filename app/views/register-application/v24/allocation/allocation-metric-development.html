@@ -15,9 +15,19 @@
 
       {{ govukSummaryList({
         rows: [
-          {
+        
+        {
+          key: {
+            text: "Biodiversity gain site number"
+          },
+          value: {
+            text: 'BNG45673838'
+          }
+        },
+        
+        {
             key: {
-              text: "Project name"
+              text: "Development project name"
             },
             value: {
               text: 'Fairfax Housing Project'
@@ -31,19 +41,7 @@
               text: '22/01976/RJL'
             }
           },
-          {
-            key: {
-              text: "Biodiversity gain site number"
-            },
-            value: {
-              text: 'BNG45673838'
-            }
-          }
-        ]
-      }) }}
-
-
-     <!--  This used to contain the planning authroity pulled from the metric. 
+          
            {
             key: {
               text: "Planning authority"
@@ -51,7 +49,13 @@
             value: {
               text: 'Bradford City Council'
             }
-          }, -->
+          }
+          
+        ]
+      }) }}
+
+
+     
 
       <form method="post" action="./allocation-development-answer">
 
