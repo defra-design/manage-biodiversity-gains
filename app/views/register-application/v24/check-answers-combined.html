@@ -843,7 +843,7 @@
         </div>
       </dl>
       
-      <!-- allocation playback -->
+      <!-- Don't need this second applicant info section - already have it up top
       
       <h2 class="govuk-heading-m">Applicant information</h2>
        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -929,7 +929,7 @@
             </dd>
           
         </div>
-      <!--   {% if data["applicant-type"] == "organisation" or data["is-agent"]=="yes"%}
+         {% if data["applicant-type"] == "organisation" or data["is-agent"]=="yes"%}
           
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -949,7 +949,7 @@
          
         </div>
       
-        {% endif%} -->
+        {% endif%} 
         
         {% if data["is-agent"]=="yes" %}
         <div class="govuk-summary-list__row">
@@ -1050,7 +1050,7 @@
         </div>
          
         {% endif %}
-        <!-- END - Agent questions -->
+        <!-- END - Agent questions
       
         {% if data["client-is-landowner"] == "no" %}
         <div class="govuk-summary-list__row">
@@ -1073,10 +1073,13 @@
         {% endif %}
       
       </dl>
+    
+      end applicant info -->
       
-      <h2 class="govuk-heading-m">Development information</h2>
+      <h2 class="govuk-heading-m">Allocation information</h2>
       
       <dl class="govuk-summary-list">
+        <!-- biodiversity gain site number not needed
          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Biodiversity gain site number
@@ -1091,10 +1094,12 @@
                 </a>
               
             </dd>
-        </div>
+        </div> -->
+        
+        <!--LPA page not needed here yet
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Planning authority
+            Local planning authority
           </dt>
           <dd class="govuk-summary-list__value">
            {{data["lpa"]}}
@@ -1106,11 +1111,11 @@
                 </a>
               
             </dd>
-        </div>
+        </div> -->
        
        <div class="govuk-summary-list__row">
          <dt class="govuk-summary-list__key">
-           Development permission
+           Planning decision notice file
          </dt>
          <dd class="govuk-summary-list__value">
           {{data['metric-upload'] or 'decision-notice.pdf'}}
@@ -1126,7 +1131,7 @@
        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Statutory biodiversity metric file
+            Development's statutory biodiversity metric file
           </dt>
           <dd class="govuk-summary-list__value">
            {{data['metric-upload'] or 'metric_4.0_fairfax_housing_project.xlsm'}}
@@ -1143,10 +1148,10 @@
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Project name
+            Development project name
           </dt>
           <dd class="govuk-summary-list__value">
-            Farifax Housing Project
+            Fairfax Housing Project
           </dd>
         </div>
        <!--  <div class="govuk-summary-list__row">
