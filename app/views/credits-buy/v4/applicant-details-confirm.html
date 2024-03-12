@@ -31,7 +31,7 @@
       
       {% if data['ind-or-org']=="Organisation" %}
       <p>We will use this information to identify you and your organisation, and to assist with our customer due diligence (anti-money laundering) checks.</p>
-      <p>SEABARLEY LIMITED is the organisation you are purchasing credits for.</p>
+      <p><span class="govuk-body govuk-!-font-weight-bold">SEABARLEY LIMITED</span> is the organisation you are purchasing credits for.</p>
       {% endif %}
 
       <p><a href="#">Check your Defra account details (opens in new tab)</a></p>
@@ -44,7 +44,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
               <label class="govuk-label govuk-checkboxes__label" for="waste">
-                My Defra account details are up to date and I will be purchasing credits as {% if data['ind-or-org']=="Organisation" %} SEABARLEY LIMITED {% else %} Jo Smith {% endif %}
+                My Defra account details are up to date and I will be purchasing credits as {% if data['ind-or-org']=="Organisation" %} <span class="govuk-body govuk-!-font-weight-bold">SEABARLEY LIMITED</span> {% else %} Jo Smith {% endif %}
               </label>
             </div>
           </div>
