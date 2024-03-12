@@ -1,6 +1,12 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
-{% set pageHeading = "Which local planning authority reviewed the development project?" %}
+{% set pageHeading = "Enter planning authority information" %}
+
+{% if data["combined-case"] == "combined" %}
+{% set tasklist = "/register-application/v24/task-list-combined" %}
+{% else %}
+{% set tasklist = "task-list-allocation" %}
+{% endif %}
 
 {% block content %}
 
@@ -21,7 +27,7 @@
 
    
         <!-- Action conrtolled from routes.js file -->
-        <form method="post" action="task-list-allocation">
+        <form method="post" action="{{ tasklist }}">
           <div class="govuk-form-group">
 
           <label class="govuk-label" for="operator-search-country "> Local planning authority </label>
@@ -94,7 +100,6 @@
             <option value='Windsor and Maidenhead Borough'>Windsor and Maidenhead Borough</option>
             <option value='Council'>Council</option>
             <option value='Wokingham Borough Council'>Wokingham Borough Council</option>
-            
 <option value='Hinckley and Bosworth Borough'>Hinckley and Bosworth Borough</option>
 <option value='Council'>Council</option>
 <option value='Horsham District Council'>Horsham District Council</option>
@@ -202,6 +207,14 @@
 
           </select> 
         </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            Planning reference number for your application
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="planning-reference" name="planning-reference" type="text">
+        </div>
+        
           {{ govukButton({
             text: "Save and continue"
           }) }}

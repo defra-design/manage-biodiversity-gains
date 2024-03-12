@@ -2,18 +2,12 @@
 
 {% set pageHeading = "Enter your biodiversity gain site number" %}
 
-{% if data["combined-case"] == "combined" %}
-{% set tasklist = "/register-application/v24/task-list-combined" %}
-{% else %}
-{% set tasklist = "task-list-allocation" %}
-{% endif %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="{{ tasklist }}">
+      <form method="post" action="local-planning-authotity">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="biodiversity-gain-site-number">
             {{ pageHeading }}
