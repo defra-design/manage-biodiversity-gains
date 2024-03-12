@@ -252,12 +252,7 @@
 
       <h2 class="govuk-heading-m">Customer due diligence</h2>
 
-      <!-- {% if data['ind-or-org'] == "Individual" %}
-      <p>Individual</p>
-      {% else %}
-      <p>Organisation</p>
-      {% endif %} -->
-
+      {% if data['ind-or-org'] == "Individual" %}
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
         <div class="govuk-summary-list__row">
@@ -313,6 +308,38 @@
           </dd>
         </div>
       </dl>
+
+      {% else %}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Are you purchasing statutory biodiversity credits as an individual or an organisation?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Organisation
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="individual-or-organisation">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            SEABARLEY LIMITED
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="individual-middle-name">
+              Change<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      {% endif %}
 
       <h2 class="govuk-heading-m">Submit your information</h2>
 
