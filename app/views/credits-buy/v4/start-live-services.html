@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      <!-- {% if serviceName %} {{ serviceName }} {% endif %} -->
+      Buying statutory biodiversity credits
+    </h1>
+
+    <p class="govuk-body">Buying statutory biodiversity credits is a last resort option for developers if you are unable to use on-site or off-site units to deliver biodiversity net gain (BNG).</p>
+
+    <p class="govuk-body">You cannot use an agent or representative to act on your behalf to buy statutory biodiversity credits.</p>
+
+    <h2 class="govuk-heading-m">How to buy statutory biodiversity credits</h2>
+
+    <p>You will need to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>upload your statutory biodiversity metric calculation tool, version 4.1</li>
+      <li>confirm the development details</li>
+      <li>add a purchase order number, if you have one</li>
+      <li>add your statutory biodiversity credits from the metric</li>
+    </ul>
+
+    <!-- <p>You will then:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>need to do customer due diligence (CDD) checks</li>
+      <li>be shown an estimate</li>
+    </ul>
+    
+    <p>If you do not pass the checks, you will not be able to continue with your application.</p>
+
+    <p>Once you have received your estimated credits cost, the service will guide through the process of what to do next in order to meet your BNG requirements.</p> -->
+
+    <p>We will process your application.</p>
+
+    <p>A third-party supplier will use your information for customer due diligence checks. These are to check you are who you say you are and to carry out anti-money laundering checks. Our privacy notice tells you how we will be sharing your information.</p>
+
+    <p>If you do not pass the checks, you will not be able to continue with your application.</p>
+
+    <p>Once you have received your estimated credits cost, the service will guide through the process of what to do next in order to meet your BNG requirements.</p>
+
+    <p>All prices listed in this service do not include VAT, but VAT is payable.</p>
+    
+    <a href="https://pocbngwebwa2401.azurewebsites.net/" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+      Start now
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+      </svg>
+    </a>
+
+    <h2 class="govuk-heading-m">Contact us if you need help</h2>
+
+    <p>Telephone: 0300 060 3900</p>
+
+    <p>Opening times:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>March to September – Monday to Friday, 10am to 4pm</li>
+      <li>October to February – Monday to Friday, 10am to 2pm</li>
+    </ul>
+
+    <p>Closed on public holidays.</p>
+
+    <p><a href="https://www.gov.uk/call-charges">Find out about call charges</a></p>
+
+    <p>Email: <a href="mailto:biodiversitynetgainenquiries@naturalengland.org.uk">biodiversitynetgainenquiries@naturalengland.org.uk</a></p>
+
+    <p>We aim to reply within 10 working days.</p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Subsection
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="https://www.gov.uk/government/collections/biodiversity-net-gain">
+              Guidance
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</div>
+
+{% endblock %}
