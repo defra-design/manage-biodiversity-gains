@@ -1,6 +1,6 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
-{% set pageHeading = "Enter planning authority information" %}
+{% set pageHeading = "Development project information" %}
 
 {% if data["combined-case"] == "combined" %}
 {% set tasklist = "/register-application/v24/task-list-combined" %}
@@ -30,10 +30,10 @@
         <form method="post" action="{{ tasklist }}">
           <div class="govuk-form-group">
 
-          <label class="govuk-label" for="operator-search-country "> Local planning authority </label>
-          <p class="govuk-hint">Start typing, then select a local planning authority.</p>
+          <label class="govuk-label" for="operator-search-country "> Local planning authority (LPA)</label>
+          <p class="govuk-hint">Start typing, then select an LPA.</p>
           <select class="govuk-select gouvk-!-width-two-thirds" id="lpa-autocomplete" name="lpa">
-            <option value="">Select a local planning authority</option>
+            <option value="">Select an LPA</option>
             <option value='Bath and North East Somerset'>Bath and North East Somerset</option>
             <option value='Council'>Council</option>
             <option value='Bedford Borough Council'>Bedford Borough Council</option>
@@ -210,8 +210,9 @@
         
         <div class="govuk-form-group">
           <label class="govuk-label" for="event-name">
-            Planning reference number for your application
+            Planning application reference
           </label>
+          <p class="govuk-hint">This is the reference the LPA sent after receiving your development project's planning application.</p>
           <input class="govuk-input govuk-input--width-20" id="planning-reference" name="planning-reference" type="text">
         </div>
         
