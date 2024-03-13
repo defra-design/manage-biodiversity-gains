@@ -661,3 +661,12 @@ only screen and (min-resolution: 2dppx) {
 }
 
 /* Temp home for public reg search results end */
+
+/* Accessible autocomplete temp fix */
+.govuk-form-group .autocomplete__hint,
+.govuk-form-group .autocomplete__input,
+.govuk-form-group .autocomplete__option {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
