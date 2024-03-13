@@ -20,3 +20,18 @@ Below added to include the new gov.uk crown
 	useTudorCrown: true
   }) }}
 {% endblock %}
+
+{# 
+Below added to include accessible autocorrect globally 
+#}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+{% endblock %}
