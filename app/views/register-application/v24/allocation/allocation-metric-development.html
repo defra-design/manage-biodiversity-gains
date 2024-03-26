@@ -16,21 +16,12 @@
       {{ govukSummaryList({
         rows: [
         
-        {
-          key: {
-            text: "Biodiversity gain site number"
-          },
-          value: {
-            text: 'BNG45673838'
-          }
-        },
-        
-        {
+          {
             key: {
               text: "Development project name"
             },
             value: {
-              text: 'Fairfax Housing Project'
+              text: data['development-name'] or "Fairfax Housing Projects"
             }
           },
           {
@@ -41,13 +32,20 @@
               text: '22/01976/RJL'
             }
           },
-          
-           {
+          {
             key: {
               text: "Planning authority"
             },
             value: {
-              text: 'Bradford City Council'
+              text: data['lpa'] or 'Bradford City Council'
+            }
+          },
+          {
+            key: {
+              text: "Biodiversity gain site number"
+            },
+            value: {
+              text: 'BGS45673838'
             }
           }
           

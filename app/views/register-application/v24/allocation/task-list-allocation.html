@@ -59,6 +59,25 @@
               
               <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
                 <div class="govuk-task-list__name-and-hint">
+                  <a href="local-planning-authority.html" aria-describedby="permission-status" id="add-permission">
+                    Add development info
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="your-details-status">
+                  {% if data["lpa-details-added"] %}
+                  <span class="completed" id="permission-status">
+                    Completed
+                  </span>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
+                    Not started
+                  </strong>
+                  {% endif %}
+                </div>
+              </li>
+              
+              <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
+                <div class="govuk-task-list__name-and-hint">
                   <a href="allocation-metric-upload" aria-describedby="your-details-status" id="upload-metric-file">
                     Add statutory biodiversity metric calculations
                   </a>
