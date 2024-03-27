@@ -1,0 +1,60 @@
+{% extends "/credits-buy/v4/layout-credits-buy.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Will you be using a purchase order?
+              </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              Select one option.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="purchase-order" name="purchase-order" type="radio" value="Yes" data-aria-controls="conditional-po">
+                <label class="govuk-label govuk-radios__label" for="purchase-order">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-po">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="purchase-order-number">
+                    Enter a purchase order number
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="purchase-order-number" name="purchase-order-number" type="text" spellcheck="false">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="purchase-order-2" name="purchase-order" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="purchase-order-2">
+                  No
+                </label>
+              </div>                     
+            </div>
+          </fieldset>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}

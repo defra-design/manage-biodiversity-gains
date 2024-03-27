@@ -36,4 +36,6 @@ router.use('/credits-estimation/v5', creditsestimationv5);
 // Credits buy
 const creditsbuyv4 = require('./views/credits-buy/v4/_routes');
 router.use('/credits-buy/v4', creditsbuyv4);
+const creditsbuyv5 = require('./views/credits-buy/v5/_routes');
+router.use('/credits-buy/v5', creditsbuyv5);
 

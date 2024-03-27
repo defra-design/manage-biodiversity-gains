@@ -1,0 +1,134 @@
+{% extends "/credits-buy/v4/layout-credits-buy.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check customer due diligence information
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Are you purchasing statutory biodiversity credits as an individual or an organisation?"
+            },
+            value: {
+              text: "Individual"
+            },
+            actions: {
+              items: [
+                {
+                  href: "individual-or-organisation.html",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Confirm your Defra account details are up to date"
+            },
+            value: {
+              text: "Confirmed"
+            },
+            actions: {
+              items: [
+                {
+                  href: "applicant-details-confirm.html",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Do you have a middle name?"
+            },
+            value: {
+              text: "Simon"
+            },
+            actions: {
+              items: [
+                {
+                  href: "individual-middle-name.html",
+                  text: "Change",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "What is your date of birth?"
+            },
+            value: {
+              text: "08 February 1989"
+            },
+            actions: {
+              items: [
+                {
+                  href: "individual-dob.html",
+                  text: "Change",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "What is your nationality?"
+            },
+            value: {
+              html: "<ul class='govuk-list govuk-list--bullet'><li>Barbados</li><li>Brazil</li><li>Monaco</li><li>Slovakia</li></ul>"
+            },
+            actions: {
+              items: [
+                {
+                  href: "individual-nationality.html",
+                  text: "Change",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- <h2 class="govuk-heading-m">
+        Now send your application
+      </h2>
+
+      <p>
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p> -->
+
+      <form method="post" novalidate>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

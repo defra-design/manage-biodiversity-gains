@@ -1,0 +1,103 @@
+{% extends "/credits-buy/v4/layout-credits-buy.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Confirm the development details
+      </h1>
+
+      <!-- <p>
+        {{ data | dump }}
+      </p> -->
+      
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <p>These details have been taken from the statutory biodiversity metric calculation tool your local planning authority reviewed.</p>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Project name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Emmer Green Golf Course
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Planning authority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Reading Borough Council
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Planning reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            22/01976/RJL
+          </dd>
+
+        </div>
+      </dl>
+
+
+    </div>
+
+    
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <!-- <p>This information has been taken from your approved Metric file.</p> -->
+
+      <form method="post">
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "development-data",
+          name: "development-data",
+          fieldset: {
+            legend: {
+              text: "Are these details correct?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({ text: 'Save and continue' }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
