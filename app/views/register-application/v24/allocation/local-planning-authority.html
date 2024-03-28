@@ -1,6 +1,6 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
-{% set pageHeading = "Development project information" %}
+{% set pageHeading = "Development project details" %}
 
 {% if data["combined-case"] == "combined" %}
 {% set tasklist = "/register-application/v24/task-list-combined" %}
@@ -27,6 +27,14 @@
         <!-- Action conrtolled from routes.js file -->
         <form method="post" action="{{ tasklist }}">
           <div class="govuk-form-group">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="event-name">
+                Development project name
+              </label>
+              <p class="govuk-hint">Your development name helps identify your project.</p>
+              <input class="govuk-input govuk-input--width-20" id="dev-name" name="development-name" type="text">
+            </div>
 
           <label class="govuk-label" for="operator-search-country "> Local planning authority (LPA)</label>
           <p class="govuk-hint">Start typing, then select an LPA.</p>
@@ -209,16 +217,10 @@
           <label class="govuk-label" for="event-name">
             Planning application reference
           </label>
-          <p class="govuk-hint">This is the reference the LPA sent after receiving your development project's planning application.</p>
+          <p class="govuk-hint">You'll find this in the planning decision notice your LPA sent after approving your planning application.</p>
           <input class="govuk-input govuk-input--width-20" id="planning-reference" name="planning-reference" type="text">
         </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="event-name">
-            Development name
-          </label>
-          <p class="govuk-hint">Your development name helps identify your project.</p>
-          <input class="govuk-input govuk-input--width-20" id="dev-name" name="development-name" type="text">
-        </div>
+        
         
           {{ govukButton({
             text: "Save and continue"

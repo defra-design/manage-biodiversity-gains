@@ -277,38 +277,7 @@
              
            </dd>
        </div>
-       
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Statutory biodiversity metric file
-          </dt>
-          <dd class="govuk-summary-list__value">
-           {{data['metric-upload'] or 'metric_4.0_fairfax_housing_project.xlsm'}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-              
-                <a class="govuk-link" href="./allocation-metric-check?change=yes&returnURL=check-answers">
-                Change<span class="govuk-visually-hidden"> Biodiversity Metric 4.0 file</span>
-                </a>
-              
-            </dd>
-        </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Biodiversity gain site number
-          </dt>
-          <dd class="govuk-summary-list__value">
-           {{data["biodiversity-gain-site-number"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-              
-                <a class="govuk-link" href="./allocation-gain-site?change=yes&returnURL=check-answers">
-                Change<span class="govuk-visually-hidden"> Biodiversity gain site number</span>
-                </a>
-              
-            </dd>
-        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Development project name
@@ -333,6 +302,23 @@
             22/01976/RJL
           </dd>
         </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Statutory biodiversity metric file
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{data['metric-upload'] or 'metric_4.0_fairfax_housing_project.xlsm'}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="./allocation-metric-check?change=yes&returnURL=check-answers">
+                Change<span class="govuk-visually-hidden"> Biodiversity Metric 4.0 file</span>
+                </a>
+              
+            </dd>
+        </div>
+       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Habitat being used
@@ -365,6 +351,21 @@
           </dd>
         </div>
 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Biodiversity gain site number
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{data["biodiversity-gain-site-number"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="./allocation-gain-site?change=yes&returnURL=check-answers">
+                Change<span class="govuk-visually-hidden"> Biodiversity gain site number</span>
+                </a>
+              
+            </dd>
+        </div>
         
 
       </dl>
