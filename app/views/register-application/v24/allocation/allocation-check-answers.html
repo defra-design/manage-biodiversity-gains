@@ -283,16 +283,22 @@
             Development project name
           </dt>
           <dd class="govuk-summary-list__value">
-            Fairfax Housing Project
+            {{ data['development-name'] or "Fairfax Housing Project" }}
           </dd>
+          <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="./local-planning-authority?change=yes&returnURL=check-answers">Change<span class="govuk-visually-hidden"> Development project name</span></a>
+           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Local planning authority
           </dt>
           <dd class="govuk-summary-list__value">
-            Bradford City Council
+            {{ data['lpa'] or 'Bradford City Council' }}
           </dd>
+          <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="./local-planning-authority?change=yes&returnURL=check-answers">Change<span class="govuk-visually-hidden"> Local planning authority</span></a>
+           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -301,6 +307,9 @@
           <dd class="govuk-summary-list__value">
             22/01976/RJL
           </dd>
+          <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="./local-planning-authority?change=yes&returnURL=check-answers">Change<span class="govuk-visually-hidden"> Planning application reference</span></a>
+           </dd>
         </div>
 
         <div class="govuk-summary-list__row">
