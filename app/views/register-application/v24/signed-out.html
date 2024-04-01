@@ -11,23 +11,16 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">
-          {{ pageHeading }}
-        </h1>
-        <div class="govuk-panel__body">
-          We've saved the details you entered so far.
-        </div>
+  
+      <h1 id="dialog-title" class="govuk-heading-l">
+        {{ pageHeading }}
+      </h1>
+      <div class="govuk-body">
+      <p>We've saved the details you entered so far.</p>
       </div>
-
-      <h2 id="return-to-application" class="govuk-heading-m govuk-!-padding-top-4">Your registrations</h2>
-
       <form action="./sign-in" method="post" novalidate>
-        <input type="hidden" name="signed-in" value="yes">
-        <button class="govuk-link app-button-link" data-module="govuk-button">
-          Sign in to continue with a registration
-        </button>
+      <input type="hidden" name="signed-in" value="yes">
+      <button class="govuk-button dialog-button js-dialog-close" data-module="govuk-button">Sign back in</button>
       </form>
 
     </div>
