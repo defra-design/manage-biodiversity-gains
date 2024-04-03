@@ -23,7 +23,7 @@
             Acting on behalf of a client
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data["is-agent"]|capitalize or "No"}}
+            {{data["is-agent"] or "No"}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link govuk-link--no-visited-state" href="./applicant-details-is-agent?change=yes&returnURL=check-answers">
@@ -60,7 +60,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             
-              {{data["confirmed-defra-id"] | capitalize}}
+              {{data["confirmed-defra-id"]}}
 
           </dd>
             
@@ -126,7 +126,7 @@
             Client is an individual or organisation
           </dt>
           <dd class="govuk-summary-list__value">
-            {{(data["applicant-type"] | capitalize) or "Individual"}}
+            {{(data["applicant-type"]) or "Individual"}}
           </dd>
           
             <dd class="govuk-summary-list__actions">
@@ -145,7 +145,7 @@
             Client's organisation name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{(data["applicant-org-name"] | capitalize) or "Biglandowner LTF"}}
+            {{(data["applicant-org-name"]) or "Biglandowner LTF"}}
           </dd>
           
             <dd class="govuk-summary-list__actions">
@@ -167,7 +167,7 @@
             {% if data["applicant-m-name"] %}
             {% set  applicantName = applicantName+" "+data["applicant-m-name"]%}
             {% endif %}
-            {% set  applicantName = applicantName+" "+data["applicant-l-name"] | capitalize or "Smith"%}
+            {% set  applicantName = applicantName+" "+data["applicant-l-name"] or "Smith"%}
             {{applicantName}}
           </dd>
           
@@ -709,7 +709,7 @@
              Other landowners or leaseholders on {{ legalagreementtype }}
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['check-landowner'] | capitalize }}
+            {{ data['check-landowner'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link govuk-link--no-visited-state" href="./legal-agreement-concov-landowner-start">
@@ -767,7 +767,7 @@
            Habitat management and monitoring plan is a separate document
           </dt>
           <dd class="govuk-summary-list__value">
-            {{(data['has-management-plan'] | capitalize) or "No" }}
+            {{(data['has-management-plan']) or "No" }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/register-application/v24/management-plan-question">
