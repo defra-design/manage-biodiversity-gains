@@ -28,7 +28,7 @@ module.exports = {
   'landowners':[],
   'hasDefraID': 'yes', // use this to switch the login to re-route to the defra id prototype
   'site-postcode': 'LS29 6JE',
-  'defraName': "Jo Smith",
+  'defraName': "Joe Smith",
   'defraEmail': "joe@imaginaryfarm.co.uk",
   'registrationPaymentAmount': '658.70',
   'latestVersion': 'v19',
@@ -41,6 +41,6 @@ module.exports = {
   'address-town': 'London',
   'address-postcode': 'SE23 6FH',
   'email': 'joe@imaginaryfarm.co.uk',
-  'telephone-number': '01234 567890'
-
+  'telephone-number': '01234 567890',
+   dict: require('./dictionary.js')  
 }
