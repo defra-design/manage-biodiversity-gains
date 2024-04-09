@@ -36,16 +36,15 @@
             </p>
             <p class="govuk-body govuk-!-margin-bottom-0">
               Total amount:
-              <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" data-amount="645.00">£645.00</span>
+              <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" data-amount="{{ data['registrationPaymentAmount'] }}">£{{ data['registrationPaymentAmount'] }}</span>
             </p>
           </div>
         </div>
 
       </div>
 
-      <form id="card-details" name="cardDetails" method="POST" action="/card_details/rg0aj0dasf9a4sk978m5vlugr2" novalidate="">
-        <input id="charge-id" name="chargeId" type="hidden" value="rg0aj0dasf9a4sk978m5vlugr2">
-        <input id="csrf" name="csrfToken" type="hidden" value="AZd7ipZ5-qhrOF7_GlI7IrDXbxGT64RoHY3k">
+      <form id="card-details" name="cardDetails" method="POST" action="" novalidate="">
+        
 
         <div class="govuk-form-group card-no-group" data-validation="cardNo">
           <label id="card-no-lbl" for="card-no" class="govuk-label govuk-label--s govuk-!-width-three-quarters">
@@ -53,8 +52,6 @@
               Card number
             </span>
           </label>
-
-
 
           <p class="govuk-body accepted-cards-hint withdrawal-text govuk-!-margin-bottom-0">
             Accepted credit and debit card types
@@ -143,8 +140,6 @@
             </span>
           </div>
 
-
-
           <input id="cvc" type="text" inputmode="numeric" pattern="[0-9]*" value="" name="cvc" class="govuk-input govuk-input--width-3 cvc" maxlength="4" autocomplete="cc-csc">
           <img src="https://card.payments.service.gov.uk/images/security-code.png" class="generic-cvc" alt="The last 3 digits on the back of the card">
           <span class="either hidden">
@@ -200,7 +195,6 @@
                   Country or territory
                 </span>
               </label>
-
 
               <div>
                 <div class="autocomplete__wrapper">
