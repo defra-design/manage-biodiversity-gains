@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Biodiversity gain sites register
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Biodiversity gain site register search filters design
+      </h1>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="search-accordion">search filters using an accordion</a></li>
+        <li><a href="search-no-accordion">search filters without accordion</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
