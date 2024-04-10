@@ -1,6 +1,6 @@
 {% extends "/credits-buy/v4/layout-credits-buy.html" %}
 
-{% set pageHeading = "Development project information" %}
+{% set pageHeading = "Biodiversity gain sites register" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -11,25 +11,37 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-
         <h1 class="govuk-heading-l" tabindex="-1">
-          {{ pageHeading }}
-        </h1>
+            {{ pageHeading }}
+          </h1>
 
-        {% set val = "" %}
-        {% if query.change %}
-        {% set val = data.responsibleBodies[query.id]["concov-responsible-body"] %}
-        
-        {% endif %}
+    </div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+
+        <h2 class="govuk-heading-m">Filter search results</h2>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="planning-reference-number">
+              Planning reference number
+            </label>
+            <div id="event-name-hint" class="govuk-hint">
+                Reference the LPA sent after receiving a development project's planning application.
+              </div>
+            <input class="govuk-input pr-search-filters-input" id="planning-reference-number" name="planningReferenceNumber" type="text">
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
    
         <!-- Action conrtolled from routes.js file -->
         <form method="post">
-          <div class="govuk-form-group">
+          <div class="govuk-form-group govuk-!-margin-top-4">
 
-          <label class="govuk-label" for="operator-search-country"> Local planning authority (LPA)</label>
+          <label class="govuk-label" for="lpa-autocomplete">Local planning authority (LPA)</label>
           <p class="govuk-hint">Start typing, then select an LPA.</p>
           <select class="govuk-select gouvk-!-width-two-thirds" id="lpa-autocomplete" name="lpa">
             <option value="">Select an LPA</option>
@@ -205,32 +217,72 @@
             <option value='Wyre Borough Council'>Wyre Borough Council</option>
           </select> 
         </div>
-        
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="event-name">
-            Planning application reference
-          </label>
-          <p class="govuk-hint">This is the reference the LPA sent after receiving your development project's planning application.</p>
-          <input class="govuk-input govuk-input--width-20" id="planning-reference" name="planning-reference" type="text">
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <div class="govuk-form-group govuk-!-margin-top-4">
+            <label class="govuk-label" for="event-name">
+              Repsonsible body
+            </label>
+            <div id="event-name-hint" class="govuk-hint">
+                A public body or charity (where at least some of its main functions relate to conservation).
+            </div>
+            <input class="govuk-input pr-search-filters-input" id="event-name" name="eventName" type="text">
         </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="event-name">
-            Development name
-          </label>
-          <p class="govuk-hint">Your development name helps identify your project.</p>
-          <input class="govuk-input govuk-input--width-20" id="dev-name" name="development-name" type="text">
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <div class="govuk-form-group govuk-!-margin-top-4">
+            <label class="govuk-label" for="habitat-type">
+              Habitat type
+            </label>
+            <div id="event-name-hint" class="govuk-hint">
+                Area, hedgerow or watercourse.
+            </div>
+            <input class="govuk-input pr-search-filters-input" id="habitat-type" name="habitatType" type="text">
         </div>
+    
+
         
           {{ govukButton({
-            text: "Save and continue"
+            text: "Update search results"
           }) }}
-
-          <input type="hidden" name="lpa-details-added" value="yes">
 
         </form>
 
     </div>
-  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">3 results</h2>
+
+    <ul class="app-search-results govuk-!-margin-bottom-8">
+        <li class="app-search-results__item">
+          <p class="govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Site type:</span> Biodiversity gain site</p>
+          <h3 class="app-search-results__title govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Off-site reference:</span> 
+            <a href="offsite" class="app-search-results__item-title">BGS-220124001</a>
+          </h3>
+          <p class="app-secondary-text-colour govuk-!-margin-bottom-1">Grid reference: SE170441</p>
+          <p class="app-secondary-text-colour govuk-!-margin-bottom-1">Local Planning Authority or responsible body: Leeds City Council</p>
+        </li>
+        <li class="app-search-results__item">
+          <p class="govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Site type:</span> Biodiversity gain site</p>
+          <h3 class="app-search-results__title govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Planning reference:</span> 
+            <a href="#" class="app-search-results__item-title">BGS-220124002</a>
+          </h3>
+          <p class="app-secondary-text-colour govuk-!-margin-bottom-1">Grid reference: SE170441</p>
+          <p class="app-secondary-text-colour govuk-!-margin-bottom-1">Local Planning Authority or responsible body: Leeds City Council</p>
+        </li>
+        <li class="app-search-results__item">
+          <p class="govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Site type:</span> Biodiversity gain site</p>
+          <h3 class="app-search-results__title govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Credits investment site reference:</span> 
+            <a href="#" class="app-search-results__item-title">BGS-220124003</a>
+          </h3>
+          <p class="app-secondary-text-colour govuk-!-margin-bottom-1">Grid reference: SE170441</p>
+          <p class="app-secondary-text-colour govuk-!-margin-bottom-1">Local Planning Authority or responsible body: Leeds City Council</p>
+        </li>
+      </ul>
+</div>
+</div>
 
 {% endblock %}
 

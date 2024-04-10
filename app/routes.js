@@ -27,6 +27,8 @@ router.use('/register-application/v24', registerapplicationv24);
 // Public register
 const biodiversitygainsitesregisterv6 = require('./views/biodiversity-gain-sites-register/v6/_routes');
 router.use('/biodiversity-gain-sites-register/v6', biodiversitygainsitesregisterv6);
+const biodiversitygainsitesregisterv7 = require('./views/biodiversity-gain-sites-register/v7/_routes');
+router.use('/biodiversity-gain-sites-register/v7', biodiversitygainsitesregisterv7);
 
 
 // Credits estimation

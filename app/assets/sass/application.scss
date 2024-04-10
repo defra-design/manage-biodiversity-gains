@@ -665,6 +665,46 @@ only screen and (min-resolution: 2dppx) {
 
 /* Temp home for public reg search results end */
 
+
+/* PR search filters */
+
+.govuk-accordion__section-button {
+  color: #1d70b8 !important;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-accordion__section-button {
+      font-size: 1.125rem !important;
+      // font-size: 19px !important;
+      line-height: 1.25;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-frontend-supported .govuk-accordion__show-all {
+      font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-frontend-supported .govuk-accordion__section-toggle {
+    font-size: 1rem !important;
+  }
+}
+
+.govuk-frontend-supported .govuk-accordion__section-content {
+  padding-top: 0px !important;
+}
+
+.pr-search-filters-input {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-left: 33px;
+  background: url(/public/images/noun-search.svg) #fff no-repeat -5px -7px;
+  background-position-x: 0rem;
+  background-position-y: 0.2rem; 
+}
+
 /* Accessible autocomplete temp fix */
 .govuk-form-group .autocomplete__hint,
 .govuk-form-group .autocomplete__input,
@@ -673,3 +713,4 @@ only screen and (min-resolution: 2dppx) {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+

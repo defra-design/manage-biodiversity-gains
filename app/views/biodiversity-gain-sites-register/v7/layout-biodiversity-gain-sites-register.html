@@ -1,0 +1,21 @@
+{% extends "../../layout.html" %}
+
+{% block header %}
+
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Biodiversity gain sites register",
+    serviceUrl: "#"
+  }) }}
+
+   <div class="govuk-width-container">
+
+    {% include "includes/biodiversity-gain-sites-register-phase-banner.html" %}
+    
+  </div>
+
+{% endblock %}
+
+<!-- {% block footer %}
+  {% include "includes/footer.html" %}
+{% endblock %} -->
