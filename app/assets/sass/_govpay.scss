@@ -2,6 +2,8 @@
 	--govuk-frontend-version: "4.8.0"
 }
 
+/* govpay css starts */
+
 .govuk-heading-l {
 	color: #0b0c0c;
 	font-family: "GDS Transport", arial, sans-serif;
@@ -703,50 +705,6 @@
 	}
 }
 
-.govuk-fieldset__legend {
-	font-family: "GDS Transport", arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-weight: 400;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.25;
-	color: #0b0c0c;
-	box-sizing: border-box;
-	display: table;
-	max-width: 100%;
-	margin-bottom: 10px;
-	padding: 0;
-	white-space: normal
-}
-
-@media print {
-	.govuk-fieldset__legend {
-		font-family: sans-serif
-	}
-}
-
-@media (min-width:40.0625em) {
-	.govuk-fieldset__legend {
-		font-size: 19px;
-		font-size: 1.1875rem;
-		line-height: 1.3157894737
-	}
-}
-
-@media print {
-	.govuk-fieldset__legend {
-		font-size: 14pt;
-		line-height: 1.15
-	}
-}
-
-@media print {
-	.govuk-fieldset__legend {
-		color: #000
-	}
-}
-
 .govuk-fieldset__legend--l {
 	font-family: "GDS Transport", arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -841,14 +799,6 @@
 		line-height: 1.15
 	}
 }
-
-/*
-.govuk-fieldset__heading {
-	margin: 0;
-	font-size: inherit;
-	font-weight: inherit
-}
-*/
 
 .govuk-hint {
 	font-family: "GDS Transport", arial, sans-serif;
