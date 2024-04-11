@@ -31,7 +31,7 @@ module.exports = {
   'defraName': "Joe Smith",
   'defraEmail': "joe@imaginaryfarm.co.uk",
   'registrationPaymentAmount': '658.70',
-  'latestVersion': 'v19',
+  'latestVersion': 'v24',
   // defraID 
   'applicant-f-name': 'Jo',
   'applicant-l-name': 'Smith',

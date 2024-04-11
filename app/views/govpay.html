@@ -43,7 +43,7 @@
 
       </div>
 
-      <form id="card-details" name="cardDetails" method="POST" action="" novalidate="">
+      <form id="card-details" name="cardDetails" method="POST" action="/register-application/{{ data['latestVersion'] }}/confirmation" novalidate="">
 
         <div class="govuk-form-group card-no-group" data-validation="cardNo">
           <label id="card-no-lbl" for="card-no" class="govuk-label govuk-label--s govuk-!-width-three-quarters">
@@ -496,10 +496,9 @@
           </button>
         </div>
       </form>
-      <form id="cancel" name="cancel" method="POST" action="/card_details/rg0aj0dasf9a4sk978m5vlugr2/cancel" class="form" novalidate="">
+      <form id="cancel" name="cancel" method="POST" action="javascript:window.history.back()" class="form" novalidate="">
         <div>
           <input id="cancel-payment" type="submit" class="button-reset" value="Cancel payment" name="cancel">
-          <input id="csrf2" name="csrfToken" type="hidden" value="AZd7ipZ5-qhrOF7_GlI7IrDXbxGT64RoHY3k">
         </div>
       </form>
     </div>
