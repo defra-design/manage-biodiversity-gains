@@ -3,10 +3,18 @@
 {% set pageHeading = "Search the biodiversity gain sites register" %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Search the biodiversity gain sites register",
+      href: "#"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -32,7 +40,7 @@
           <div id="event-name-hint" class="govuk-hint">
             The number which connects a development project to the land being used as off-site gain.
             </div>
-          <input class="govuk-input pr-search-filters-input" id="planning-reference-number" name="planningReferenceNumber" type="text">
+          <input class="govuk-input govuk-!-width-three-quarters" id="planning-reference-number" name="planningReferenceNumber" type="text">
       </div>
 
       <hr class="govuk-section-break govuk-section-break--visible">
@@ -44,7 +52,7 @@
             <div id="event-name-hint" class="govuk-hint">
                 Reference the LPA sent after receiving a development project's planning application.
               </div>
-            <input class="govuk-input pr-search-filters-input" id="planning-reference-number" name="planningReferenceNumber" type="text">
+            <input class="govuk-input govuk-!-width-three-quarters" id="planning-reference-number" name="planningReferenceNumber" type="text">
         </div>
 
         <hr class="govuk-section-break govuk-section-break--visible">
@@ -239,7 +247,7 @@
             <div id="event-name-hint" class="govuk-hint">
                 A public body or charity (where at least some of its main functions relate to conservation).
             </div>
-            <input class="govuk-input pr-search-filters-input" id="event-name" name="eventName" type="text">
+            <input class="govuk-input govuk-!-width-three-quarters" id="event-name" name="eventName" type="text">
         </div>
         <hr class="govuk-section-break govuk-section-break--visible">
 
@@ -250,13 +258,14 @@
             <div id="event-name-hint" class="govuk-hint">
                 Area, hedgerow or watercourse.
             </div>
-            <input class="govuk-input pr-search-filters-input" id="habitat-type" name="habitatType" type="text">
+            <input class="govuk-input govuk-!-width-three-quarters" id="habitat-type" name="habitatType" type="text">
         </div>
     
 
         
           {{ govukButton({
-            text: "Search the register"
+            text: "Search the register",
+            href: "search-results"
           }) }}
 
         </form>

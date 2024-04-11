@@ -4,30 +4,35 @@
   Biodiversity gain sites register
 {% endblock %}
 
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Search the biodiversity gain sites register",
+      href: "single-search"
+    },
+    {
+      text: "Results"
+    }
+  ]
+}) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <p class="govuk-notification-banner__heading">
-          There are currently no registered gain sites. There is no information to display at present.
-        </p>
-      </div>
-    </div>
-
     <h1 class="gem-c-heading govuk-heading-xl govuk-!-margin-bottom-4">
-      Search <span class="govuk-visually-hidden">all content</span>
+      Biodiversity gain sites
     </h1>
 
     <!-- Search box code taken from the GOV.UK website search -->
-    <div id="keywords" class="app-patch--search-input-override" role="search" aria-label="Sitewide">
+    <!-- <div id="keywords" class="app-patch--search-input-override" role="search" aria-label="Sitewide">
       <div class="gem-c-search govuk-!-display-none-print  gem-c-search--on-white" data-module="gem-toggle-input-class-on-focus">
         <label for="finder-keyword-search" class="gem-c-search__label">Search on biodiversity net gain register</label>
         <div class="gem-c-search__item-wrapper">
@@ -43,7 +48,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
   <div class="govuk-grid-column-full">   
