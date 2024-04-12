@@ -14,7 +14,29 @@
 {% endswitch %}
 
 {% if status != "" %}
-{{ statusicon }}
+
+<div class="statusbox"><span>{{ statusicon }}</span></div>
+
+<style>
+	
+.statusbox {
+	position:fixed;
+	top:10px;
+	right:10px;
+	background: rgb(225, 46, 189);
+	padding:0.5rem;
+	border-radius: 100px;
+	display:none;
+	font-size: 1rem;
+	line-height: 1rem;
+}
+
+.govuk-main-wrapper:hover > .statusbox {
+	display:block;
+}
+	
+</style>
+
 {% endif %}
 
 {% endmacro %}
