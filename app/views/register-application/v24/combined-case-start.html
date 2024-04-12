@@ -3,6 +3,11 @@
 {% set pageHeading = "What do you want to apply to do?" %}
 
 {% block content %}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{{ designstatus.designstatus("test") }}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -27,6 +32,7 @@
             <li>which the local planning authority reviewed with the development project's planning application</li>
           </ul>
          </li>
+         <li>a planning application decision notice for the development project from your local planning authority</li>
       </ul>
 
       <p class="govuk-body">

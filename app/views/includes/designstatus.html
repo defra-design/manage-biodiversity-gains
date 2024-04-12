@@ -1,0 +1,20 @@
+{% macro designstatus(status) %}
+
+{% switch status %}
+
+  {% case 'done' %}
+	{% set statusicon = "✅" %}
+  {% case 'copy' %}
+	{% set statusicon = "📝" %}
+  {% case 'test' %}
+	{% set statusicon = "🙂" %}
+  {% default %}
+	{% set statusicon = "" %}
+	
+{% endswitch %}
+
+{% if status != "" %}
+{{ statusicon }}
+{% endif %}
+
+{% endmacro %}
