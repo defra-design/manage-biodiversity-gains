@@ -9,7 +9,7 @@
   items: [
     {
       text: "Home",
-      href: "#"
+      href: "start"
     },
     {
       text: "Search the biodiversity gain sites register",
@@ -51,9 +51,54 @@
     </div> -->
 
   </div>
-  <div class="govuk-grid-column-full">   
+  <div class="govuk-grid-column-two-thirds">   
 
     <h2 class="govuk-heading-m">3 results</h2>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Show
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="" selected>10</option>
+        <option value="" >25</option>
+        <option value="">50</option>
+        <option value="">100</option>
+      </select>
+    </div>
+
+    <ul class="bng-pr-filter-tags">
+      <li>
+        <a class="bng-pr-filter__tag" href="#">
+          <span class="govuk-visually-hidden">Remove this filter</span> 
+          Woodland and forest
+        </a>
+      </li>
+      <!-- <li>
+        <a class="moj-filter__tag" href="#">
+          <span class="govuk-visually-hidden">Remove this filter</span> 
+          Repsonsible body
+        </a>
+      </li> -->
+      <li>
+        <a class="bng-pr-filter__tag" href="#">
+          <span class="govuk-visually-hidden">Remove this filter</span> 
+          Leeds City Council
+        </a>
+      </li>
+      <li>
+        <a class="bng-pr-filter__tag" href="#">
+          <span class="govuk-visually-hidden">Remove this filter</span> 
+          21/02367/FUL
+        </a>
+      </li>
+      <li>
+        <a class="bng-pr-filter__tag" href="#">
+          <span class="govuk-visually-hidden">Remove this filter</span> 
+          BGS-220124001
+        </a>
+      </li>
+    </ul>
     
     <ul class="app-search-results govuk-!-margin-bottom-8">
       <li class="app-search-results__item">
@@ -81,6 +126,36 @@
         <p class="app-secondary-text-colour govuk-!-margin-bottom-1">Local Planning Authority or responsible body: Leeds City Council</p>
       </li>
     </ul>
+
+    <nav class="govuk-pagination" aria-label="Pagination">
+      <ul class="govuk-pagination__list">
+        <li class="govuk-pagination__item govuk-pagination__item--current">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+            1
+          </a>
+        </li>
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+            2
+          </a>
+        </li>
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+            3
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-pagination__next">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg>
+        </a>
+      </div>
+    </nav>
 
   </div>
 </div>

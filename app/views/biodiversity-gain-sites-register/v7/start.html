@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Biodiversity gain sites register
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Biodiversity gain site register
+      </h1>
+
+
+      <p>You will be able to search the register to check details about registered biodiversity gain sites, including the:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>location</li>
+        <li>map or plan showing the boundary of the gain site types of habitats to be enhanced or created</li>
+        <li>habitats on a site that are allocated to a development</li>
+        <li>relevant local planning authority or responsible body</li>
+      </ul>
+
+      <p>The register will be populated with data supplied by applicants with their application. Once applications have been accepted, the relevant information will appear on the biodiversity gain site register.</p>
+
+      <!-- <p>Once applications start to be processed, the relevant information will appear on the biodiversity gain sites register.</p> -->
+
+      {{ govukButton({
+        text: "Start now",
+        href: "single-search",
+        isStartButton: true
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" style="border: none; height: 2px; background-color: #1d70b8;">
+
+      <h2 class="govuk-heading-m">Explore the topic</h2>
+
+      <ul class="govuk-list govuk-list--spaced">
+        <li><a href="https://www.gov.uk/environment/biodiversity-and-ecosystems">Biodiversity and ecosystems</a></li>
+        <li><a href="https://www.gov.uk/environment/wildlife-habitat-conservation">Wildlife and habitat conservation</a></li>
+        <li><a href="https://www.gov.uk/housing-local-and-community/planning-and-building">Planning and building</a></li>
+      </ul>
+
+    </div>
+
+    <!-- <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+                Collection
+            </li>
+            <li>
+              <a href="https://www.gov.uk/government/collections/biodiversity-net-gain">
+                Biodiversity net gain
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div> -->
+  </div>
+
+{% endblock %}

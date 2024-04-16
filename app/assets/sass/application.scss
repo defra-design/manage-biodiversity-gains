@@ -705,6 +705,64 @@ only screen and (min-resolution: 2dppx) {
   background-position-y: 0.2rem; 
 }
 
+.moj-filter__tag:link, .moj-filter__tag:visited {
+  color: #0b0c0c;
+}
+
+@media (min-width: 40.0625em) {
+  .moj-filter__tag {
+      font-size: 1rem;
+      line-height: 1.25;
+  }
+}
+
+.bng-pr-filter-tags {
+  padding: 0;
+}
+
+.bng-pr-filter-tags li {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+}
+
+.bng-pr-filter__tag {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.1428571429;
+  background-color: #fff;
+  border: 1px solid #0b0c0c;
+  color: #0b0c0c;
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.bng-pr-filter__tag::after {
+  background-image: url(/public/images/icon-tag-remove-cross-black.svg);
+  content: "";
+  display: inline-block;
+  font-weight: bold;
+  height: 10px;
+  margin-left: 5px;
+  vertical-align: middle;
+  width: 10px;
+  // background-color: #d53880;
+}
+
+
+.bng-pr-filter__tag:hover {
+  background-color: #0b0c0c;
+  color: #fff;
+}
+
+.bng-pr-filter__tag:hover::after {
+  background-image: url(/public/images/icon-tag-remove-cross-white.svg);
+}
+
 /* Accessible autocomplete temp fix */
 .govuk-form-group .autocomplete__hint,
 .govuk-form-group .autocomplete__input,

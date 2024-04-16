@@ -1,4 +1,4 @@
-{% extends "biodiversity-gain-sites-register/v6/layout-biodiversity-gain-sites-register.html" %}
+{% extends "biodiversity-gain-sites-register/v7/layout-biodiversity-gain-sites-register.html" %}
 
 {% block pageTitle %}
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -7,10 +7,25 @@
 {% set pageHeading = "BGS-220124001" %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript: window.history.go(-1)"
-  }) }}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "start"
+    },
+    {
+      text: "Search the biodiversity gain sites register",
+      href: "single-search"
+    },
+    {
+      text: "Results",
+      href: "search-results"
+    },
+    {
+      text: "BGS-220124001"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
