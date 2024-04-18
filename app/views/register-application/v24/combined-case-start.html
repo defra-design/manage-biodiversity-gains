@@ -6,7 +6,17 @@
 
 {% import "/includes/designstatus.html" as designstatus %}
 
-{{ designstatus.designstatus("test") }}
+{# set design status page title and url  #}
+
+{{ designstatus.designstatus("test","/myurl", "My page title", path, "designer.surname@defra.gov.uk", "writer.surname@defra.gov.uk" ) }}
+
+{% set errorcheck = query["showerrors"]  %}
+
+{% if errorcheck %}
+
+we got errors {{ errorcheck }}
+
+{% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -39,6 +49,7 @@
         It costs £639 to allocate and register at the same time.
       </p>
       <p class="govuk-body">
+        
     
     <form method="post">
       {{ govukRadios({
@@ -49,6 +60,9 @@
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
       }
+      },
+      errorMessage: {
+        text: "Select if you are British, Irish or a citizen of a different country"
       },
 
       items: [

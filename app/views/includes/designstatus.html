@@ -1,41 +1,196 @@
-{% macro designstatus(status) %}
+{% macro designstatus(status, page, pagetitle, protolink, designer, writer) %}
 
 {% switch status %}
 
   {% case 'done' %}
-	{% set statusicon = "✅" %}
+	{% set statusicon = "✅ Done" %}
   {% case 'copy' %}
-	{% set statusicon = "📝" %}
+	{% set statusicon = "📝 Content Design" %}
   {% case 'test' %}
-	{% set statusicon = "🙂" %}
+	{% set statusicon = "🙂 User Research" %}
   {% default %}
 	{% set statusicon = "" %}
 	
 {% endswitch %}
 
+{% set heroku = "https://manage-biodiversity-gains-174bb1548be3.herokuapp.com" %}
+
 {% if status != "" %}
 
-<div class="statusbox"><span>{{ statusicon }}</span></div>
+<div class="status-outer">
+
+	<div class="statusbox">
+		<h1>Design spec for {{ pagetitle | lower }}</h1>
+		<dl>
+			<dt>Page status</dt>
+			<dd>{{ statusicon }}</dd>
+			<dt>URL</dt>
+			<dd>{{ page }}</dd>
+			<dt>Page title</dt>
+			<dd>{{ pagetitle }}</dd>
+			<dt>Errors</dt>
+			<dd><label for="showerrors">Show errors</label><input type="checkbox" id="showerrors" name="showerrors" /></dd>
+			<dt>Link to this page</dt>
+			<dd><a href="{{ heroku }}{{ protolink }}">{{ heroku }}{{ protolink }}</a></dd>
+			<dt>Interaction designer</dt>
+			<dd><a href="mailto:{{ designer}}?subject=Help with prototype">{{ designer }}</a></dd>
+			<dt>Content designer</dt>
+			<dd><a href="mailto:{{ writer }}?subject=Help with prototype">{{ writer }}</a></dd>
+		</dl>
+		
+	</div>
+	
+	<button class="spec-close">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="12" cy="12" r="8.48529" transform="rotate(-45 12 12)" fill="#B3B1B1"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M8.81801 8.11091L8.11091 8.81802L11.2929 12L8.11091 15.182L8.81801 15.8891L12 12.7071L15.182 15.8891L15.8891 15.182L12.7071 12L15.8891 8.81802L15.182 8.11091L12 11.2929L8.81801 8.11091Z" fill="white"/>
+		</svg>
+	</button>
+
+</div>
 
 <style>
 	
-.statusbox {
+.status-outer {
 	position:fixed;
-	top:10px;
-	right:10px;
-	background: rgb(225, 46, 189);
-	padding:0.5rem;
-	border-radius: 100px;
-	display:none;
+	width: 100%;
+	max-width:480px;
+	height:100%;
+	top:0;
+	right:0;
+	display:flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	background:#fff;
+	border-left:1px solid #ddd;
+	z-index:100;
+	resize: horizontal;
+	overflow: auto;
+}
+
+.status-outer * {
+	box-sizing: border-box;
+}
+	
+.statusbox {
+	width:100%;
+	padding:1rem;
 	font-size: 1rem;
-	line-height: 1rem;
+	line-height: 1.4;
+	font-family: system-ui;
+}
+
+.statusbox h1 {
+	margin:0;
+	font-size: 1.5rem;
+}
+
+.statusbox dl {
+	margin:1rem 0;
+	padding:0;
+	display:grid;
+	grid-template-columns: 110px 1fr;
+}
+
+.statusbox dt {
+	font-weight: 600;
+	border-bottom:1px solid #ccc;
+	padding: 1rem 0;
+	display: block;
+}
+
+.statusbox dd {
+	border-bottom:1px solid #ccc;
+	padding:1rem 0;
+	display: block;
+	margin: 0;
+	word-break: break-word;
 }
 
 .govuk-main-wrapper:hover > .statusbox {
 	display:block;
 }
+
+.spec-close {
+	appearance: none;
+	-webkit-appearance: none;
+	margin:0;
+	padding:0.5rem;
+	background: transparent;
+	border:0;
+	cursor:pointer;
+	display: block;
+	transition: opacity .3s;
+}
+
+.spec-close:hover {
+	opacity: 0.7;
+}
+
+.govuk-error-message {
+	display:none;
+}
+
+.displayerrors .govuk-error-message {
+	display:block;
+}
+
+.status-outer {
+	display: none;
+}
 	
 </style>
+
+<script>
+	
+	document.addEventListener("DOMContentLoaded", function() {
+		var checkbox = document.getElementById("showerrors");
+		var errorElements = document.querySelectorAll(".govuk-form-group--error");
+		var closeButton = document.querySelector(".spec-close");
+		var statusOuter = document.querySelector(".status-outer");
+	
+		checkbox.addEventListener("change", function() {
+			var isChecked = checkbox.checked;
+	
+			if (isChecked) {
+				document.body.classList.add("displayerrors");
+			} else {
+				document.body.classList.remove("displayerrors");
+			}
+	
+			errorElements.forEach(function(element) {
+				if (isChecked) {
+					// If checkbox is checked, swap classes to show errors
+					element.classList.replace("govuk-form-group--error-off", "govuk-form-group--error");
+				} else {
+					// If checkbox is unchecked, swap classes to hide errors
+					element.classList.replace("govuk-form-group--error", "govuk-form-group--error-off");
+				}
+			});
+		});
+	
+		// Initially change all instances of "govuk-form-group--error" to "govuk-form-group--error-off"
+		errorElements.forEach(function(element) {
+			element.classList.replace("govuk-form-group--error", "govuk-form-group--error-off");
+		});
+	
+		// Event listener for closing the status
+		closeButton.addEventListener("click", function() {
+			statusOuter.style.display = "none";
+		});
+	});
+	
+	function showSpec() {
+		var statusOuter = document.querySelector(".status-outer");
+		if (statusOuter.style.display === 'none' || statusOuter.style.display === '') {
+			statusOuter.style.display = 'flex';
+		} else {
+			statusOuter.style.display = 'none';
+		}
+	}
+
+	
+</script>
 
 {% endif %}
 

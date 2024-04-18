@@ -11,6 +11,12 @@ router.use(radioButtonRedirect)
 
 // Add your routes here
 
+router.use((req, res, next) => {
+  res.locals.query = req.query
+  res.locals.path = req.path
+  next()
+})
+
 // Shared GG sign in screen
 router.post('/sign-in', function (req, res) {
     res.redirect('dashboard');

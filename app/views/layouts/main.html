@@ -9,6 +9,8 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 Below added to include the new gov.uk crown
 #}
 
+{% set bodyClasses = "" %}
+
 {% block headIcons %}{% endblock %}
 
 {% block header %}
@@ -28,6 +30,28 @@ Below added to include accessible autocorrect globally
 {% block stylesheets %}
   {{ super() }}
   <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/privacy",
+         text: "Privacy policy"
+       },
+       {
+         href: "/manage-prototype",
+         text: "Manage your prototype"
+       },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
 {% endblock %}
 
 
