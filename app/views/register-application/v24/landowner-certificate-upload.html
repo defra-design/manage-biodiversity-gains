@@ -39,13 +39,19 @@
             <p>You can <a href="https://www.gov.uk/get-information-about-property-and-land/search-the-register">order official copies of land ownership documents</a> from HM Land Registry.</p>
           </div>
         </details>
+        
+        <div class="govuk-button-group">
 
         {{ govukButton({
-          text: "Upload",
+          text: data.dict["upload"],
           classes: "js-updload-button",
           attributes: {"aria-live":"polite"}
         }) }}
         
+        <a class="govuk-link" href="#">{{ data.dict["savelater"] }}</a>
+        
+        </div>
+                
       </form>
 
     </div>
