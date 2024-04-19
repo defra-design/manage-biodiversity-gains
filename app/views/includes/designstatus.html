@@ -36,8 +36,10 @@
 			<dd><a href="mailto:{{ designer}}?subject=Help with prototype">{{ designer }}</a></dd>
 			<dt>Content designer</dt>
 			<dd><a href="mailto:{{ writer }}?subject=Help with prototype">{{ writer }}</a></dd>
+			{% if jira %}
 			<dt>Jira ticket</dt>
-			<dd>{{ jira }}</dd>
+			<dd><a href="https://eaflood.atlassian.net/browse/BNGP-{{ jira }}" target="_blank">https://eaflood.atlassian.net/browse/BNGP-{{ jira }}</a></dd>
+			{% endif %}
 			<dt>Notes</dt>
 			<dd>{{ notes }}</dd>
 		</dl>
