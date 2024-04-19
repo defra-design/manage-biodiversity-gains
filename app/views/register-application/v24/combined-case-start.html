@@ -4,19 +4,23 @@
 
 {% block content %}
 
+{# set design spec for this page #}
+
 {% import "/includes/designstatus.html" as designstatus %}
 
-{# set design status page title and url  #}
+{% 
+    set designspec = {
+      status: 'test',
+      pageurl: '/mynewurl',
+      pagetitle: 'The nicest page in the world',
+      ixd: 'crayons@defra.gov.uk',
+      cd: 'words@defra.gov.uk',
+      jira: '3456',
+      notes: 'We made this because we thought it would be nice'
+  } 
+%}
 
-{{ designstatus.designstatus("test","/myurl", "My page title", path, "designer.surname@defra.gov.uk", "writer.surname@defra.gov.uk" ) }}
-
-{% set errorcheck = query["showerrors"]  %}
-
-{% if errorcheck %}
-
-we got errors {{ errorcheck }}
-
-{% endif %}
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.notes ) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">

@@ -1,4 +1,4 @@
-{% macro designstatus(status, page, pagetitle, protolink, designer, writer) %}
+{% macro designstatus(status, page, pagetitle, protolink, designer, writer, jira, notes) %}
 
 {% switch status %}
 
@@ -36,6 +36,10 @@
 			<dd><a href="mailto:{{ designer}}?subject=Help with prototype">{{ designer }}</a></dd>
 			<dt>Content designer</dt>
 			<dd><a href="mailto:{{ writer }}?subject=Help with prototype">{{ writer }}</a></dd>
+			<dt>Jira ticket</dt>
+			<dd>{{ jira }}</dd>
+			<dt>Notes</dt>
+			<dd>{{ notes }}</dd>
 		</dl>
 		
 	</div>
