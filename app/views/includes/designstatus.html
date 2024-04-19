@@ -61,7 +61,7 @@
 	max-width:480px;
 	height:100%;
 	top:0;
-	right:0;
+	right:-480px;
 	display:flex;
 	align-items: flex-start;
 	justify-content: flex-start;
@@ -70,6 +70,7 @@
 	z-index:100;
 	resize: horizontal;
 	overflow: auto;
+	transition: right .3s;
 }
 
 .status-outer * {
@@ -139,8 +140,8 @@
 	display:block;
 }
 
-.status-outer {
-	display: none;
+.status-outer.draweropen {
+	right:0;
 }
 	
 </style>
@@ -180,7 +181,8 @@
 	
 		// Event listener for closing the status
 		closeButton.addEventListener("click", function() {
-			statusOuter.style.display = "none";
+			//statusOuter.style.display = "none";
+			statusOuter.classList.remove("draweropen");
 		});
 	});
 	
@@ -192,6 +194,22 @@
 			statusOuter.style.display = 'none';
 		}
 	}
+	
+	function toggleDrawer() {
+		var statusOuter = document.querySelector(".status-outer");
+		if (statusOuter.classList.contains("draweropen")) {
+			statusOuter.classList.remove("draweropen");
+		} else {
+			statusOuter.classList.add("draweropen");
+		}
+	}
+	
+	document.addEventListener("keydown", function(event) {
+		// Check if Ctrl + Shift + S are pressed
+		if (event.ctrlKey && event.shiftKey && event.key === 'S') {
+			toggleDrawer();
+		}
+	});
 
 	
 </script>
