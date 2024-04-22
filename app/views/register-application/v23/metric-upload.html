@@ -39,9 +39,15 @@
           </div>
         </details>
 
+        <div class="govuk-button-group">
+
         {{ govukButton({
-          text: "Upload"
+          text: data.dict["upload"]
         }) }}
+        
+        <a class="govuk-link" href="#">{{ data.dict["savelater"] }}</a>
+        
+        </div>
         
       </form>
 
