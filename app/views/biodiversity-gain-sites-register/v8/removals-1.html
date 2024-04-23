@@ -17,10 +17,38 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <p><strong class="govuk-tag govuk-tag--red" style="min-width:35%;font-weight: 700;">Removed: 23 April 2024</strong></p>
     <h1 class="govuk-heading-xl">
       <span class="govuk-caption-xl">Gain site reference number</span>
        {{ pageHeading }}
     </h1>
+
+    <!-- {{ govukSummaryList({
+      rows: [
+      {
+        key: {
+          text: "Date removed"
+        },
+        value: {
+          text: "23 April 2024"
+        }
+      }
+      ]
+    }) }} -->
+
+    
+
+    <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#habitat-link">Habitat information</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#allocation-link">Allocation information</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#amendment-link">Amendment information</a>
+        </li>
+      </ul>
     <!-- <p class="govuk-body app-secondary-text-colour govuk-!-margin-bottom-5 govuk-!-margin-top-1">Added to the BNG Register on 15 March 2022</p> -->
 
     <!-- <div id="offsite" class="map map--location" tabindex="0">
@@ -57,7 +85,7 @@
             text: "Land boundary"
           },
           value: {
-            html: '<a href="#">Link to land boundary</a>'
+            html: '<b>Link to land boundary removed</b>'
           }
         },
         {
@@ -81,7 +109,10 @@
 
     
 
-      <h2 class="govuk-heading-l govuk-!-padding-top-5">Habitat information</h2>
+    <a name="habitat-link" class="govuk-link--no-underline">
+    <h2 class="govuk-heading-l govuk-!-padding-top-5">Habitat information</h2>
+    </a>
+      
 
       <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Baseline habitat</h3>
       <div class="govuk-hint" style="width: 60%;">Original information for the site, before any BNG improvements</div>
@@ -179,7 +210,10 @@
         </table>
       </div>
 
+    <a name="allocation-link" class="govuk-link--no-underline">
     <h2 class="govuk-heading-l govuk-!-margin-bottom-0">Allocation information</h2>
+    </a>
+
     <p class="govuk-body govuk-!-margin-top-4">There could be more than one allocated site in each development.</p>
 
     <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Planned habitat</h3>
@@ -486,6 +520,43 @@
         </tbody>
       </table>
     </div>
+
+    <a name="amendment-link" class="govuk-link--no-underline">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-0">Amendment information</h2>
+    </a>
+    <p class="govuk-body govuk-!-margin-top-4">Introductory copy for amendments information.</p>
+
+    {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Amendment date"
+            },
+            value: {
+              text: "22 April 2024"
+            }
+          },
+          {
+            key: {
+              text: "Grounds for amendment"
+            },
+            value: {
+                text: "Ground entered here"
+            }
+          },
+          {
+            key: {
+              text: "Amendment details"
+            },
+            value: {
+                text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,."
+            }
+          }
+
+        ]
+      }) }}
+
+
 
     {% include "biodiversity-gain-sites-register/v6/includes/start-new-search.html" %}
 
