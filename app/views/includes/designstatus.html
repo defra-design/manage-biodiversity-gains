@@ -41,7 +41,7 @@
 			<dd><a href="https://eaflood.atlassian.net/browse/BNGP-{{ jira }}" target="_blank">https://eaflood.atlassian.net/browse/BNGP-{{ jira }}</a></dd>
 			{% endif %}
 			<dt>Notes</dt>
-			<dd>{{ notes }}</dd>
+			<dd>{{ notes | safe }}</dd>
 		</dl>
 		
 	</div>
@@ -112,6 +112,11 @@
 	display: block;
 	margin: 0;
 	word-break: break-word;
+	font-size: 1rem;
+}
+
+.statusbox dd * {
+	font-size: 1rem;
 }
 
 .govuk-main-wrapper:hover > .statusbox {
