@@ -1,0 +1,56 @@
+
+{% extends "biodiversity-gain-sites-register/v6/layout-biodiversity-gain-sites-register.html" %}
+
+{% block pageTitle %}
+  Biodiversity gain sites register
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          There are currently no registered gain sites. There is no information to display at present.
+        </p>
+      </div>
+    </div>
+
+      <!-- Search box code taken from the GOV.UK website search -->
+      <form method="post" action="search-results" accept-charset="utf-8" class="search-header" role="search">
+        <div class="gem-c-search govuk-!-display-none-print  gem-c-search--large gem-c-search--on-white gem-c-search--separate-label" data-module="gem-toggle-input-class-on-focus">
+          <label for="search-main" class="">
+            <h1 class="gem-c-heading govuk-heading-xl govuk-!-margin-bottom-4">
+            Search the register
+          </h1>
+          </label>
+          <p id="search-hint">Enter a Planning reference number, Local Planning Authority (LPA), responsible body or habitat type</p>
+          <div class="gem-c-search__item-wrapper">
+            <input enterkeyhint="search" class="gem-c-search__item gem-c-search__input js-class-toggle" id="search-main" name="search-register" title="Search" type="search" value="" aria-describedby="search-hint">
+            <div class="gem-c-search__item gem-c-search__submit-wrapper">
+              <button class="gem-c-search__submit" type="submit" data-module="gem-track-click" enterkeyhint="search">
+                Search
+              <svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+                <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="govuk-body"><a href="#">Conditions of use</a></p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

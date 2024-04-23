@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Biodiversity gain sites register
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Biodiversity gain site register removals and amendments
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Removals
+      </h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="removals-1">Removals (v1)</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        Amendments
+      </h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="amendments-1">Amendments (v1 additonal section)</a></li>
+        <li><a href="amendments-2">Amendments (v1 tabs)</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
