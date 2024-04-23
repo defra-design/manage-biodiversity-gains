@@ -30,9 +30,17 @@
           <input class="govuk-file-upload" id="location-upload" name="location-upload" type="file" aria-describedby="location-upload-hint">
         </div>
 
+        <div class="govuk-button-group">
+        
         {{ govukButton({
-          text: "Upload"
+          text: data.dict["upload"],
+          classes: "js-updload-button",
+          attributes: {"aria-live":"polite"}
         }) }}
+        
+        <a class="govuk-link" href="#">{{ data.dict["savelater"] }}</a>
+        
+        </div>
         
       </form>
 
