@@ -55,15 +55,15 @@
     
 
     <ul class="govuk-list">
-        <li>
-          <a class="govuk-link" href="#habitat-link">Habitat information</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#allocation-link">Allocation information</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#amendment-link">Amendment information</a>
-        </li>
+      <li>
+        <a class="govuk-link" href="#habitat-link">Habitat</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#allocation-link">Allocation</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#amendment-link">Amendments</a>
+      </li>
       </ul>
     <!-- <p class="govuk-body app-secondary-text-colour govuk-!-margin-bottom-5 govuk-!-margin-top-1">Added to the BNG Register on 15 March 2022</p> -->
 
@@ -101,7 +101,7 @@
             text: "Land boundary"
           },
           value: {
-            html: '<b>Link to land boundary removed</b>'
+            html: '<strong class="govuk-tag govuk-tag--red" style="min-width:40%;">Link to land boundary removed</strong>'
           }
         },
         {
@@ -126,7 +126,7 @@
     
 
     <a name="habitat-link"></a>
-    <h2 class="govuk-heading-l govuk-!-padding-top-5">Habitat information</h2>
+    <h2 class="govuk-heading-l govuk-!-padding-top-5">Habitat</h2>
     
       
 
@@ -227,12 +227,12 @@
       </div>
 
     <a name="allocation-link"></a>
-    <h2 class="govuk-heading-l govuk-!-margin-bottom-0">Allocation information</h2>
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-0">Allocation</h2>
     
 
     <p class="govuk-body govuk-!-margin-top-4">There could be more than one allocated site in each development.</p>
 
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Planned habitat</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Planned habitat 01</h3>
     <div class="govuk-hint" style="width: 60%;">Information for an allocated site within a single development</div>
 
     {{ govukSummaryList({
@@ -384,10 +384,7 @@
       </table>
     </div>
 
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Planned habitat</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Planned habitat 02</h3>
     <div class="govuk-hint" style="width: 60%;">Information for an allocated site within a single development</div>
     {{ govukSummaryList({
       rows: [
@@ -538,15 +535,15 @@
     </div>
 
     <a name="amendment-link"></a>
-    <h2 class="govuk-heading-l govuk-!-margin-bottom-0">Amendment information</h2>
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-0">Amendments</h2>
     
-    <p class="govuk-body govuk-!-margin-top-4">Introductory copy for amendments information.</p>
+    <p class="govuk-body govuk-!-margin-top-4">Information about amendments made to a single development.</p>
 
     {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "Amendment date"
+              text: "Date"
             },
             value: {
               text: "22 April 2024"
@@ -557,12 +554,12 @@
               text: "Grounds for amendment"
             },
             value: {
-                text: "Ground entered here"
+                text: "Changes to legal agreement"
             }
           },
           {
             key: {
-              text: "Amendment details"
+              text: "Details"
             },
             value: {
                 text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,."
