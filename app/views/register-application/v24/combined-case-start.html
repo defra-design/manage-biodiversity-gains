@@ -12,15 +12,16 @@
     set designspec = {
       status: 'test',
       pageurl: '/mynewurl',
-      pagetitle: 'The worst page in the world',
+      pagetitle: 'The best page in the world',
       ixd: 'crayons@defra.gov.uk',
       cd: 'words@defra.gov.uk',
       jira: '3456',
+      error: 'Oops this is an error',
       notes: '<p>Add your design notes/history here as a record of your rationale</p><ul><li>a list</li><li>a list</li></ul>'
   } 
 %}
 
-{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.notes ) }}
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes ) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
