@@ -4,6 +4,24 @@
   Biodiversity gain sites register
 {% endblock %}
 
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "start"
+    },
+    {
+      text: "Search the biodiversity gain sites register",
+      href: "search"
+    },
+    {
+      text: "Results"
+    }
+  ]
+}) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -53,18 +71,18 @@
     <ul class="app-search-results govuk-!-margin-bottom-8">
       <li class="app-search-results__item">
         <p class="govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Site type:</span> Biodiversity gain site</p>
-        <h3 class="govuk-!-margin-bottom-1 govuk-!-margin-top-0 govuk-!-padding-top-0 govuk-heading-m"><span class="govuk-visually-hidden">Off-site reference:</span> 
-          BGS-220124001
-        </h3>
-        <strong class="govuk-tag govuk-tag--red" style="min-width:24%;">Removed on 23 April 2024.</strong>
-      </li>
-      <li class="app-search-results__item">
-        <p class="govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Site type:</span> Biodiversity gain site</p>
-        <h3 class="app-search-results__title govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Planning reference:</span> 
-          <a href="#" class="app-search-results__item-title">BGS-220124002</a>
+        <h3 class="app-search-results__title govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Off-site reference:</span> 
+          <a href="BGS-220124001" class="app-search-results__item-title">BGS-220124001</a>
         </h3>
         <p class="app-secondary-text-colour govuk-!-margin-bottom-1">Grid reference: SE170441</p>
         <p class="app-secondary-text-colour govuk-!-margin-bottom-1">Local Planning Authority or responsible body: Leeds City Council</p>
+      </li>
+      <li class="app-search-results__item">
+        <p class="govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Site type:</span> Biodiversity gain site</p>
+        <h3 class="govuk-!-margin-bottom-1 govuk-!-margin-top-0 govuk-!-padding-top-0 govuk-heading-m"><span class="govuk-visually-hidden">Off-site reference:</span> 
+          BGS-220124002
+        </h3>
+        <strong class="govuk-tag govuk-tag--red" style="min-width:24%;">Removed on 23 April 2024.</strong>
       </li>
       <li class="app-search-results__item">
         <p class="govuk-!-margin-bottom-1"><span class="govuk-visually-hidden">Site type:</span> Biodiversity gain site</p>
