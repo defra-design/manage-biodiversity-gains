@@ -1,4 +1,4 @@
-{% macro designstatus(status, page, pagetitle, protolink, designer, writer, jira, errormessage, notes) %}
+{% macro designstatus(status, page, pagetitle, protolink, designer, writer, jira, errormessage, notes, dump) %}
 
 {% switch status %}
 
@@ -44,6 +44,8 @@
 			{% endif %}
 			<dt>Notes</dt>
 			<dd>{{ notes | safe }}</dd>
+			<dt>Session data</dt>
+			<dt>{{ dump }}</dt>
 		</dl>
 		
 	</div>
