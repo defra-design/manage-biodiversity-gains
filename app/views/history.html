@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} design history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ serviceName }} design history
+      </h1>
+
+      <p>We have updated content in response to UR and analytics feedback across the prototypes for record and register. These updates should go through UR testing and further iteration.</p>
+      <p>Changes for combined case are not mentioned in this post except where combined case pages differ from register and record, because in most of its pages, combined case pulls through content from register and record.</p>
+      
+      <h3>How we refer to the metric</h3>
+      <p>We updated content across all prototypes to make it clear to users which version of the metric they need to upload. (It needs to be the statutory biodiversity metric tool calculation the LPA reviewed with the planning application).</p>
+      <p>This was in response to:</p>
+      <ul>
+      <li>user research finding that users were uploading outdated versions of the metric</li>
+      <li>the previous wording on what the LPA had reviewed being factually inaccurate</li>
+      </ul>
+      <p>We moved guidance up from its previous position hidden in an accordion into the main body text, to make it more visible. We also added more specific detail to the wording to make it clearer.</p>
+      <p>We added wording to the radio button text on the confirmation pages, so that users have to confirm they have uploaded the correct version of the metric.
+      https://eaflood.atlassian.net/browse/BNGP-4341
+      Clarifying that some documents should be dated within 2 months before application
+      All applications received so far did not provide landowner consent dated within 2 months. This is because the services did not explain this requirement. We added content to the register and record prototypes to clarify that the authorisation must be dated within the last 2 months.</p>
+      <p>https://eaflood.atlassian.net/browse/BNGP-4818
+      2 out of 3 users so far have failed to upload the official local land charge certificate dated within the right time period. We updated register prototype content to be clear that users must upload the official search certificate from HM Land Registry, dated within the last 2 months.</p>
+      <p>https://eaflood.atlassian.net/browse/BNGP-4819
+      Aligning the record journey with its users
+      Some of the content in the record prototype addressed ‘you’ as a developer, for example using terms like ‘your development’. However, although developers can also use this service with the land manager’s permission, the record journey is a duty for land managers who sell off-site gains. We rewrote developer-focused content on a number of pages to make it more neutral and suitable for land managers as well as developers.</p>
+      <p>https://eaflood.atlassian.net/browse/BNGP-4517
+      Helping users know they can save their application and return to it
+      UR and survey feedback found that users are unaware that their progress would be saved throughout. Users looked for a save button but sometimes couldn’t find it and assumed they could not leave the application because their progress would not be saved. This could prevent users from entering information in multiple sessions. It could also prevent those with assisted digital needs from completing the journey as they may need multiple sessions. Across registration and allocation, we updated the text on the previous ‘continue’ button to be consistently ‘save and continue’.
+      We are also adding wording to tasklist and upload pages to explicitly let users know they can save the application by completing each page and come back to it another time.</p>
+      <p>https://eaflood.atlassian.net/browse/BNGP-4345
+      Helping users discharge their planning condition
+      At the end of the allocation journey, multiple users were not aware of the need to get in touch with their LPA after successfully recording an allocation so that they can ‘discharge the condition’ in the way they normally would any other planning conditions. We updated content to make this clearer in the prototype and in the Notify acceptance emails users receive at the end of the allocation journey, as well as the contingency allocation and combined case journeys.</p>
+      <p>https://eaflood.atlassian.net/browse/BNGP-4002
+      Adding the requirement to upload a planning application decision notice
+      There is a new legal requirement which means we need to ask the applicant for a copy of the ‘planning application decision notice’ when they submit their application to record an allocation or complete a combined case application. We updated content to add this requirement to the prototype start page for combined case and the contingency start pages for allocation and combined case. (The change had already been made to the record prototype start page).</p>
+      <p>https://eaflood.atlassian.net/browse/BNGP-4591
+      Gov Pay updates
+      We have made some changes ahead of Gov Pay being added to the register and record services. These include:
+      updating the ‘submit’ button to ‘submit and continue to payment’ so the user knows they can continue to the payment stage of the journey (https://eaflood.atlassian.net/browse/BNGP-4833)
+      a new confirmation page the user will see after paying using Gov Pay, which states the application and payment are made and outlines next steps (https://eaflood.atlassian.net/browse/BNGP-4389
+      updating the Notify email users get to confirm their application has been received to remove the need to pay by BACS</p>
+
+     
+
+    </div>
+  </div>
+
+{% endblock %}
