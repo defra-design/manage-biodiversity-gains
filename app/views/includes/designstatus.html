@@ -1,4 +1,6 @@
-{% macro designstatus(status, page, pagetitle, protolink, designer, writer, jira, errormessage, notes, dump, showspec) %}
+{% macro designstatus(status, page, pagetitle, protolink, designer, writer, jira, errormessage, notes, dump) %}
+
+{# footer link logic is in layout-register-application.html needs a better solution #}
 
 {% set heroku = "https://manage-biodiversity-gains-174bb1548be3.herokuapp.com" %}
 
@@ -34,7 +36,6 @@
 			<dt>Session data</dt>
 			<dd>{{ dump }}</dd>
 		</dl>
-		
 	</div>
 	
 	<button class="spec-close">

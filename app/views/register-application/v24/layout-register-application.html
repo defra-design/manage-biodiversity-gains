@@ -67,5 +67,15 @@
 {% endblock %}
 
 {% block footer %}
-  {% include "register-application/v24/includes/footer.html" %}
+  {% set speccheck = showspec %}
+   {% if speccheck %}
+   <style>
+     li:has(#speclink) { display: inline-block }
+   </style>
+   {% else %}
+   <style>
+      li:has(#speclink) { display: none }
+    </style>
+   {% endif %}
+  {% include "register-application/v24/includes/footer.html" %} 
 {% endblock %}
