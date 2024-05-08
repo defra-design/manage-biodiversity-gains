@@ -43,7 +43,8 @@
         text: "Accessibility statement"
       },{
         href: "javascript:toggleDrawer()",
-        text: "Design spec"
+        text: "Design spec",
+        attributes: { id : "speclink" }
       },{
         href: "/prototype-admin/clear-data",
         text: "Clear data"
@@ -51,3 +52,7 @@
     ]
   }
 }) }}
+
+<style>
+  #speclink { display: none }
+</style>

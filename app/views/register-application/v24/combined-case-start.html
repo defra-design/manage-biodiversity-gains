@@ -17,11 +17,12 @@
       cd: 'words@defra.gov.uk',
       jira: '3456',
       error: 'Oops this is an error',
-      notes: '<p>Add your design notes/history here as a record of your rationale</p><ul><li>a list</li><li>a list</li></ul>'
+      notes: '<p>Add your design notes/history here as a record of your rationale</p><ul><li>a list</li><li>a list</li></ul>',
+      showspec: 'true'
   } 
 %}
 
-{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump ) }}
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump, designspec.showspec) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
