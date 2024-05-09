@@ -1,8 +1,29 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
 {% set pageHeading = "Upload written authorisation to apply" %}
+{% set showspec = "true" %}
+
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: 'N/A',
+      pagetitle: 'N/A',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4345',
+      error: '',
+      notes: 'Updated the text on ALL continue buttons to be consistently *save and continue*. Also updated buttons on ALL upload pages to *save and upload* – plus added a link next to each upload button: *Or save progress and come back later*, which links to signed out page'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
