@@ -4,8 +4,29 @@
 
 {% set hideSaveSection = true %}
 {% set showAccount = true %}
+{% set showspec = "true" %}
+
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Development projects',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '',
+      error: '',
+      notes: 'Added a link to guidance on how to amend an allocation'
+  } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
