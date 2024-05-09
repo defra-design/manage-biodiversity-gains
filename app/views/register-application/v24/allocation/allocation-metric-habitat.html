@@ -1,6 +1,8 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
 {% set pageHeading = "Confirm habitats being used by the development for off-site gain" %}
+{% set showspec = "true" %}
+
 
 {% if data["combined-case"] == "combined" %}
 {% set tasklist = "/register-application/v24/task-list-combined" %}
@@ -9,6 +11,26 @@
 {% endif %}
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Confirm habitats being used by the development for off-site gain',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4517',
+      error: '',
+      notes: 'Amended wording in this line only: Confirm if these details match what the development project has agreed with the landowner or leaseholder.'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
