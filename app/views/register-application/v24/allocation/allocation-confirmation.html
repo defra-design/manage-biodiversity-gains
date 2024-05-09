@@ -1,10 +1,29 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
 {% set pageHeading = "Application submitted" %}
-
+{% set showspec = "true" %}
 
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Application submitted',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4002',
+      error: '',
+      notes: 'Updated wording on refunds to clarify they are not given. Added content on discharging planning condition. Also impacts Jira 5010'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
