@@ -1,6 +1,8 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
 {% set pageHeading = "Enter your biodiversity gain site number" %}
+{% set showspec = "true" %}
+
 
 {% if data["combined-case"] == "combined" %}
 {% set tasklist = "/register-application/v24/task-list-combined" %}
@@ -9,6 +11,25 @@
 {% endif %}
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Enter your biodiversity gain site number',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4517',
+      error: '',
+      notes: 'Updated content to make it suitable for land managers, not just developers.'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">

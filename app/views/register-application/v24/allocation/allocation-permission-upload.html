@@ -1,8 +1,29 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
 {% set pageHeading = "Upload the planning application decision notice for the development" %}
+{% set showspec = "true" %}
+
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Upload the planning decision notice for the development',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4591',
+      error: '',
+      notes: 'updated content to clarify correct name of this notice.'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
