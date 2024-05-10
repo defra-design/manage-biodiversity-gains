@@ -1,8 +1,28 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
 {% set pageHeading = "Check the statutory biodiversity metric file" %}
+{% set showspec = "true" %}
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Check the statutory biodiversity metric file',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4341',
+      error: '',
+      notes: 'Added wording to the radio button text, so that users have to confirm they have uploaded the correct version of the metric.'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
