@@ -1,11 +1,31 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
 {% set pageHeading = serviceName %}
+{% set showspec = "true" %}
 
 {% set hideBackLink = true %}
 {% set hideSaveSection = true %}
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Register a biodiversity gain site',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4345',
+      error: '',
+      notes: 'Added wording to tasklist page to let users know they can save the application by completing each page and come back to it another time. '
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
