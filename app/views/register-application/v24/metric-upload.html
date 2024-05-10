@@ -1,8 +1,28 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
 {% set pageHeading = "Upload the statutory biodiversity metric calculations for the biodiversity gain site" %}
+{% set showspec = "true" %}
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Upload the statutory biodiversity metric calculations for the biodiversity gain site',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4341',
+      error: '',
+      notes: 'Updated content throughout page, to clarify which metric to upload. Moved guidance up from its previous position hidden in an accordion into the main body text, to make it more visible.'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
