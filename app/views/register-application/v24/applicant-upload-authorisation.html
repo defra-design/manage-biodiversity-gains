@@ -1,8 +1,28 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
 {% set pageHeading = "Upload written authorisation to apply" %}
+{% set showspec = "true" %}
 
 {% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Upload written authorisation to apply',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4818',
+      error: '',
+      notes: 'Updated bulleted list of what it must include. Also moved info on what to do if you have no authorisation out of accordion and linked to the correct form. Also covered in Jira 4340'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
