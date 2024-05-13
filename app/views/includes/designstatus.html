@@ -28,8 +28,14 @@
 			<dt>Content designer</dt>
 			<dd><a href="mailto:{{ writer }}?subject=Help with prototype">{{ writer }}</a></dd>
 			{% if jira %}
-			<dt>Jira ticket</dt>
-			<dd><a href="https://eaflood.atlassian.net/browse/BNGP-{{ jira }}" target="_blank">https://eaflood.atlassian.net/browse/BNGP-{{ jira }}</a></dd>
+			{% set tickets = jira %}
+			{% set ticketnumber = tickets.split(',') %}
+			<dt>Jira ticket(s)</dt>
+			<dd>
+				{% for item in ticketnumber %}
+				<a href="https://eaflood.atlassian.net/browse/BNGP-{{ item }}" target="_blank">https://eaflood.atlassian.net/browse/BNGP-{{ item }}</a><br>
+				{% endfor %}
+			</dd>
 			{% endif %}
 			<dt>Notes</dt>
 			<dd>{{ notes | safe }}</dd>
