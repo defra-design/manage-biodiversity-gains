@@ -20,7 +20,7 @@
 			<dt>Errors</dt>
 			<dd><label for="showerrors">Show errors</label><input type="checkbox" id="showerrors" name="showerrors" /></dd>
 			<dt>Error message</dt>
-			<dd>{{ errormessage }}</dd>
+			<dd>{{ errormessage | safe }}</dd>
 			<dt>Link to this page</dt>
 			<dd><a href="{{ heroku }}{{ protolink }}">{{ heroku }}{{ protolink }}</a></dd>
 			<dt>Interaction designer</dt>
