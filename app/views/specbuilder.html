@@ -1,0 +1,140 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ {{ serviceName }} – Design spec builder
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- form builder -->
+      
+      <style>
+      
+      #preview {
+        white-space: pre-wrap; /* Maintains whitespace formatting */
+        background: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+      }
+      
+      #dataForm label {
+        font-weight:600;
+        display:block;
+        margin-bottom:0.5rem;
+      }
+    
+      </style>
+      
+      <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Configure your design spec
+        </h1>
+      </legend>
+      
+      <form id="dataForm">
+         <div class="govuk-form-group">
+            <label class="govuk-label" for="status">Status</label>
+            <select class="govuk-select" id="status" name="status">
+                <option value="design">Design</option>
+                <option value="ready for review">Ready for Review</option>
+                <option value="dev">Dev</option>
+            </select>
+        </div>
+      
+       <div class="govuk-form-group">
+          <label class="govuk-label" for="pageurl">Page URL</label>
+          <input class="govuk-input" type="text" id="pageurl" name="pageurl">
+      </div>
+      
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="pagetitle">Page Title</label>
+          <input class="govuk-input" type="text" id="pagetitle" name="pagetitle">
+      </div>
+      
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="ixd">IXD</label>
+          <input class="govuk-input" type="text" id="ixd" name="ixd">
+      </div>
+      
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="cd">Content designer</label>
+          <input class="govuk-input" type="text" id="cd" name="cd">
+      </div>
+      
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="jira">JIRA (enter ticket numbers separated with a comma)</label>
+          <input class="govuk-input" type="text" id="jira" name="jira" placeholder="1234,4567,3421">
+      </div>
+      
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="error">Error</label>
+          <textarea class="govuk-textarea" id="error" name="error" maxlength="500" rows="4" cols="50"></textarea>
+      </div>
+      
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="notes">Notes</label>
+          <textarea class="govuk-textarea" id="notes" name="notes" maxlength="1000" rows="6" cols="50"></textarea>
+      </div>
+      
+      </form>
+      
+      </fieldset>
+      
+      <div id="preview"></div>
+      
+      <script>
+        
+        function escapeHtml(text) {
+            var map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+        
+        function processData() {
+            var formData = {
+                status: document.getElementById('status').value,
+                pageurl: escapeHtml(document.getElementById('pageurl').value),
+                pagetitle: escapeHtml(document.getElementById('pagetitle').value),
+                ixd: escapeHtml(document.getElementById('ixd').value),
+                cd: escapeHtml(document.getElementById('cd').value),
+                jira: escapeHtml(document.getElementById('jira').value),
+                error: escapeHtml(document.getElementById('error').value).replace(/\n/g, '<p>'),
+                notes: escapeHtml(document.getElementById('notes').value).replace(/\n/g, '<p>')
+            };
+        
+            var formattedString = "{\n";
+            for (var key in formData) {
+                formattedString += "    " + key + ": \"" + formData[key] + "\",\n";
+            }
+            formattedString = formattedString.trimEnd().slice(0, -1) + "\n}"; // Removes the last comma and closes the bracket
+        
+            document.getElementById('preview').textContent = formattedString;
+        }
+        
+        document.getElementById('dataForm').addEventListener('input', processData);
+        
+      </script>
+      
+      <!-- form builder -->
+
+    </div>
+  </div>
+
+{% endblock %}
