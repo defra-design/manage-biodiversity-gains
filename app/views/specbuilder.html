@@ -107,21 +107,81 @@
             return text.replace(/[&<>"']/g, function(m) { return map[m]; });
         }
         
+        function escapeAttribute(text) {
+            // Specifically escape quotes for attributes
+            return text.replace(/"/g, '&quot;');
+        }
+        
+        function escapeForJson(text) {
+            return text.replace(/"/g, '\\"'); // Escape double quotes for JSON string values
+        }
+        
+        function markdownToHtml(md) {
+            // Convert to escaped HTML first
+            md = escapeHtml(md);
+        
+            // Markdown transformations for bold, italic, and links
+            md = md.replace(/(\*\*)(.*?)\1/g, '<strong>$2</strong>')
+                   .replace(/(\*)(.*?)\1/g, '<em>$2</em>');
+        
+            // Extract markdown links, handle escaping
+            md = md.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, function(match, text, url) {
+                return `<a href="${escapeAttribute(url)}">${text}</a>`;
+            });
+        
+            // Handling lists
+            let lines = md.split('\n');
+            let inOrderedList = false;
+            let inUnorderedList = false;
+            let html = [];
+            
+            lines.forEach(line => {
+                if (line.match(/^\d+\.\s+(.*)$/)) {
+                    if (!inOrderedList) {
+                        html.push('<ol>');
+                        inOrderedList = true;
+                    }
+                    html.push(`<li>${RegExp.$1}</li>`);
+                } else if (line.match(/^-\s+(.*)$/)) {
+                    if (!inUnorderedList) {
+                        html.push('<ul>');
+                        inUnorderedList = true;
+                    }
+                    html.push(`<li>${RegExp.$1}</li>`);
+                } else {
+                    if (inOrderedList) {
+                        html.push('</ol>');
+                        inOrderedList = false;
+                    }
+                    if (inUnorderedList) {
+                        html.push('</ul>');
+                        inUnorderedList = false;
+                    }
+                    html.push(`<p>${line}</p>`);
+                }
+            });
+        
+            if (inOrderedList) html.push('</ol>');
+            if (inUnorderedList) html.push('</ul>');
+        
+            return html.join('');
+        }
+        
         function processData() {
             var formData = {
                 status: document.getElementById('status').value,
-                pageurl: escapeHtml(document.getElementById('pageurl').value),
-                pagetitle: escapeHtml(document.getElementById('pagetitle').value),
-                ixd: escapeHtml(document.getElementById('ixd').value),
-                cd: escapeHtml(document.getElementById('cd').value),
-                jira: escapeHtml(document.getElementById('jira').value),
-                error: escapeHtml(document.getElementById('error').value).replace(/\n/g, '<p>'),
-                notes: escapeHtml(document.getElementById('notes').value).replace(/\n/g, '<p>')
+                pageurl: escapeForJson(document.getElementById('pageurl').value.trim() || ""),
+                pagetitle: escapeForJson(document.getElementById('pagetitle').value.trim() || ""),
+                ixd: escapeForJson(document.getElementById('ixd').value.trim() || ""),
+                cd: escapeForJson(document.getElementById('cd').value.trim() || ""),
+                jira: escapeForJson(document.getElementById('jira').value.trim() || ""),
+                error: document.getElementById('error').value.trim() ? escapeForJson(markdownToHtml(document.getElementById('error').value)) : "",
+                notes: document.getElementById('notes').value.trim() ? escapeForJson(markdownToHtml(document.getElementById('notes').value)) : ""
             };
         
             var formattedString = "{\n";
             for (var key in formData) {
-                formattedString += "    " + key + ": \"" + formData[key] + "\",\n";
+                formattedString += `    ${key}: "${formData[key]}",\n`;
             }
             formattedString = formattedString.trimEnd().slice(0, -1) + "\n}"; // Removes the last comma and closes the bracket
         
