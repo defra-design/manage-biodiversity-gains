@@ -33,6 +33,10 @@
         display:block;
         margin-bottom:0.5rem;
       }
+      
+      #dataForm input:focus::placeholder {
+        color: transparent;
+      }
     
       </style>
       
@@ -64,7 +68,7 @@
       </div>
       
       <div class="govuk-form-group">
-          <label class="govuk-label" for="ixd">IXD</label>
+          <label class="govuk-label" for="ixd">Interaction designer</label>
           <input class="govuk-input" type="text" id="ixd" name="ixd">
       </div>
       
@@ -75,16 +79,16 @@
       
       <div class="govuk-form-group">
           <label class="govuk-label" for="jira">JIRA (enter ticket numbers separated with a comma)</label>
-          <input class="govuk-input" type="text" id="jira" name="jira" placeholder="1234,4567,3421">
+          <input class="govuk-input" type="text" id="jira" name="jira" placeholder="e.g 1234,4567,3421">
       </div>
       
       <div class="govuk-form-group">
-          <label class="govuk-label" for="error">Error</label>
-          <textarea class="govuk-textarea" id="error" name="error" maxlength="500" rows="4" cols="50"></textarea>
+          <label class="govuk-label" for="error">Error handling (Supports basic Markdown)</label>
+          <textarea class="govuk-textarea" id="error" name="error" maxlength="1000" rows="6" cols="50"></textarea>
       </div>
       
       <div class="govuk-form-group">
-          <label class="govuk-label" for="notes">Notes</label>
+          <label class="govuk-label" for="notes">Notes (Supports basic Markdown)</label>
           <textarea class="govuk-textarea" id="notes" name="notes" maxlength="1000" rows="6" cols="50"></textarea>
       </div>
       
