@@ -38,6 +38,15 @@
       #dataForm input:focus::placeholder {
         color: transparent;
       }
+      
+      #copyMessage {
+        color: green;
+        margin-top: 10px;
+      }
+      
+      #copyButton {
+        margin: 10px 0;
+      }
     
       </style>
       
@@ -100,8 +109,13 @@
       </div>
       
       <div class="govuk-grid-column-one-third">
+        
+      <h3 class="govuk-heading-s">Your Design spec</h3>
       
       <div id="preview"></div>
+      
+      <button id="copyButton" onclick="copyToJson()">Copy JSON</button>
+      <p id="copyMessage"></p>
       
       </div>
       
@@ -118,64 +132,52 @@
             return text.replace(/[&<>"']/g, function(m) { return map[m]; });
         }
         
-        function escapeAttribute(text) {
-            // Specifically escape quotes for attributes
-            return text.replace(/"/g, '&quot;');
-        }
-        
         function escapeForJson(text) {
             return text.replace(/"/g, '\\"'); // Escape double quotes for JSON string values
         }
         
         function markdownToHtml(md) {
-            // Convert to escaped HTML first
             md = escapeHtml(md);
-        
-            // Markdown transformations for bold, italic, and links
             md = md.replace(/(\*\*)(.*?)\1/g, '<strong>$2</strong>')
-                   .replace(/(\*)(.*?)\1/g, '<em>$2</em>');
-        
-            // Extract markdown links, handle escaping
-            md = md.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, function(match, text, url) {
-                return `<a href="${escapeAttribute(url)}">${text}</a>`;
+                   .replace(/(\*)(.*?)\1/g, '<em>$2</em>')
+                   .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, function(match, text, url) {
+                return `<a href="${escapeHtml(url)}">${text}</a>`;
             });
         
-            // Handling lists
-            let lines = md.split('\n');
-            let inOrderedList = false;
-            let inUnorderedList = false;
-            let html = [];
-            
+            const lines = md.split('\n');
+            let html = '';
+            let list = null; // 'ul' for unordered, 'ol' for ordered lists
+        
             lines.forEach(line => {
-                if (line.match(/^\d+\.\s+(.*)$/)) {
-                    if (!inOrderedList) {
-                        html.push('<ol>');
-                        inOrderedList = true;
+                const orderedMatch = line.match(/^(\d+)\.\s+(.*)$/);
+                const unorderedMatch = line.match(/^-\s+(.*)$/);
+        
+                if (orderedMatch) {
+                    if (list !== 'ol') {
+                        if (list) html += `</${list}>`;
+                        list = 'ol';
+                        html += '<ol>';
                     }
-                    html.push(`<li>${RegExp.$1}</li>`);
-                } else if (line.match(/^-\s+(.*)$/)) {
-                    if (!inUnorderedList) {
-                        html.push('<ul>');
-                        inUnorderedList = true;
+                    html += `<li>${orderedMatch[2]}</li>`;
+                } else if (unorderedMatch) {
+                    if (list !== 'ul') {
+                        if (list) html += `</${list}>`;
+                        list = 'ul';
+                        html += '<ul>';
                     }
-                    html.push(`<li>${RegExp.$1}</li>`);
+                    html += `<li>${unorderedMatch[1]}</li>`;
                 } else {
-                    if (inOrderedList) {
-                        html.push('</ol>');
-                        inOrderedList = false;
+                    if (list) {
+                        html += `</${list}>`;
+                        list = null;
                     }
-                    if (inUnorderedList) {
-                        html.push('</ul>');
-                        inUnorderedList = false;
-                    }
-                    html.push(`<p>${line}</p>`);
+                    html += `<p>${line}</p>`;
                 }
             });
         
-            if (inOrderedList) html.push('</ol>');
-            if (inUnorderedList) html.push('</ul>');
+            if (list) html += `</${list}>`;
         
-            return html.join('');
+            return html;
         }
         
         function processData() {
@@ -194,12 +196,23 @@
             for (var key in formData) {
                 formattedString += `    ${key}: "${formData[key]}",\n`;
             }
-            formattedString = formattedString.trimEnd().slice(0, -1) + "\n}"; // Removes the last comma and closes the bracket
-        
+            formattedString = formattedString.trimEnd().slice(0, -1) + "\n}";
             document.getElementById('preview').textContent = formattedString;
         }
         
+        function copyToJson() {
+            navigator.clipboard.writeText(document.getElementById('preview').textContent)
+                .then(() => {
+                    document.getElementById('copyMessage').textContent = 'Design spec copied!';
+                    setTimeout(() => {
+                        document.getElementById('copyMessage').textContent = ''; // Clear message after a few seconds
+                    }, 3000);
+                })
+                .catch(err => console.error('Failed to copy text: ', err));
+        }
+        
         document.getElementById('dataForm').addEventListener('input', processData);
+        processData(); // Initial processing to populate with default values
         
       </script>
       
