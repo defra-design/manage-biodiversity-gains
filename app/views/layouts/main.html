@@ -45,6 +45,11 @@ Below added to include accessible autocorrect globally
          text: "Manage your prototype"
        },
        {
+         href: "javascript:toggleDrawer()",
+         text: "Design spec",
+         attributes: { id : "speclink" }
+       },
+       {
          href: "/manage-prototype/clear-data",
          text: "Clear data"
        }
@@ -52,6 +57,18 @@ Below added to include accessible autocorrect globally
      visuallyHiddenTitle: "Footer links"
    }
  }) }}
+ 
+ {% set speccheck = showspec %}
+  {% if speccheck %}
+  <style>
+    li:has(#speclink) { display: inline-block }
+  </style>
+  {% else %}
+  <style>
+     li:has(#speclink) { display: none }
+   </style>
+  {% endif %}
+ 
 {% endblock %}
 
 
