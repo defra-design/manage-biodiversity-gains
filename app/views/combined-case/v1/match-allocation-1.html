@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     <div class="govuk-form-group">
+       <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+           <span class="govuk-caption-l">Step 1 of 3</span>
+           <h1 class="govuk-fieldset__heading">
+             Match available habitats
+           </h1>
+         </legend>
+         <div id="signIn-hint" class="govuk-hint">
+           Choose which available habitat best matches to allocate against your:
+         </div>
+         <div class="govuk-inset-text">Grassland - Other neutral grassland (2 hectares / Moderate Condition)</div>
+         <div class="govuk-radios" data-module="govuk-radios">
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+             <label class="govuk-label govuk-radios__label" for="signIn">
+               Grassland - Other neutral grassland
+             </label>
+             <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+               1.8 hectares / Moderate Condition
+             </div>
+           </div>
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+             <label class="govuk-label govuk-radios__label" for="signIn-2">
+               <strong class="govuk-tag govuk-tag--turquoise">
+                 Good match
+               </strong>&nbsp;<br>Grassland - Other neutral grassland
+             </label>
+             <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+               2.0 hectares / Moderate Condition
+             </div>
+           </div>
+         </div>
+         <div class="govuk-form-group govuk-!-static-margin-top-6">
+           <button type="submit" class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </div>
+       </fieldset>
+     </div>
+
+    </div>
+  </div>
+
+{% endblock %}
