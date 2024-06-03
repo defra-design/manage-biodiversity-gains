@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "register-application/v24/layout-register-application.html" %}
 
 {% set showspec = "true" %}
 
@@ -49,14 +49,15 @@
            <h1 class="govuk-fieldset__heading">
              {{ pageHeading }}
            </h1>
+           <span class="govuk-hint">(Taken from enhanced habitats cell ref B6 from your metric)</span>
          </legend>
-         <div id="signIn-hint" class="govuk-hint">
-           Choose which available habitat best matches to allocate against your:
+         <div id="signIn-hint">
+           <p>Only one habitat matches to allocate against your:</p>
          </div>
          <div class="govuk-inset-text">Woodland and forest - Lowland mixed deciduous woodland (20 hectares / Poor Condition)</div>
          <div class="govuk-radios" data-module="govuk-radios">
            <div class="govuk-radios__item">
-             <input class="govuk-radios__input" id="match-woodlandscrub-0.8" name="match-woodlandscrub-{{ pagenumber }}" type="radio" value="5 hectares / Moderate Condition" aria-describedby="match-woodlandscrub-0.8-hint">
+             <input checked="checked" class="govuk-radios__input" id="match-woodlandscrub-0.8" name="match-woodlandscrub-{{ pagenumber }}" type="radio" value="5 hectares / Moderate Condition" aria-describedby="match-woodlandscrub-0.8-hint">
              <label class="govuk-label govuk-radios__label" for="match-woodlandscrub-0.8">
                Woodland and forest - Lowland mixed deciduous woodland
              </label>
@@ -64,7 +65,7 @@
                5 hectares / Moderate Condition
              </div>
            </div>
-           <div class="govuk-radios__item">
+           <!--<div class="govuk-radios__item">
              <input class="govuk-radios__input" id="match-woodlandscrub-0.2" name="match-woodlandscrub-{{ pagenumber }}" type="radio" value="0.5 hectares / Medium Condition" aria-describedby="match-woodlandscrub-0.2-hint">
              <label class="govuk-label govuk-radios__label" for="match-woodlandscrub-0.2">
                Woodland and forest - Lowland mixed deciduous woodland
@@ -72,7 +73,7 @@
              <div id="match-woodlandscrub-2.0-hint" class="govuk-hint govuk-radios__hint">
                0.5 hectares / Medium Condition
              </div>
-           </div>
+           </div>-->
          </div>
          <div class="govuk-form-group govuk-!-static-margin-top-6">
            <button type="submit" class="govuk-button" data-module="govuk-button">

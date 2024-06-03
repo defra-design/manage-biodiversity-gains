@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "register-application/v24/layout-register-application.html" %}
 
 {% set showspec = "true" %}
 
@@ -49,11 +49,12 @@
            <h1 class="govuk-fieldset__heading">
              {{ pageHeading }}
            </h1>
+           <span class="govuk-hint">(Taken from enhanced habitats cell ref B2 from your metric)</span>
          </legend>
-         <div id="signIn-hint" class="govuk-hint">
-           Choose which available habitat best matches to allocate against your:
+         <div id="signIn-hint">
+           <p>Choose which available habitat best matches to allocate against your:</p>
          </div>
-         <div class="govuk-inset-text">Grassland - Other neutral grassland (2 hectares / Moderate Condition)</div>
+         <div class="govuk-inset-text">Grassland - Other neutral grassland (2 hectares / Moderate Condition )</div>
          <div class="govuk-radios" data-module="govuk-radios">
            <div class="govuk-radios__item">
              <input class="govuk-radios__input" id="match-grassland-1.8" name="match-grassland-{{ pagenumber }}" type="radio" value="1.8 hectares / Moderate Condition" aria-describedby="match-grassland-1.8-hint">
@@ -67,9 +68,9 @@
            <div class="govuk-radios__item">
              <input class="govuk-radios__input" id="match-grassland-2.0" name="match-grassland-{{ pagenumber }}" type="radio" value="2.0 hectares / Moderate Condition" aria-describedby="match-grassland-2.0-hint">
              <label class="govuk-label govuk-radios__label" for="match-grassland-2.0">
-               <strong class="govuk-tag govuk-tag--turquoise">
+               <!--<strong class="govuk-tag govuk-tag--turquoise">
                  Good match
-               </strong>&nbsp;<br>Grassland - Other neutral grassland
+               </strong>&nbsp;<br>-->Grassland - Other neutral grassland
              </label>
              <div id="match-grassland-2.0-hint" class="govuk-hint govuk-radios__hint">
                2.0 hectares / Moderate Condition
