@@ -45,7 +45,7 @@
                    </a>
                  </div>
                  <div class="govuk-task-list__status" id="landowner-status">
-                   {% if data.landownershipFiles | length > 0 %}<span class="completed">Completed</span>{% else %}<span class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</span>{% endif %} 
+                   {% if data['landowner-check'] %}<span class="completed">Completed</span>{% else %}<span class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</span>{% endif %} 
                  </div>
                </li>
                <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">

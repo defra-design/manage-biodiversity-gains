@@ -1,0 +1,94 @@
+{% extends "register-application/v24/layout-register-application.html" %}
+
+{% set pageHeading = "Upload written authorisation to apply" %}
+{% set showspec = "true" %}
+
+{% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Upload written authorisation to apply',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4818',
+      error: '',
+      notes: 'Updated bulleted list of what it must include. Also moved info on what to do if you have no authorisation out of accordion and linked to the correct form. Also covered in Jira 4340'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageHeading }}
+      </h1>
+      
+      <form method="post" action="./applicant-upload-check">
+        {% if data["applicant-type"] == "individual" %}
+        {% set landowner = (data["applicant-f-name"]or "Jo" )+" "+data["applicant-m-name"]+" "+(data["applicant-l-name"] or "Johnson") %}
+        {% else %}
+         {% set landowner = data["applicant-org-name"] or "Acme farming inc" %}
+        {% endif %}
+        <div id="landowner-certificate-upload-hint">
+          <p>It must include:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>a written statement confirming <strong>{{landowner}}'s</strong> authorisation for you to apply on their behalf, dated within the last 2 months</li>
+            {% if data["applicant-type"] == "organisation" %}
+            <li>the name and signature of a representative of Acme Farming Inc</li>
+            {% else %}
+            <li>their name and signature</li>
+            {% endif %}
+            <!-- <li>the name and signature of any other landowner or leaseholder listed on the legal agreement</li> -->
+            <li>the name and signature of any other landowner or leaseholder listed on the legal agreement</li>
+
+          </ul>
+
+          <p>The file should be:</p> 
+          <ul class="govuk-list govuk-list--bullet">
+            <li>a DOC, DOCX or PDF</li>
+            <li>no larger than 50MB</li>
+          </ul>
+        </div>  
+
+        {{ govukFileUpload({
+          id: "landowner-agent-upload",
+          name: "landowner-agent-upload",
+          label: {
+            text: "Upload a file",
+            classes:"govuk-visually-hidden"
+          }
+          
+        }) }}
+
+        <div class="govuk-inset-text">
+            <h3>What to do if you have no written authorisation</h3>
+            <p>You can <a href="https://www.gov.uk/government/publications/authorise-an-agent-to-act-your-behalf-form" target="_blank">download an 'Authorise an agent' form (opens in new tab)</a> and ask <strong>{{landowner}}</strong> to complete it.</p>
+            <p>You can then come back to this application and upload the completed form as written authorisation to apply.</p>            
+        </div>
+          
+         <div class="govuk-button-group">
+
+	{{ govukButton({
+	  text: data.dict["upload"],
+	  classes: "js-updload-button",
+	  attributes: {"aria-live":"polite"}
+	}) }}
+	
+	<a class="govuk-link" href="{{ data[latestVersion] }}signed-out.html">{{ data.dict["savelater"] }}</a>
+        
+</div>
+        
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
