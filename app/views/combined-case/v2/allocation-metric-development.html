@@ -1,0 +1,88 @@
+{% extends "register-application/v24/layout-register-application.html" %}
+
+{% set pageHeading = "Confirm the development project details" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageHeading }}
+      </h1>
+
+      <p>These details have been taken from the statutory biodiversity metric file the local planning authority reviewed with the development project's planning application.</p>
+
+      {{ govukSummaryList({
+        rows: [
+        
+          {
+            key: {
+              text: "Development project name"
+            },
+            value: {
+              text: data['development-name'] or "Fairfax Housing Project"
+            }
+          },
+          {
+            key: {
+              text: "Planning reference"
+            },
+            value: {
+              text: '22/01976/RJL'
+            }
+          },
+          {
+            key: {
+              text: "Planning authority"
+            },
+            value: {
+              text: data['lpa'] or 'Bradford City Council'
+            }
+          },
+          {
+            key: {
+              text: "Biodiversity gain site number"
+            },
+            value: {
+              text: 'BGS45673838'
+            }
+          }
+          
+        ]
+      }) }}
+
+
+     
+
+      <form method="post" action="./allocation-development-answer">
+
+        {{ govukRadios({
+          idPrefix: "allocation-development",
+          name: "allocation-development",
+          fieldset: {
+            legend: {
+              text: "Is this correct?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes~./allocation-metric-habitat",
+              text: "Yes"
+            },
+            {
+              value: "no~./allocation-metric-upload",
+              text: "No, upload a different file"
+            }
+          ]
+        }) }}
+        
+        {{ govukButton({ text: 'Save and continue' }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

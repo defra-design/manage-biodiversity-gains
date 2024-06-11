@@ -1,0 +1,99 @@
+{% extends "register-application/v24/layout-register-application.html" %}
+
+{% set showspec = "true" %}
+
+{% set pagenumber = 2 %}
+
+{% set pageHeading = "Match available habitats" %}
+
+{% block pageTitle %}
+  {{ pageHeading }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'design',
+      pageurl: '',
+      pagetitle: pageHeading,
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '',
+      error: '',
+      notes: ''
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     <div class="govuk-form-group">
+       <form action="match-allocation-3">
+       <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+           <span class="govuk-caption-l">Step 2 of 3</span>
+           <h1 class="govuk-fieldset__heading">
+             {{ pageHeading }}
+           </h1>
+           <span class="govuk-hint">(Taken from enhanced habitats cell ref B4 from your metric)</span>
+         </legend>
+         <div id="signIn-hint">
+          <p>Choose which available habitat best matches to allocate against your:</p>
+         </div>
+         <div class="govuk-inset-text">Heathland and shrub - Mixed scrub (0.05 hectares / Good Condition)</div>
+         <div class="govuk-radios" data-module="govuk-radios">
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="match-heathland-0.8" name="match-heathland-{{ pagenumber }}" type="radio" value="1.8 hectares / Moderate Condition" aria-describedby="match-heathland-0.8-hint">
+             <label class="govuk-label govuk-radios__label" for="match-heathland-0.8">
+               Heathland and shrub - Mixed scrub
+             </label>
+             <div id="match-heathland-1.8-hint" class="govuk-hint govuk-radios__hint">
+               0.08 hectares / Moderate Condition
+             </div>
+           </div>
+           <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="match-heathland-1.28" name="match-heathland-{{ pagenumber }}" type="radio" value="1.28 hectares / Moderate Condition" aria-describedby="match-heathland-1.28-hint">
+              <label class="govuk-label govuk-radios__label" for="match-heathland-1.28">
+                Heathland and shrub - Mixed scrub
+              </label>
+              <div id="match-heathland-1.8-hint" class="govuk-hint govuk-radios__hint">
+                1.28 hectares / Poor Condition
+              </div>
+            </div>
+           <div class="govuk-radios__item">
+             <input class="govuk-radios__input" id="match-heathland-0.2" name="match-heathland-{{ pagenumber }}" type="radio" value="2.0 hectares / Moderate Condition" aria-describedby="match-heathland-0.2-hint">
+             <label class="govuk-label govuk-radios__label" for="match-heathland-0.2">
+               Heathland and shrub - Mixed scrub
+             </label>
+             <div id="match-heathland-2.0-hint" class="govuk-hint govuk-radios__hint">
+               0.2 hectares / Good Condition
+             </div>
+           </div>
+         </div>
+         <div class="govuk-form-group govuk-!-static-margin-top-6">
+           <button type="submit" class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </div>
+       </fieldset>
+       </form>
+     </div>
+
+    </div>
+  </div>
+
+{% endblock %}
