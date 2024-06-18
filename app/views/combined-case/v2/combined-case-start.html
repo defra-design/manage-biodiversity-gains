@@ -1,0 +1,101 @@
+{% extends "register-application/v24/layout-register-application.html" %}
+
+{% set pageHeading = "What do you want to apply to do?" %}
+
+{% set showspec = "true" %}
+
+{% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: "design",
+      pageurl: "url",
+      pagetitle: "here is a page &quot;title&quot;",
+      ixd: "",
+      cd: "",
+      jira: "3456,6574,3454",
+      error: "here is some error text and <p><p>is on<p><p>multiple line and has &quot;quotes&quot; and &#039;single quotes&#039; ",
+      notes: ""
+  } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      You’re about to apply to register a biodiversity gain site
+    </h1>
+    
+    <p class="govuk-body">
+      You can also choose to record allocation of off-site gains to a development at the same time as registering the gain site.
+    </p>
+    <p class="govuk-body">
+      
+    </p>
+    <p class="govuk-body">
+      To allocate to a development and register a gain site at the same time, you'll need:
+    </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>all the documents needed to register a gain site</li>
+        <li>the <a href="https://www.gov.uk/guidance/biodiversity-metric-calculate-the-biodiversity-net-gain-of-a-project-or-development" class="govuk-link">completed statutory biodiversity metric tool</a> calculations:
+          <ul>
+            <li>for the site you want to register</li>
+            <li>which the local planning authority reviewed with the development project's planning application</li>
+          </ul>
+         </li>
+         <li>a planning application decision notice for the development project from your local planning authority</li>
+      </ul>
+
+      <p class="govuk-body">
+        It costs £639 to allocate and register at the same time.
+      </p>
+      <p class="govuk-body">
+        
+    
+    <form method="post">
+      {{ govukRadios({
+      name: "combined-case",
+      fieldset: {
+      legend: {
+      text: pageHeading,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      errorMessage: {
+        text: "Select if you are British, Irish or a citizen of a different country"
+      },
+
+      items: [
+      {
+      value: "register~./dashboard-register",
+      text: "Register a biodiversity gain site"
+      },
+      {
+      value: "combined~./dashboard-combined",
+      text: "Record allocation of off-site biodiversity gains to a development at the same time as registering the gain site"
+      }
+      ]
+      }) }}
+      {{ govukButton({
+      text: "Save and continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+<!--
+
+{
+value: "allocate~./dashboard-allocate",
+text: "record off-site gains for a new development"
+},
+  
+-->
