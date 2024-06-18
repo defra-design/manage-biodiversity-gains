@@ -1,12 +1,6 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
-{% set pageHeading = "Check the local land charge search certificate file" %}
-
-{% if data["combined-case"] == "combined" %}
-{% set tasklist = "task-list-combined" %}
-{% else %}
-{% set tasklist = "task-list" %}
-{% endif %}
+{% set pageHeading = "Check the habitat management and monitoring plan file" %}
 
 {% block content %}
 
@@ -26,17 +20,17 @@
               classes: "govuk-!-width-one-quarter"
             },
             value: {
-              text: data['local-land-charge-upload'] or 'local-land-charge.pdf'
+              text: data['management-plan-upload'] or 'habitat-management-plan.pdf'
             }
           }
         ]
       }) }}
 
-        <form method="post">
+      <form method="post" action="./management-plan-habitat-start-date">
 
         {{ govukRadios({
-          idPrefix: "local-land-charge-correct",
-          name: "local-land-charge-correct",
+          idPrefix: "management-plan-correct",
+          name: "management-plan-correct",
           fieldset: {
             legend: {
               text: "Is this the correct file?",
@@ -45,11 +39,11 @@
           },
           items: [
             {
-              value: "yes~task-list",
+              value: "yes",
               text: "Yes"
             },
             {
-              value: "no~./local-land-charge-upload",
+              value: "no~./management-plan-upload",
               text: "No, upload a different file"
             }
           ]

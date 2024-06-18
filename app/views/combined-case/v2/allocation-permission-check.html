@@ -1,11 +1,11 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
-{% set pageHeading = "Check the local land charge search certificate file" %}
+{% set pageHeading = "Check the planning decision notice file" %}
 
 {% if data["combined-case"] == "combined" %}
 {% set tasklist = "task-list-combined" %}
 {% else %}
-{% set tasklist = "task-list" %}
+{% set tasklist = "allocation/task-list-allocation" %}
 {% endif %}
 
 {% block content %}
@@ -26,17 +26,18 @@
               classes: "govuk-!-width-one-quarter"
             },
             value: {
-              text: data['local-land-charge-upload'] or 'local-land-charge.pdf'
+              text: data['metric-upload'] or 'decision-notice.pdf'
             }
           }
         ]
       }) }}
 
-        <form method="post">
+      <!-- Routing handled by "radio button redirect" -->
+      <form method="post" action="">
 
         {{ govukRadios({
-          idPrefix: "local-land-charge-correct",
-          name: "local-land-charge-correct",
+          idPrefix: "allocation-metric-correct",
+          name: "allocation-metric-correct",
           fieldset: {
             legend: {
               text: "Is this the correct file?",
@@ -46,16 +47,18 @@
           items: [
             {
               value: "yes~task-list",
-              text: "Yes"
+              text: "Yes, this is the correct file"
             },
             {
-              value: "no~./local-land-charge-upload",
+              value: "no~allocation-permission-upload",
               text: "No, upload a different file"
             }
           ]
         }) }}
         
         {{ govukButton({ text: 'Save and continue' }) }}
+
+        <input type="hidden" name="permission-details-uploaded" value="yes">
         
       </form>
 

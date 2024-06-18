@@ -1,12 +1,6 @@
 {% extends "register-application/v24/layout-register-application.html" %}
 
-{% set pageHeading = "Check the local land charge search certificate file" %}
-
-{% if data["combined-case"] == "combined" %}
-{% set tasklist = "task-list-combined" %}
-{% else %}
-{% set tasklist = "task-list" %}
-{% endif %}
+{% set pageHeading = "Check the scheme of works file" %}
 
 {% block content %}
 
@@ -26,17 +20,17 @@
               classes: "govuk-!-width-one-quarter"
             },
             value: {
-              text: data['local-land-charge-upload'] or 'local-land-charge.pdf'
+              text: data['sow-upload'] or 'sow-document.pdf'
             }
           }
         ]
       }) }}
 
-        <form method="post">
+      <form method="post" action="./legal-party-add-start">
 
         {{ govukRadios({
-          idPrefix: "local-land-charge-correct",
-          name: "local-land-charge-correct",
+          idPrefix: "sow-correct",
+          name: "sow-correct",
           fieldset: {
             legend: {
               text: "Is this the correct file?",
@@ -45,11 +39,11 @@
           },
           items: [
             {
-              value: "yes~task-list",
+              value: "yes",
               text: "Yes"
             },
             {
-              value: "no~./local-land-charge-upload",
+              value: "no~./legal-agreement-statement-of-works-upload-alt",
               text: "No, upload a different file"
             }
           ]
