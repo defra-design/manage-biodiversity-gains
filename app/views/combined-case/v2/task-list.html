@@ -62,7 +62,7 @@
                    {% if data['location-confirm'] %}<span class="completed">Completed</span>{% else %}<span class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</span>{% endif %} 
                  </div>
                </li>
-               {#
+               
                <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
                  <div class="govuk-task-list__name-and-hint">
                    {% if data['habitat-checked-data'] %}
@@ -74,10 +74,11 @@
                    </a>
                  </div>
                  <div class="govuk-task-list__status" id="habitat-status">
-                   {% if data['habitat-checked-data'] %}<span class="completed">Completed</span>{% else %}<span class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</span>{% endif %} 
+                   {% if data['metric-cc-uploaded'] %}<span class="completed">Completed</span>{% else %}<span class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</span>{% endif %} 
                  </div>
-               </li>#}
+               </li>
              </ul>
+             
              <h2 class="govuk-heading-m govuk-!-margin-top-5">Legal information</h2>
               <ul class="govuk-task-list">
                 <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
@@ -137,7 +138,7 @@
                 <!-- permission -->
                 <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
                   <div class="govuk-task-list__name-and-hint">
-                    <a href="upload-registration-metric" aria-describedby="your-details-status" id="upload-metric-file">
+                    <a href="upload-allocation-metric" aria-describedby="your-details-status" id="upload-metric-file">
                       Match available habitats
                     </a>
                   </div>
@@ -181,7 +182,7 @@
                   <div class="govuk-task-list__name-and-hint">
                    <span id="can-submit" style="display:none;">
                    <span class="app-task-list__task-name" >
-                     <a href="check-answers" aria-describedby="submit-application-status">
+                     <a href="allocation-check-answers" aria-describedby="submit-application-status">
                        Check your answers and submit
                      </a>
                    </span>
