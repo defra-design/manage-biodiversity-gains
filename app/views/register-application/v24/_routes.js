@@ -340,7 +340,7 @@ router.post('/legal-agreement-concov-landowner-org', function (req, res) {
      req.session.data.landowners.push(req.body);
   }
  
-  res.redirect('/register-application/v24/legal-agreement-concov-landowner-list')
+  res.redirect('legal-agreement-concov-landowner-list')
 })
 // Local land charge check
 router.post('/legal-agreement-concov-landowner-individual', function (req, res) {
