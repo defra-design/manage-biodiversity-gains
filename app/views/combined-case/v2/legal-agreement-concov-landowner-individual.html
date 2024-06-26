@@ -13,8 +13,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
-      {{ data | dump }}
-      
       <!-- action controled in ./_routes.js -->
       <form method="post" action="legal-agreement-concov-landowner-list" >
         <input type="hidden" name="landowner-type" value="{{data['landowner-type']}}">
