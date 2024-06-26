@@ -39,21 +39,25 @@
             value: {
               text: data['lpa'] or 'Bradford City Council'
             }
-          },
-          {
-            key: {
-              text: "Biodiversity gain site number"
-            },
-            value: {
-              text: 'BGS45673838'
-            }
           }
           
         ]
       }) }}
 
 
+     <!-- keep in case we need to re-add 
      
+     ,
+     {
+       key: {
+         text: "Biodiversity gain site number"
+       },
+       value: {
+         text: 'BGS45673838'
+       }
+     }
+     
+    -->
 
       <form method="post" action="./allocation-development-answer">
 
@@ -72,7 +76,7 @@
               text: "Yes"
             },
             {
-              value: "no~./allocation-metric-upload",
+              value: "no~./upload-allocation-metric",
               text: "No, upload a different file"
             }
           ]
