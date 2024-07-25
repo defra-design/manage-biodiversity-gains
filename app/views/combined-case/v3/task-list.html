@@ -121,15 +121,25 @@
                 </li>
               </ul>
               
+              <style>
+                
+                .disablelink {
+                  color:#0b0c0c!important;
+                  text-decoration: none;
+                  pointer-events: none;
+                }
+                
+              </style>
+              
               <!-- allocation -->
               
-              <h2 class="govuk-heading-m govuk-!-margin-top-5">Allocation information {{ allocationisgo }}</h2>
+              <h2 class="govuk-heading-m govuk-!-margin-top-5">Allocation information</h2>
               
               <ul class="govuk-task-list">
                 <!-- permission -->
                 <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
                   <div class="govuk-task-list__name-and-hint">
-                    <a href="allocation-permission-upload.html" aria-describedby="permission-status" id="add-permission">
+                    <a href="allocation-permission-upload.html" aria-describedby="permission-status" id="add-permission" {% if allocationisgo == "" %}class="disablelink"{% endif %}>
                       Add planning decision notice
                     </a>
                   </div>
@@ -140,7 +150,7 @@
                     </span>
                     {% else %}
                     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
-                      Not started
+                      {% if allocationisgo == "" %}Cannot start yet{% else %}Not started{% endif %}
                     </strong>
                     {% endif %}
                   </div>
@@ -148,7 +158,7 @@
                 <!-- permission -->
                 <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
                   <div class="govuk-task-list__name-and-hint">
-                    <a href="upload-allocation-metric" aria-describedby="your-details-status" id="upload-metric-file">
+                    <a href="upload-allocation-metric" aria-describedby="your-details-status" id="upload-metric-file" {% if allocationisgo == "" %}class="disablelink"{% endif %}>
                       Match available habitats
                     </a>
                   </div>
@@ -159,14 +169,14 @@
                     </span>
                     {% else %}
                     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
-                      Not started
+                      {% if allocationisgo == "" %}Cannot start yet{% else %}Not started{% endif %}
                     </strong>
                     {% endif %}
                   </div>
                 </li>
                 <li class="govuk-task-list__item govuk-task-list__item--with-link task-list-required">
                   <div class="govuk-task-list__name-and-hint">
-                    <a href="local-planning-authority" aria-describedby="your-details-status" id="confirm-development-details">
+                    <a href="local-planning-authority" aria-describedby="your-details-status" id="confirm-development-details" {% if allocationisgo == "" %}class="disablelink"{% endif %}>
                       Confirm development and habitat details
                     </a>
                   </div>
@@ -177,7 +187,7 @@
                     </span>
                     {% else %}
                     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="add-your-details-status">
-                      Not started
+                      {% if allocationisgo == "" %}Cannot start yet{% else %}Not started{% endif %}
                     </strong>
                     {% endif %}
                   </div>
