@@ -18,6 +18,16 @@
       <p class="govuk-body app-!-secondary-text-colour govuk-!-margin-bottom-4">You have completed <span class="task-progress-completed">0</span> of <span class="task-progress-to-complete-total">7</span> sections.</p>
       <div class="govuk-inset-text">Your application is saved as you complete each page. You can leave and come back at any time to continue the application.</div>
 
+      {% if data['details-confirm'] or data['use-defra-id'] == "yes" and data['landowner-check'] and data['location-confirm'] and data['metric-cc-uploaded'] and data['legal-agreement-confirm'] and data['local-land-charge-correct'] %}
+      
+      {% set allocationisgo = "true" %}
+      
+      {% else %}
+      
+      {% set allocationisgo = "" %}
+      
+      {% endif %}
+
 
      <!-- new GDS pattern for task list -->
      
@@ -113,7 +123,7 @@
               
               <!-- allocation -->
               
-              <h2 class="govuk-heading-m govuk-!-margin-top-5">Allocation information</h2>
+              <h2 class="govuk-heading-m govuk-!-margin-top-5">Allocation information {{ allocationisgo }}</h2>
               
               <ul class="govuk-task-list">
                 <!-- permission -->
