@@ -1,0 +1,98 @@
+{% extends "register-application/v24/layout-register-application.html" %}
+
+{% set pageHeading = "Confirm your matched habitats" %}
+
+{% block pageTitle %}
+   {{ pageHeading }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageHeading }}
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Grassland - Other neutral grassland (2 hectares / Moderate Condition)"
+            },
+            value: {
+              text: data["match-grassland-1"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "match-allocation-1",
+                  text: "Change",
+                  visuallyHiddenText: "Grassland - Other neutral grassland (2 hectares / Moderate Condition)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Heathland and shrub - Mixed scrub (0.05 hectares / Good Condition)"
+            },
+            value: {
+              text: data["match-heathland-2"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "match-allocation-2",
+                  text: "Change",
+                  visuallyHiddenText: "Heathland and shrub - Mixed scrub (0.05 hectares / Good Condition)"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Woodland and forest - Lowland mixed deciduous woodland (20 hectares / Poor Condition)"
+            },
+            value: {
+              text: data["match-woodlandscrub-3"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "match-allocation-3",
+                  text: "Change",
+                  visuallyHiddenText: "Woodland and forest - Lowland mixed deciduous woodland (20 hectares / Poor Condition)"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Submit your allocations
+      </h2>
+
+      <form action="task-list" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+        
+        <input type="hidden" name="match-complete" value="yes" />
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
