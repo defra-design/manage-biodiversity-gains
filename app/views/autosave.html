@@ -1,0 +1,207 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  	
+	<!-- Form 1 -->
+	<div class="govuk-form-group">
+	  <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+
+	  <form action="autosave" class="autosave" target="hidden-frame">
+		  
+		  <!-- this ID is what identifies each block of data per form -->
+		  <fieldset class="govuk-fieldset">
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+			  <h1 class="govuk-fieldset__heading">
+				What is your address? (dummy form to test autosave)
+			  </h1>
+			</legend>
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="address-line-1">
+				Address line 1
+			  </label>
+			  <input class="govuk-input" id="address-line-1" name="autosavetestaddressLine1" type="text" autocomplete="address-line1">
+			</div>
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="address-line-2">
+				Address line 2 (optional)
+			  </label>
+			  <input class="govuk-input" id="address-line-2" name="autosavetestaddressLine2" type="text" autocomplete="address-line2">
+			</div>
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="address-town">
+				Town or city
+			  </label>
+			  <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="autosavetestaddressTown" type="text" autocomplete="address-level2">
+			</div>
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="address-county">
+				County (optional)
+			  </label>
+			  <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="autosavetestaddressCounty" type="text">
+			</div>
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="address-postcode">
+				Postcode
+			  </label>
+			  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="autosavetestaddressPostcode" type="text" autocomplete="postal-code">
+			</div>
+
+			<div class="govuk-form-group">
+			  <label class="govuk-label" for="location">
+				Choose location
+			  </label>
+			  <div id="location-hint" class="govuk-hint">
+				This can be different to where you went before
+			  </div>
+			  <select class="govuk-select" id="location" name="autosavetestlocation" aria-describedby="location-hint">
+				<option value="choose" selected>Choose location</option>
+				<option value="eastmidlands">East Midlands</option>
+				<option value="eastofengland">East of England</option>
+				<option value="london">London</option>
+				<option value="northeast">North East</option>
+				<option value="northwest">North West</option>
+				<option value="southeast">South East</option>
+				<option value="southwest">South West</option>
+				<option value="westmidlands">West Midlands</option>
+				<option value="yorkshire">Yorkshire and the Humber</option>
+			  </select>
+			</div>
+
+			<div class="govuk-form-group">
+			  <fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+				  <h1 class="govuk-fieldset__heading">
+					Where do you live?
+				  </h1>
+				</legend>
+				<div class="govuk-radios" data-module="govuk-radios">
+				  <div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="whereDoYouLive" name="autosavetestwhereDoYouLive" type="radio" value="england">
+					<label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+					  England
+					</label>
+				  </div>
+				  <div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="whereDoYouLive-2" name="autosavetestwhereDoYouLive" type="radio" value="scotland">
+					<label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+					  Scotland
+					</label>
+				  </div>
+				  <div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="whereDoYouLive-3" name="autosavetestwhereDoYouLive" type="radio" value="wales">
+					<label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+					  Wales
+					</label>
+				  </div>
+				  <div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="whereDoYouLive-4" name="autosavetestwhereDoYouLive" type="radio" value="northern-ireland">
+					<label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+					  Northern Ireland
+					</label>
+				  </div>
+				</div>
+			  </fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+			  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+				  <h1 class="govuk-fieldset__heading">
+					Which types of waste do you transport?
+				  </h1>
+				</legend>
+				<div id="waste-hint" class="govuk-hint">
+				  Select all that apply.
+				</div>
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+				  <div class="govuk-checkboxes__item">
+					<input class="govuk-checkboxes__input" id="waste" name="autosavetestwaste" type="checkbox" value="carcasses">
+					<label class="govuk-label govuk-checkboxes__label" for="waste">
+					  Waste from animal carcasses
+					</label>
+				  </div>
+				  <div class="govuk-checkboxes__item">
+					<input class="govuk-checkboxes__input" id="waste-2" name="autosavetestwaste" type="checkbox" value="mines">
+					<label class="govuk-label govuk-checkboxes__label" for="waste-2">
+					  Waste from mines or quarries
+					</label>
+				  </div>
+				  <div class="govuk-checkboxes__item">
+					<input class="govuk-checkboxes__input" id="waste-3" name="autosavetestwaste" type="checkbox" value="farm">
+					<label class="govuk-label govuk-checkboxes__label" for="waste-3">
+					  Farm or agricultural waste
+					</label>
+				  </div>
+				</div>
+			  </fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+			  <h1 class="govuk-label-wrapper">
+				<label class="govuk-label govuk-label--l" for="more-detail">
+				  Can you provide more detail?
+				</label>
+			  </h1>
+			  <div id="more-detail-hint" class="govuk-hint">
+				Do not include personal or financial information, like your National Insurance number or credit card details.
+			  </div>
+			  <textarea class="govuk-textarea" id="more-detail" name="autosavetestmoreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+			</div>
+
+		  </fieldset>
+		  <div class="govuk-form-group">
+			<button type="submit" class="govuk-button govuk-!-margin-top-8" data-module="govuk-button">
+			  Save and continue
+			</button>
+		  </div>
+		</form>
+
+	  </fieldset>
+	  
+
+	</div>
+
+	<div class="govuk-grid-column-one-third">
+		
+		{{ data | dump }}
+		
+		<!-- Hidden iframe for form submission -->
+		<iframe name="hidden-frame" class="hidden-frame"></iframe>
+		
+	</div>
+	
+	
+  </div>
+  
+  <script>
+	  document.addEventListener('DOMContentLoaded', function() {
+		  // Function to submit the form
+		  function submitForm(form) {
+			  console.log('Submitting form:', form);
+			  form.submit(); // Programmatically submit the form
+		  }
+  
+		  // Attach event listeners to all inputs in forms with the class 'autosave'
+		  document.querySelectorAll('.autosave input, .autosave textarea, .autosave select').forEach(function(input) {
+			  input.addEventListener('input', function() {
+				  const form = this.closest('form.autosave'); // Get the parent form
+				  submitForm(form); // Call submit function
+			  });
+  
+			  input.addEventListener('change', function() {
+				  const form = this.closest('form.autosave'); // Get the parent form
+				  submitForm(form); // Call submit function
+			  });
+		  });
+  
+		  // Debugging: log event attachment
+		  console.log('Event listeners attached to form fields');
+	  });
+  </script>
+
+
+{% endblock %}
