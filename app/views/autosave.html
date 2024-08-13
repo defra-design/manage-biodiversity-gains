@@ -175,45 +175,40 @@
   </div>
   
   <script>
-	  
-	  // Select all forms with the class "autosave"
-	  const forms = document.querySelectorAll('form.autosave');
-	  
-	  // Function to save a single form
+  
 	  async function saveForm(form) {
+  
 		  const formData = new FormData(form);
-		  console.log(formData);
-		  const response = await fetch('/autosave', {
+		  const jsonData = Object.fromEntries(formData);
+  
+		  console.log('Sending data:', jsonData);
+  
+		  const response = await fetch('/autosave2', {
 			  method: 'POST',
-			  body: formData,
+			  headers: {
+				  'Content-Type': 'application/json',
+			  },
+			  body: JSON.stringify(jsonData)
 		  });
-	  
-		  // Handle the response as needed
-		  if (response.ok) {
-			  console.log('Form saved successfully');
-		  } else {
-			  debugger;
-			  console.error('Error saving form');
-		  }
+  
 	  }
-	  
-	  // Function to add event listeners to a form
-	  function addAutosaveListeners(form) {
-		  // Trigger saveForm on input, change, and keyup events
-		  const saveHandler = async () => {
-			  await saveForm(form);
+  
+	  let saveTimer;
+  
+	  const handleFormChange = (event) => {
+		  const form = event.target.closest('form');
+  
+		  if (form && form.classList.contains('autosave')) {
+			  clearTimeout(saveTimer);
+			  saveTimer = setTimeout(() => {
+				  saveForm(form);
+			  }, 5000);
 		  };
-	  
-		  form.addEventListener('input', saveHandler);  // For text inputs, textareas
-		  form.addEventListener('change', saveHandler); // For select inputs, checkboxes, radio buttons, file inputs
-		  form.addEventListener('keyup', saveHandler);  // To capture typing in text inputs and textareas
 	  }
-	  
-	  // Attach event listeners to each form
-	  forms.forEach(form => {
-		  addAutosaveListeners(form);
-	  });
-
+  
+	  document.addEventListener('change', handleFormChange);
+	  document.addEventListener('keyup', handleFormChange);
+  
   </script>
 
 
