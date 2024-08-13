@@ -182,7 +182,7 @@
 	  // Function to save a single form
 	  async function saveForm(form) {
 		  const formData = new FormData(form);
-		  console.dir(formData);
+		  console.log(formData);
 		  const response = await fetch('/autosave', {
 			  method: 'POST',
 			  body: formData,
