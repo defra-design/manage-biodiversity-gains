@@ -10,7 +10,7 @@
 	<div class="govuk-form-group">
 	  <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
 
-	  <form action="autosave" class="autosave" target="hidden-frame">
+	  <form action="autosave" class="autosave">
 		  
 		  <!-- this ID is what identifies each block of data per form -->
 		  <fieldset class="govuk-fieldset">
@@ -169,38 +169,51 @@
 		
 		{{ data | dump }}
 		
-		<!-- Hidden iframe for form submission -->
-		<iframe name="hidden-frame" class="hidden-frame"></iframe>
-		
 	</div>
 	
 	
   </div>
   
   <script>
-	  document.addEventListener('DOMContentLoaded', function() {
-		  // Function to submit the form
-		  function submitForm(form) {
-			  console.log('Submitting form:', form);
-			  form.submit(); // Programmatically submit the form
-		  }
-  
-		  // Attach event listeners to all inputs in forms with the class 'autosave'
-		  document.querySelectorAll('.autosave input, .autosave textarea, .autosave select').forEach(function(input) {
-			  input.addEventListener('input', function() {
-				  const form = this.closest('form.autosave'); // Get the parent form
-				  submitForm(form); // Call submit function
-			  });
-  
-			  input.addEventListener('change', function() {
-				  const form = this.closest('form.autosave'); // Get the parent form
-				  submitForm(form); // Call submit function
-			  });
+	  
+	  // Select all forms with the class "autosave"
+	  const forms = document.querySelectorAll('form.autosave');
+	  
+	  // Function to save a single form
+	  async function saveForm(form) {
+		  const formData = new FormData(form);
+		  console.dir(formData);
+		  const response = await fetch('/autosave', {
+			  method: 'POST',
+			  body: formData,
 		  });
-  
-		  // Debugging: log event attachment
-		  console.log('Event listeners attached to form fields');
+	  
+		  // Handle the response as needed
+		  if (response.ok) {
+			  console.log('Form saved successfully');
+		  } else {
+			  debugger;
+			  console.error('Error saving form');
+		  }
+	  }
+	  
+	  // Function to add event listeners to a form
+	  function addAutosaveListeners(form) {
+		  // Trigger saveForm on input, change, and keyup events
+		  const saveHandler = async () => {
+			  await saveForm(form);
+		  };
+	  
+		  form.addEventListener('input', saveHandler);  // For text inputs, textareas
+		  form.addEventListener('change', saveHandler); // For select inputs, checkboxes, radio buttons, file inputs
+		  form.addEventListener('keyup', saveHandler);  // To capture typing in text inputs and textareas
+	  }
+	  
+	  // Attach event listeners to each form
+	  forms.forEach(form => {
+		  addAutosaveListeners(form);
 	  });
+
   </script>
 
 
