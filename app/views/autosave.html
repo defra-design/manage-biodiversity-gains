@@ -23,7 +23,7 @@
 			  <label class="govuk-label" for="address-line-1">
 				Address line 1
 			  </label>
-			  <input class="govuk-input" id="address-line-1" name="autosavetestaddressLine1" type="text" autocomplete="address-line1">
+			  <input class="govuk-input" id="address-line-1" name="autosavetestaddressLine1" type="text" autocomplete="address-line1" value="{{data['autosavetestaddressLine1']}}">
 			</div>
 			<div class="govuk-form-group">
 			  <label class="govuk-label" for="address-line-2">
@@ -183,7 +183,7 @@
   
 		  console.log('Sending data:', jsonData);
   
-		  const response = await fetch('/autosave2', {
+		  const response = await fetch('/autosave', {
 			  method: 'POST',
 			  headers: {
 				  'Content-Type': 'application/json',
