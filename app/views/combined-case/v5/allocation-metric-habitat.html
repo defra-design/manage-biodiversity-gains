@@ -1,0 +1,67 @@
+{% extends "register-application/v24/layout-register-application.html" %}
+
+{% set pageHeading = "Confirm habitats being used by the development for off-site gain" %}
+{% set showspec = "true" %}
+
+
+{% if data["combined-case"] == "combined" %}
+{% set tasklist = "/register-application/v24/task-list-combined" %}
+{% else %}
+{% set tasklist = "task-list-allocation" %}
+{% endif %}
+
+{% block content %}
+
+{# set design spec for this page #}
+
+{% import "/includes/designstatus.html" as designstatus %}
+
+{% 
+    set designspec = {
+      status: 'dev',
+      pageurl: '',
+      pagetitle: 'Confirm habitats being used by the development for off-site gain',
+      ixd: 'alex.morris@defra.gov.uk',
+      cd: 'olivia.gordon@defra.gov.uk',
+      jira: '4517',
+      error: '',
+      notes: 'Amended wording in this line only: Confirm if these details match what the development project has agreed with the landowner or leaseholder.'
+    } 
+%}
+
+{{ designstatus.designstatus(designspec.status, designspec.pageurl, designspec.pagetitle, path, designspec.ixd, designspec.cd, designspec.jira, designspec.error, designspec.notes, data | dump) }}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageHeading }}
+      </h1>
+
+      <p>Confirm if these details match what the development project has agreed with the landowner or leaseholder.</p>
+
+      {% include "register-application/v24/includes/metric-creation-habitat-large-grouped-allocation.html" %}
+
+      {% include "register-application/v24/includes/metric-creation-hedgerow-small.html" %}
+      
+      {% include "register-application/v24/includes/metric-watercourse.html" %}
+
+
+            <form method="post" action="task-list">
+
+              {{ govukButton({ text: 'Save and continue' }) }}
+              
+              <input type="hidden" name="metric-details-confirm" value="yes">
+
+                
+              </form>
+        
+              <p>Or</p>
+        
+              <p><a href="./allocation-metric-upload" class="govuk-link--no-visited-state">Upload a different statutory biodiversity metric file</a></p>
+        
+            </div>
+          </div>
+
+{% endblock %}

@@ -35,6 +35,8 @@ const ccapplicationv3 = require('./views/register-application/v24/_routes');
 router.use('/combined-case/v3', ccapplicationv3);
 const ccapplicationv4 = require('./views/register-application/v24/_routes');
 router.use('/combined-case/v4', ccapplicationv4);
+const ccapplicationv5 = require('./views/register-application/v24/_routes');
+router.use('/combined-case/v5', ccapplicationv5);
 
 // Public register
 const biodiversitygainsitesregisterv6 = require('./views/biodiversity-gain-sites-register/v6/_routes');
