@@ -1254,6 +1254,24 @@
           ],
           [
             {
+              text: "Total area units",
+              classes: "heavy-border"
+            },
+            {
+              text: "",
+              classes: "heavy-border"
+            },
+            {
+              text: "",
+              classes: "heavy-border"
+            },
+            {
+              text: "4.8 units",
+              classes: "heavy-border"
+            }
+          ],
+          [
+            {
               text: "Native species rich hedgerow "
             },
             {
@@ -1264,6 +1282,24 @@
             },
             {
               text: "2.8 units"
+            }
+          ],
+          [
+            {
+              text: "Total hedgerow units",
+              classes: "heavy-border"
+            },
+            {
+              text: "",
+              classes: "heavy-border"
+            },
+            {
+              text: "",
+              classes: "heavy-border"
+            },
+            {
+              text: "2.8 units",
+              classes: "heavy-border"
             }
           ],
           [
@@ -1282,7 +1318,7 @@
           ],
           [
             {
-              text: "Total units",
+              text: "Total watercourse units",
               classes: "heavy-border"
             },
             {
@@ -1294,7 +1330,7 @@
               classes: "heavy-border"
             },
             {
-              text: "7.6 units",
+              text: "0.3 units",
               classes: "heavy-border"
             }
           ]
@@ -1357,8 +1393,13 @@
   <style>
     
     .heavy-border {
-      border-top:2px solid black;
       border-bottom:2px solid black;
+      margin-bottom:10px;
+    }
+    
+    .govuk-table__row:has(.govuk-table__cell.heavy-border, .govuk-table__header.heavy-border) + .govuk-table__row .govuk-table__cell,
+    .govuk-table__row:has(.govuk-table__cell.heavy-border, .govuk-table__header.heavy-border) + .govuk-table__row .govuk-table__header {
+        padding-top:36px;
     }
     
   </style>
