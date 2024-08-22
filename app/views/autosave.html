@@ -29,13 +29,13 @@
 			  <label class="govuk-label" for="address-line-2">
 				Address line 2 (optional)
 			  </label>
-			  <input class="govuk-input" id="address-line-2" name="autosavetestaddressLine2" type="text" autocomplete="address-line2">
+			  <input class="govuk-input" id="address-line-2" name="autosavetestaddressLine2" type="text" autocomplete="address-line2" value="{{data['autosavetestaddressLine2']}}">
 			</div>
 			<div class="govuk-form-group">
 			  <label class="govuk-label" for="address-town">
 				Town or city
 			  </label>
-			  <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="autosavetestaddressTown" type="text" autocomplete="address-level2">
+			  <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="autosavetestaddressTown" type="text" autocomplete="address-level2" value="{{data['autosavetestaddressTown']}}">
 			</div>
 			<div class="govuk-form-group">
 			  <label class="govuk-label" for="address-county">
@@ -149,7 +149,7 @@
 			  <div id="more-detail-hint" class="govuk-hint">
 				Do not include personal or financial information, like your National Insurance number or credit card details.
 			  </div>
-			  <textarea class="govuk-textarea" id="more-detail" name="autosavetestmoreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+			  <textarea class="govuk-textarea" id="more-detail" name="autosavetestmoreDetail" rows="5" aria-describedby="more-detail-hint">{{data['autosavetestmoreDetail']}}</textarea>
 			</div>
 
 		  </fieldset>
@@ -175,22 +175,31 @@
   </div>
   
   <script>
-  
 	  async function saveForm(form) {
-  
+		  // Get form data immediately to avoid any race conditions
 		  const formData = new FormData(form);
-		  const jsonData = Object.fromEntries(formData);
+		  const jsonData = Object.fromEntries(formData.entries());
   
-		  console.log('Sending data:', jsonData);
+		  // Post the form data to the server, including empty fields
+		  try {
+			  console.log('Sending data:', jsonData);
   
-		  const response = await fetch('/autosave', {
-			  method: 'POST',
-			  headers: {
-				  'Content-Type': 'application/json',
-			  },
-			  body: JSON.stringify(jsonData)
-		  });
+			  const response = await fetch('/autosave', {
+				  method: 'POST',
+				  headers: {
+					  'Content-Type': 'application/json',
+				  },
+				  body: JSON.stringify(jsonData)
+			  });
   
+			  if (response.ok) {
+				  console.log('Form data saved successfully.');
+			  } else {
+				  console.error('Failed to save form data.');
+			  }
+		  } catch (error) {
+			  console.error('Error during form submission:', error);
+		  }
 	  }
   
 	  let saveTimer;
@@ -202,14 +211,16 @@
 			  clearTimeout(saveTimer);
 			  saveTimer = setTimeout(() => {
 				  saveForm(form);
-			  }, 5000);
-		  };
+			  }, 500); // Debounce delay to avoid rapid consecutive submissions
+		  }
 	  }
   
 	  document.addEventListener('change', handleFormChange);
 	  document.addEventListener('keyup', handleFormChange);
-  
   </script>
+
+
+
 
 
 {% endblock %}
