@@ -4,7 +4,7 @@
 
 {% set pagenumber = 2 %}
 
-{% set pageHeading = "Match type and area, or length, of habitat available for allocation on the biodiversity gain site" %}
+{% set pageHeading = "Allocate habitat from the biodiversity gain site to the development" %}
 
 {% block pageTitle %}
   {{ pageHeading }}
@@ -50,11 +50,13 @@
              {{ pageHeading }}
            </h1>
         </legend>
-        <h3 class="govuk-heading-m govuk-!-margin-top-4">Habitats being allocated to your development project</h3><p>Taken from row xxxx in your <b>development project</b> metric.</p>
+        <h3 class="govuk-heading-m govuk-!-margin-top-4">Habitat required by the development project</h3>
 
          <div class="govuk-inset-text">Heathland and shrub - Mixed scrub (0.05 hectares / good condition)</div>
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <div id="signIn-hint">
-          <h3 class="govuk-heading-m govuk-!-margin-top-4">Habitats available on the gain site</h3><p>Taken from the enhanced habitats row xxxx in your <b>registration</b> metric.</p><p>Select the best match for your site</p>
+          <h3 class="govuk-heading-m govuk-!-margin-top-4">Habitats on the biodiversity gain site, available for allocation to the development</p>
+          <p>Select the habitat to allocate that <b>meets the requirement above</b>, as entered in your registration metric</p>
          </div>
          <div class="govuk-radios" data-module="govuk-radios">
            <div class="govuk-radios__item">
@@ -85,6 +87,18 @@
              </div>
            </div>
          </div>
+         <details class="govuk-details govuk-!-margin-top-4">
+           <summary class="govuk-details__summary">
+             <span class="govuk-details__summary-text">
+               Further information on allocating to the development
+             </span>
+           </summary>
+           <div class="govuk-details__text">
+             <p>There must be enough habitat available on the gain site being registered to meet the allocation to a development.</p>
+             <p>Your application may be delayed, or rejected, if the area or length of allocated habitat is greater than the available habitat shown for your gain site.</p>
+             <p>Required habitats are taken from row X from sheet Y in your <b>development metric</b>. Available habitats are taken from rows X, Y and Z from sheet N in your <b>registration metric</b>.</p>
+           </div>
+         </details>
          <div class="govuk-form-group govuk-!-static-margin-top-6">
            <button type="submit" class="govuk-button" data-module="govuk-button">
              Save and continue
